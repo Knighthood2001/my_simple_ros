@@ -16,12 +16,13 @@ class MsgFactory{
 public:
   // 获取单例实例
   static MsgFactory& instance();
+
 private:
   MsgFactory()=default;
   ~MsgFactory()=default;
   // 禁止拷贝和赋值
   MsgFactory(const MsgFactory&)=delete;
-  MsgFactory& operater=(const MsgFactory&)=delete;
+  MsgFactory& operator=(const MsgFactory&)=delete;
 
 
 
