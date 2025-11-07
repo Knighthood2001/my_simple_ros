@@ -12,6 +12,8 @@
 #include <functional>
 #include <vector>
 #include <google/protobuf/message.h>
+#include <unordered_set>
+#include <muduo/base/Logging.h>
 
 class MessageQueue {
 public:
@@ -33,9 +35,23 @@ public:
     subscribers_[topic].push_back(cb);
   }
 
+  //注册主题
+  void registerTopic(const std::string& topic){
+    std::lock_guard<std::mutex> lock(mutex_);
+    if (registered_topics_.find(topic) == registered_topics_.end()) {
+      registered_topics_.insert(topic);
+      LOG_INFO << "Registering topic: " << topic;
+    }
+
+  }
   // 推送消息到指定主题的队列
   void push(const std::string& topic, std::shared_ptr<google::protobuf::Message> msg){
     std::lock_guard<std::mutex> lock(mutex_);
+    if (registered_topics_.find(topic) == registered_topics_.end()) {
+      //主题没有注册
+      LOG_WARN << "Received message for unregistered topic: " << topic;
+      return;
+    }
     //检查队列是否为满，如果满，移除最早的消息
     auto it = topic_max_queue_sizes_.find(topic);
     uint32_t max_size = (it != topic_max_queue_sizes_.end()) ? it -> second : default_max_queue_size_;
@@ -65,5 +81,6 @@ private:
   std::unordered_map<std::string, std::list<std::shared_ptr<google::protobuf::Message>>> message_queue_;
   std::unordered_map<std::string, std::vector<Callback>> subscribers_; //订阅者列表
   std::unordered_map<std::string, uint32_t> topic_max_queue_sizes_; //每个主题的最大消息队列大小
+  std::unordered_set<std::string> registered_topics_; //已经注册的主题
 };
 #endif //MESSAGE_QUEUE_H
