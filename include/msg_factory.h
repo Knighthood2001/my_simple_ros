@@ -33,6 +33,7 @@ private:
   MsgFactory& operator=(const MsgFactory&)=delete;
   //缓存消息原型
   std::unordered_map<std::string, const google::protobuf::Message*> factory_;
+  google::protobuf::DynamicMessageFactory dynamic_factory_;
 
 
 }

@@ -15,6 +15,19 @@ std::unique_ptr<google::protobuf::Message> MsgFactory::createMessage(const std::
   if (it != factory_.end()){
     return std::unique_ptr<google::protobuf::Message>it->second->New();
   }
-  return nullptr;
+  //如果消息类型未注册，仍然希望能够动态创建消息。
+  //使用 Protobuf 的 DescriptorPool 和 DynamicMessageFactory 实现动态消息创建。
+  const google::protobuf::Descriptor* desc = google::protobuf::DescriptorPool::generated_pool()->FindMessageTypeByName(name);
+  if(!desc){
+    return nullptr;
+  }
+  const google::protobuf::Message* prototype = dynamic_factory_.GetPrototype(desc);
+  if(!prototype){
+    return nullptr;
+  }
+  //缓存下来，下次直接使用
+  factory_[name] = prototype;
+
+  return std::unique_ptr<google::protobuf::Message>(prototype->New());
 
 }
