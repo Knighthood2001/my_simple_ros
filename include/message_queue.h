@@ -35,6 +35,15 @@ public:
     subscribers_[topic].push_back(cb);
   }
 
+  //移除整个topic的所有订阅者
+  void removeSubscriber(const std::string& topic){
+    std::lock_guard<std::mutex> lock(mutex_);
+    subscribers_.erase(topic);
+    message_queue_.erase(topic);
+    topic_max_queue_sizes_.erase(topic);
+    registered_topics_.erase(topic);
+    LOG_INFO << "Removed topic and all its subscribers: " << topic;
+  }
   //注册主题
   void registerTopic(const std::string& topic){
     std::lock_guard<std::mutex> lock(mutex_);
