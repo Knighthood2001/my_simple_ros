@@ -3,9 +3,10 @@
 //
 #include "msg_factory.h"
 
-MsgFactory& MsgFactory::instance(){
-  static MsgFactory instance;
-  return instance;
+// 获取单例
+MsgFactory& MsgFactory::instance() {
+    static MsgFactory inst;
+    return inst;
 }
 
 // 创建 unique_ptr<Message>
@@ -13,7 +14,7 @@ std::unique_ptr<google::protobuf::Message> MsgFactory::createMessage(const std::
   //1
   auto it = factory_.find(name);
   if (it != factory_.end()){
-    return std::unique_ptr<google::protobuf::Message>it->second->New();
+    return std::unique_ptr<google::protobuf::Message>(it->second->New());
   }
   //如果消息类型未注册，仍然希望能够动态创建消息。
   //使用 Protobuf 的 DescriptorPool 和 DynamicMessageFactory 实现动态消息创建。

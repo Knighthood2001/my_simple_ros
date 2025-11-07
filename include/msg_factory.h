@@ -14,7 +14,8 @@
 
 class MsgFactory{
 public:
-  // 获取单例实例
+  // 获取单例
+  // 单例模式，确保全局只有一个消息工厂实例。
   static MsgFactory& instance();
   //注册消息类型
   template<typename MsgType>
@@ -38,6 +39,6 @@ private:
   google::protobuf::DynamicMessageFactory dynamic_factory_;
 
 
-}
+};
 
 #endif //MSG_FACTORY_H
