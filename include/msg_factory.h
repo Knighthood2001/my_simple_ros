@@ -21,6 +21,9 @@ public:
   void registerMessage(){
     factory_[MsgType::descriptor()->full_name()] = &MsgType::default_instance();
   }
+  //创建消息
+  std::unique_ptr<google::protobuf::Message> createMessage(const std::string& name);
+
 
 private:
   MsgFactory()=default;
