@@ -29,5 +29,9 @@ std::unique_ptr<google::protobuf::Message> MsgFactory::createMessage(const std::
   factory_[name] = prototype;
 
   return std::unique_ptr<google::protobuf::Message>(prototype->New());
+}
 
+std::shared_ptr<google::protobuf::Message> MsgFactory::makeSharedMessage(std::unique_ptr<google::protobuf::Message> msg){
+  //std::move(msg) 的作用是 触发 unique_ptr 的移动语义，让它持有的 Message 资源能够被安全地转移给 shared_ptr。
+  return std::shared_ptr<google::protobuf::Message>(std::move(msg));
 }

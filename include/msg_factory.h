@@ -23,6 +23,8 @@ public:
   }
   //创建消息
   std::unique_ptr<google::protobuf::Message> createMessage(const std::string& name);
+  //消息对象可能需要被多个地方共享
+  std::shared_ptr<google::protobuf::Message> makeSharedMessage(std::unique_ptr<google::protobuf::Message> msg);
 
 
 private:
