@@ -14,6 +14,7 @@
 #include <google/protobuf/message.h>
 #include <unordered_set>
 #include <muduo/base/Logging.h>
+#include <queue>
 
 class MessageQueue {
 public:
@@ -70,15 +71,27 @@ public:
     //添加新消息到队列
     message_queue_[topic].push_back(msg);
   }
-  //处理指定主题的消息
-  void process(const std::string& topic){
+
+  void processCallbacks(){
     std::lock_guard<std::mutex> lock(mutex_);
-    if(!message_queue_[topic].empty()){
-      auto msg = message_queue_[topic].front();
-      message_queue_[topic].pop_front();
-      //处理消息
-      for (const auto& cb : subscribers_[topic]) {
-        cb(msg);
+    //遍历所有主题的消息队列
+    for (auto& topic_entry : message_queue_) {
+      const std::string& topic = topic_entry.first;
+      auto& queue = topic_entry.second;
+
+      //如果队列不为空，获取队首消息
+      if (!queue.empty()) {
+        auto msg = queue.front();
+        queue.pop_front();
+
+        auto sub_it = subscribers_.find(topic);
+        if (sub_it != subscribers_.end()) {
+          //通知所有订阅者处理消息
+          for (const auto& callback: sub_it -> second){
+            callback(msg);
+          }
+        }
+
       }
     }
   }
