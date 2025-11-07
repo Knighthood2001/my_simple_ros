@@ -16,6 +16,11 @@ class MsgFactory{
 public:
   // 获取单例实例
   static MsgFactory& instance();
+  //注册消息类型
+  template<typename MsgType>
+  void registerMessage(){
+    factory_[MsgType::descriptor()->full_name()] = &MsgType::default_instance();
+  }
 
 private:
   MsgFactory()=default;
@@ -23,7 +28,8 @@ private:
   // 禁止拷贝和赋值
   MsgFactory(const MsgFactory&)=delete;
   MsgFactory& operator=(const MsgFactory&)=delete;
-
+  //缓存消息原型
+  std::unordered_map<std::string, const google::protobuf::Message*> factory_;
 
 
 }
