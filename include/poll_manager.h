@@ -13,6 +13,9 @@
 #include <muduo/base/Timestamp.h>
 #include <unordered_set>
 #include <unordered_map>
+#include <ros_rpc.pb.h>
+
+using namespace simple_ros;
 /*
 | 成员                       | 作用                 |
 | ------------------------ | ------------------ |
@@ -21,12 +24,26 @@
 | `TcpServer server_`      | Muduo 的 TCP 服务器对象  |
 | `onConnection()`         | 连接事件回调函数           |
  */
+// 为 NodeInfo 对象生成哈希值，用于在 unordered_set 中快速查找(结合 IP 地址和端口号生成唯一标识)
+struct NodeInfoHash{
+  size_t operator()(const NodeInfo& n)const{
+    return std::hash<std::string>()(n.ip())^(std::hash<int>()(n.port()) << 1);
+  }
+};
+
+struct NodeInfoEqual{
+  bool operator()(const NodeInfo& a, const NodeInfo& b)const{
+    return a.ip() == b.ip() && a.port() == b.port();
+  }
+};
 class PollManager{
 public:
   PollManager(muduo::net::EventLoop* loop, const muduo::net::InetAddress& listenAddr);
   void start();
   // 设置消息回调：参数 (connectionId, message)
   void setMessageCallback(std::function<void(const std::string&, const std::string&)> cb);
+  // 根据主题名称获取目标节点集合，允许外部调用者查询某个主题的目标节点，用于消息分发
+  std::unordered_set<NodeInfo, NodeInfoHash, NodeInfoEqual> getTargets(const std::string& topic) const;
 
 private:
   muduo::net::TcpServer server_;  //TCP服务器
@@ -37,6 +54,10 @@ private:
   // 存储用户提供的回调
   // 回调函数，用于处理接收到的消息
   std::function<void(const std::string&, const std::string&)> messageCallback_;
+  // 键：话题名称（string）
+  // 值：订阅该话题的所有节点集合
+  // 优势：快速查找特定话题的所有订阅者，便于消息广播。
+  std::unordered_map<std::string, std::unordered_set<NodeInfo, NodoInfoHash, NodeInfoEqual>> topic_targets_;
 
 
 };

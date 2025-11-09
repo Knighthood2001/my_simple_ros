@@ -37,3 +37,11 @@ void PollManager::onMessage(const muduo::net::TcpConnectionPtr& conn, muduo::net
     }
   }
 }
+
+std::unordered_set<NodeInfo, NodeInfoHash, NodeInfoEqual> PollManager::getTargets(const std::string& topic) const {
+  auto it = topic_targets_.find(topic);
+  if (it == topic_targets_.end()) {
+    return {};
+  }
+  return it->second;
+}

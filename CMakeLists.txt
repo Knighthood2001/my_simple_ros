@@ -26,7 +26,9 @@ set(GENERATED_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src/generated)
 # ===== 核心库 =====
 add_library(ros_rpc_core
         src/msg_factory.cpp
+        src/poll_manager.cpp
         src/generated/example.pb.cc
+        src/generated/ros_rpc.pb.cc
 )
 
 target_include_directories(ros_rpc_core PUBLIC
