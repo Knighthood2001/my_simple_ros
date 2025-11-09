@@ -7,3 +7,15 @@ message NodeInfo {
   int32 port = 2;         // 节点端口
   string node_name = 3;   // 节点名称
 }
+
+message TopicTargetsUpdate {
+  string topic = 1;                  // 需要更新的 topic
+  repeated NodeInfo add_targets = 2; // 新增目标
+  repeated NodeInfo remove_targets = 3; // 删除目标
+}
+
+// 定义话题信息
+message TopicInfo {
+  string topic_name = 1;  // 话题名称
+  string msg_type = 2;    // 消息类型
+}
