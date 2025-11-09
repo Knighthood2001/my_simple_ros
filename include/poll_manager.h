@@ -42,6 +42,7 @@ public:
   void start();
   // 设置消息回调：参数 (connectionId, message)
   void setMessageCallback(std::function<void(const std::string&, const std::string&)> cb);
+  //std::unordered_set<NodeInfo, NodeInfoHash, NodeInfoEqual> 用于存储订阅某个 Topic 的节点集合，保证节点 不重复，并支持 O(1) 高效插入、删除和查找。
   // 根据主题名称获取目标节点集合，允许外部调用者查询某个主题的目标节点，用于消息分发
   std::unordered_set<NodeInfo, NodeInfoHash, NodeInfoEqual> getTargets(const std::string& topic) const;
 
@@ -57,7 +58,7 @@ private:
   // 键：话题名称（string）
   // 值：订阅该话题的所有节点集合
   // 优势：快速查找特定话题的所有订阅者，便于消息广播。
-  std::unordered_map<std::string, std::unordered_set<NodeInfo, NodoInfoHash, NodeInfoEqual>> topic_targets_;
+  std::unordered_map<std::string, std::unordered_set<NodeInfo, NodeInfoHash, NodeInfoEqual>> topic_targets_;
 
 
 };
