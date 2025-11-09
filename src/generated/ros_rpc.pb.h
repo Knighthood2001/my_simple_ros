@@ -45,12 +45,84 @@ struct TableStruct_ros_5frpc_2eproto {
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_ros_5frpc_2eproto;
 namespace simple_ros {
+class GetNodeInfoRequest;
+struct GetNodeInfoRequestDefaultTypeInternal;
+extern GetNodeInfoRequestDefaultTypeInternal _GetNodeInfoRequest_default_instance_;
+class GetNodeInfoResponse;
+struct GetNodeInfoResponseDefaultTypeInternal;
+extern GetNodeInfoResponseDefaultTypeInternal _GetNodeInfoResponse_default_instance_;
+class GetNodesRequest;
+struct GetNodesRequestDefaultTypeInternal;
+extern GetNodesRequestDefaultTypeInternal _GetNodesRequest_default_instance_;
+class GetNodesResponse;
+struct GetNodesResponseDefaultTypeInternal;
+extern GetNodesResponseDefaultTypeInternal _GetNodesResponse_default_instance_;
+class GetTopicInfoRequest;
+struct GetTopicInfoRequestDefaultTypeInternal;
+extern GetTopicInfoRequestDefaultTypeInternal _GetTopicInfoRequest_default_instance_;
+class GetTopicInfoResponse;
+struct GetTopicInfoResponseDefaultTypeInternal;
+extern GetTopicInfoResponseDefaultTypeInternal _GetTopicInfoResponse_default_instance_;
+class GetTopicsRequest;
+struct GetTopicsRequestDefaultTypeInternal;
+extern GetTopicsRequestDefaultTypeInternal _GetTopicsRequest_default_instance_;
+class GetTopicsResponse;
+struct GetTopicsResponseDefaultTypeInternal;
+extern GetTopicsResponseDefaultTypeInternal _GetTopicsResponse_default_instance_;
 class NodeInfo;
 struct NodeInfoDefaultTypeInternal;
 extern NodeInfoDefaultTypeInternal _NodeInfo_default_instance_;
+class RegisterPublisherRequest;
+struct RegisterPublisherRequestDefaultTypeInternal;
+extern RegisterPublisherRequestDefaultTypeInternal _RegisterPublisherRequest_default_instance_;
+class RegisterPublisherResponse;
+struct RegisterPublisherResponseDefaultTypeInternal;
+extern RegisterPublisherResponseDefaultTypeInternal _RegisterPublisherResponse_default_instance_;
+class SubscribeRequest;
+struct SubscribeRequestDefaultTypeInternal;
+extern SubscribeRequestDefaultTypeInternal _SubscribeRequest_default_instance_;
+class SubscribeResponse;
+struct SubscribeResponseDefaultTypeInternal;
+extern SubscribeResponseDefaultTypeInternal _SubscribeResponse_default_instance_;
+class TopicInfo;
+struct TopicInfoDefaultTypeInternal;
+extern TopicInfoDefaultTypeInternal _TopicInfo_default_instance_;
+class TopicTargetsUpdate;
+struct TopicTargetsUpdateDefaultTypeInternal;
+extern TopicTargetsUpdateDefaultTypeInternal _TopicTargetsUpdate_default_instance_;
+class UnregisterPublisherRequest;
+struct UnregisterPublisherRequestDefaultTypeInternal;
+extern UnregisterPublisherRequestDefaultTypeInternal _UnregisterPublisherRequest_default_instance_;
+class UnregisterPublisherResponse;
+struct UnregisterPublisherResponseDefaultTypeInternal;
+extern UnregisterPublisherResponseDefaultTypeInternal _UnregisterPublisherResponse_default_instance_;
+class UnsubscribeRequest;
+struct UnsubscribeRequestDefaultTypeInternal;
+extern UnsubscribeRequestDefaultTypeInternal _UnsubscribeRequest_default_instance_;
+class UnsubscribeResponse;
+struct UnsubscribeResponseDefaultTypeInternal;
+extern UnsubscribeResponseDefaultTypeInternal _UnsubscribeResponse_default_instance_;
 }  // namespace simple_ros
 PROTOBUF_NAMESPACE_OPEN
+template<> ::simple_ros::GetNodeInfoRequest* Arena::CreateMaybeMessage<::simple_ros::GetNodeInfoRequest>(Arena*);
+template<> ::simple_ros::GetNodeInfoResponse* Arena::CreateMaybeMessage<::simple_ros::GetNodeInfoResponse>(Arena*);
+template<> ::simple_ros::GetNodesRequest* Arena::CreateMaybeMessage<::simple_ros::GetNodesRequest>(Arena*);
+template<> ::simple_ros::GetNodesResponse* Arena::CreateMaybeMessage<::simple_ros::GetNodesResponse>(Arena*);
+template<> ::simple_ros::GetTopicInfoRequest* Arena::CreateMaybeMessage<::simple_ros::GetTopicInfoRequest>(Arena*);
+template<> ::simple_ros::GetTopicInfoResponse* Arena::CreateMaybeMessage<::simple_ros::GetTopicInfoResponse>(Arena*);
+template<> ::simple_ros::GetTopicsRequest* Arena::CreateMaybeMessage<::simple_ros::GetTopicsRequest>(Arena*);
+template<> ::simple_ros::GetTopicsResponse* Arena::CreateMaybeMessage<::simple_ros::GetTopicsResponse>(Arena*);
 template<> ::simple_ros::NodeInfo* Arena::CreateMaybeMessage<::simple_ros::NodeInfo>(Arena*);
+template<> ::simple_ros::RegisterPublisherRequest* Arena::CreateMaybeMessage<::simple_ros::RegisterPublisherRequest>(Arena*);
+template<> ::simple_ros::RegisterPublisherResponse* Arena::CreateMaybeMessage<::simple_ros::RegisterPublisherResponse>(Arena*);
+template<> ::simple_ros::SubscribeRequest* Arena::CreateMaybeMessage<::simple_ros::SubscribeRequest>(Arena*);
+template<> ::simple_ros::SubscribeResponse* Arena::CreateMaybeMessage<::simple_ros::SubscribeResponse>(Arena*);
+template<> ::simple_ros::TopicInfo* Arena::CreateMaybeMessage<::simple_ros::TopicInfo>(Arena*);
+template<> ::simple_ros::TopicTargetsUpdate* Arena::CreateMaybeMessage<::simple_ros::TopicTargetsUpdate>(Arena*);
+template<> ::simple_ros::UnregisterPublisherRequest* Arena::CreateMaybeMessage<::simple_ros::UnregisterPublisherRequest>(Arena*);
+template<> ::simple_ros::UnregisterPublisherResponse* Arena::CreateMaybeMessage<::simple_ros::UnregisterPublisherResponse>(Arena*);
+template<> ::simple_ros::UnsubscribeRequest* Arena::CreateMaybeMessage<::simple_ros::UnsubscribeRequest>(Arena*);
+template<> ::simple_ros::UnsubscribeResponse* Arena::CreateMaybeMessage<::simple_ros::UnsubscribeResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace simple_ros {
 
@@ -229,6 +301,3150 @@ class NodeInfo final :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_ros_5frpc_2eproto;
 };
+// -------------------------------------------------------------------
+
+class TopicTargetsUpdate final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:simple_ros.TopicTargetsUpdate) */ {
+ public:
+  inline TopicTargetsUpdate() : TopicTargetsUpdate(nullptr) {}
+  ~TopicTargetsUpdate() override;
+  explicit PROTOBUF_CONSTEXPR TopicTargetsUpdate(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  TopicTargetsUpdate(const TopicTargetsUpdate& from);
+  TopicTargetsUpdate(TopicTargetsUpdate&& from) noexcept
+    : TopicTargetsUpdate() {
+    *this = ::std::move(from);
+  }
+
+  inline TopicTargetsUpdate& operator=(const TopicTargetsUpdate& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline TopicTargetsUpdate& operator=(TopicTargetsUpdate&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const TopicTargetsUpdate& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const TopicTargetsUpdate* internal_default_instance() {
+    return reinterpret_cast<const TopicTargetsUpdate*>(
+               &_TopicTargetsUpdate_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(TopicTargetsUpdate& a, TopicTargetsUpdate& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(TopicTargetsUpdate* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(TopicTargetsUpdate* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  TopicTargetsUpdate* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<TopicTargetsUpdate>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const TopicTargetsUpdate& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const TopicTargetsUpdate& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(TopicTargetsUpdate* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "simple_ros.TopicTargetsUpdate";
+  }
+  protected:
+  explicit TopicTargetsUpdate(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kAddTargetsFieldNumber = 2,
+    kRemoveTargetsFieldNumber = 3,
+    kTopicFieldNumber = 1,
+  };
+  // repeated .simple_ros.NodeInfo add_targets = 2;
+  int add_targets_size() const;
+  private:
+  int _internal_add_targets_size() const;
+  public:
+  void clear_add_targets();
+  ::simple_ros::NodeInfo* mutable_add_targets(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::NodeInfo >*
+      mutable_add_targets();
+  private:
+  const ::simple_ros::NodeInfo& _internal_add_targets(int index) const;
+  ::simple_ros::NodeInfo* _internal_add_add_targets();
+  public:
+  const ::simple_ros::NodeInfo& add_targets(int index) const;
+  ::simple_ros::NodeInfo* add_add_targets();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::NodeInfo >&
+      add_targets() const;
+
+  // repeated .simple_ros.NodeInfo remove_targets = 3;
+  int remove_targets_size() const;
+  private:
+  int _internal_remove_targets_size() const;
+  public:
+  void clear_remove_targets();
+  ::simple_ros::NodeInfo* mutable_remove_targets(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::NodeInfo >*
+      mutable_remove_targets();
+  private:
+  const ::simple_ros::NodeInfo& _internal_remove_targets(int index) const;
+  ::simple_ros::NodeInfo* _internal_add_remove_targets();
+  public:
+  const ::simple_ros::NodeInfo& remove_targets(int index) const;
+  ::simple_ros::NodeInfo* add_remove_targets();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::NodeInfo >&
+      remove_targets() const;
+
+  // string topic = 1;
+  void clear_topic();
+  const std::string& topic() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_topic(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_topic();
+  PROTOBUF_NODISCARD std::string* release_topic();
+  void set_allocated_topic(std::string* topic);
+  private:
+  const std::string& _internal_topic() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_topic(const std::string& value);
+  std::string* _internal_mutable_topic();
+  public:
+
+  // @@protoc_insertion_point(class_scope:simple_ros.TopicTargetsUpdate)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::NodeInfo > add_targets_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::NodeInfo > remove_targets_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr topic_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_ros_5frpc_2eproto;
+};
+// -------------------------------------------------------------------
+
+class TopicInfo final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:simple_ros.TopicInfo) */ {
+ public:
+  inline TopicInfo() : TopicInfo(nullptr) {}
+  ~TopicInfo() override;
+  explicit PROTOBUF_CONSTEXPR TopicInfo(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  TopicInfo(const TopicInfo& from);
+  TopicInfo(TopicInfo&& from) noexcept
+    : TopicInfo() {
+    *this = ::std::move(from);
+  }
+
+  inline TopicInfo& operator=(const TopicInfo& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline TopicInfo& operator=(TopicInfo&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const TopicInfo& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const TopicInfo* internal_default_instance() {
+    return reinterpret_cast<const TopicInfo*>(
+               &_TopicInfo_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(TopicInfo& a, TopicInfo& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(TopicInfo* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(TopicInfo* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  TopicInfo* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<TopicInfo>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const TopicInfo& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const TopicInfo& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(TopicInfo* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "simple_ros.TopicInfo";
+  }
+  protected:
+  explicit TopicInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTopicNameFieldNumber = 1,
+    kMsgTypeFieldNumber = 2,
+  };
+  // string topic_name = 1;
+  void clear_topic_name();
+  const std::string& topic_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_topic_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_topic_name();
+  PROTOBUF_NODISCARD std::string* release_topic_name();
+  void set_allocated_topic_name(std::string* topic_name);
+  private:
+  const std::string& _internal_topic_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_topic_name(const std::string& value);
+  std::string* _internal_mutable_topic_name();
+  public:
+
+  // string msg_type = 2;
+  void clear_msg_type();
+  const std::string& msg_type() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_msg_type(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_msg_type();
+  PROTOBUF_NODISCARD std::string* release_msg_type();
+  void set_allocated_msg_type(std::string* msg_type);
+  private:
+  const std::string& _internal_msg_type() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_msg_type(const std::string& value);
+  std::string* _internal_mutable_msg_type();
+  public:
+
+  // @@protoc_insertion_point(class_scope:simple_ros.TopicInfo)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr topic_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_type_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_ros_5frpc_2eproto;
+};
+// -------------------------------------------------------------------
+
+class SubscribeRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:simple_ros.SubscribeRequest) */ {
+ public:
+  inline SubscribeRequest() : SubscribeRequest(nullptr) {}
+  ~SubscribeRequest() override;
+  explicit PROTOBUF_CONSTEXPR SubscribeRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SubscribeRequest(const SubscribeRequest& from);
+  SubscribeRequest(SubscribeRequest&& from) noexcept
+    : SubscribeRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline SubscribeRequest& operator=(const SubscribeRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SubscribeRequest& operator=(SubscribeRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SubscribeRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SubscribeRequest* internal_default_instance() {
+    return reinterpret_cast<const SubscribeRequest*>(
+               &_SubscribeRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    3;
+
+  friend void swap(SubscribeRequest& a, SubscribeRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SubscribeRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SubscribeRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SubscribeRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SubscribeRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const SubscribeRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const SubscribeRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SubscribeRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "simple_ros.SubscribeRequest";
+  }
+  protected:
+  explicit SubscribeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTopicNameFieldNumber = 1,
+    kMsgTypeFieldNumber = 2,
+    kNodeInfoFieldNumber = 3,
+  };
+  // string topic_name = 1;
+  void clear_topic_name();
+  const std::string& topic_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_topic_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_topic_name();
+  PROTOBUF_NODISCARD std::string* release_topic_name();
+  void set_allocated_topic_name(std::string* topic_name);
+  private:
+  const std::string& _internal_topic_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_topic_name(const std::string& value);
+  std::string* _internal_mutable_topic_name();
+  public:
+
+  // string msg_type = 2;
+  void clear_msg_type();
+  const std::string& msg_type() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_msg_type(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_msg_type();
+  PROTOBUF_NODISCARD std::string* release_msg_type();
+  void set_allocated_msg_type(std::string* msg_type);
+  private:
+  const std::string& _internal_msg_type() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_msg_type(const std::string& value);
+  std::string* _internal_mutable_msg_type();
+  public:
+
+  // .simple_ros.NodeInfo node_info = 3;
+  bool has_node_info() const;
+  private:
+  bool _internal_has_node_info() const;
+  public:
+  void clear_node_info();
+  const ::simple_ros::NodeInfo& node_info() const;
+  PROTOBUF_NODISCARD ::simple_ros::NodeInfo* release_node_info();
+  ::simple_ros::NodeInfo* mutable_node_info();
+  void set_allocated_node_info(::simple_ros::NodeInfo* node_info);
+  private:
+  const ::simple_ros::NodeInfo& _internal_node_info() const;
+  ::simple_ros::NodeInfo* _internal_mutable_node_info();
+  public:
+  void unsafe_arena_set_allocated_node_info(
+      ::simple_ros::NodeInfo* node_info);
+  ::simple_ros::NodeInfo* unsafe_arena_release_node_info();
+
+  // @@protoc_insertion_point(class_scope:simple_ros.SubscribeRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr topic_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_type_;
+  ::simple_ros::NodeInfo* node_info_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_ros_5frpc_2eproto;
+};
+// -------------------------------------------------------------------
+
+class SubscribeResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:simple_ros.SubscribeResponse) */ {
+ public:
+  inline SubscribeResponse() : SubscribeResponse(nullptr) {}
+  ~SubscribeResponse() override;
+  explicit PROTOBUF_CONSTEXPR SubscribeResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SubscribeResponse(const SubscribeResponse& from);
+  SubscribeResponse(SubscribeResponse&& from) noexcept
+    : SubscribeResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline SubscribeResponse& operator=(const SubscribeResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SubscribeResponse& operator=(SubscribeResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SubscribeResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SubscribeResponse* internal_default_instance() {
+    return reinterpret_cast<const SubscribeResponse*>(
+               &_SubscribeResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    4;
+
+  friend void swap(SubscribeResponse& a, SubscribeResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SubscribeResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SubscribeResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SubscribeResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SubscribeResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const SubscribeResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const SubscribeResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SubscribeResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "simple_ros.SubscribeResponse";
+  }
+  protected:
+  explicit SubscribeResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kNodeInfoFieldNumber = 3,
+    kMessageFieldNumber = 2,
+    kSuccessFieldNumber = 1,
+  };
+  // repeated .simple_ros.NodeInfo node_info = 3;
+  int node_info_size() const;
+  private:
+  int _internal_node_info_size() const;
+  public:
+  void clear_node_info();
+  ::simple_ros::NodeInfo* mutable_node_info(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::NodeInfo >*
+      mutable_node_info();
+  private:
+  const ::simple_ros::NodeInfo& _internal_node_info(int index) const;
+  ::simple_ros::NodeInfo* _internal_add_node_info();
+  public:
+  const ::simple_ros::NodeInfo& node_info(int index) const;
+  ::simple_ros::NodeInfo* add_node_info();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::NodeInfo >&
+      node_info() const;
+
+  // string message = 2;
+  void clear_message();
+  const std::string& message() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_message(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_message();
+  PROTOBUF_NODISCARD std::string* release_message();
+  void set_allocated_message(std::string* message);
+  private:
+  const std::string& _internal_message() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_message(const std::string& value);
+  std::string* _internal_mutable_message();
+  public:
+
+  // bool success = 1;
+  void clear_success();
+  bool success() const;
+  void set_success(bool value);
+  private:
+  bool _internal_success() const;
+  void _internal_set_success(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:simple_ros.SubscribeResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::NodeInfo > node_info_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr message_;
+  bool success_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_ros_5frpc_2eproto;
+};
+// -------------------------------------------------------------------
+
+class RegisterPublisherRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:simple_ros.RegisterPublisherRequest) */ {
+ public:
+  inline RegisterPublisherRequest() : RegisterPublisherRequest(nullptr) {}
+  ~RegisterPublisherRequest() override;
+  explicit PROTOBUF_CONSTEXPR RegisterPublisherRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  RegisterPublisherRequest(const RegisterPublisherRequest& from);
+  RegisterPublisherRequest(RegisterPublisherRequest&& from) noexcept
+    : RegisterPublisherRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline RegisterPublisherRequest& operator=(const RegisterPublisherRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline RegisterPublisherRequest& operator=(RegisterPublisherRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const RegisterPublisherRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const RegisterPublisherRequest* internal_default_instance() {
+    return reinterpret_cast<const RegisterPublisherRequest*>(
+               &_RegisterPublisherRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  friend void swap(RegisterPublisherRequest& a, RegisterPublisherRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(RegisterPublisherRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(RegisterPublisherRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  RegisterPublisherRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<RegisterPublisherRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const RegisterPublisherRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const RegisterPublisherRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(RegisterPublisherRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "simple_ros.RegisterPublisherRequest";
+  }
+  protected:
+  explicit RegisterPublisherRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTopicNameFieldNumber = 1,
+    kMsgTypeFieldNumber = 2,
+    kNodeInfoFieldNumber = 3,
+  };
+  // string topic_name = 1;
+  void clear_topic_name();
+  const std::string& topic_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_topic_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_topic_name();
+  PROTOBUF_NODISCARD std::string* release_topic_name();
+  void set_allocated_topic_name(std::string* topic_name);
+  private:
+  const std::string& _internal_topic_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_topic_name(const std::string& value);
+  std::string* _internal_mutable_topic_name();
+  public:
+
+  // string msg_type = 2;
+  void clear_msg_type();
+  const std::string& msg_type() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_msg_type(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_msg_type();
+  PROTOBUF_NODISCARD std::string* release_msg_type();
+  void set_allocated_msg_type(std::string* msg_type);
+  private:
+  const std::string& _internal_msg_type() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_msg_type(const std::string& value);
+  std::string* _internal_mutable_msg_type();
+  public:
+
+  // .simple_ros.NodeInfo node_info = 3;
+  bool has_node_info() const;
+  private:
+  bool _internal_has_node_info() const;
+  public:
+  void clear_node_info();
+  const ::simple_ros::NodeInfo& node_info() const;
+  PROTOBUF_NODISCARD ::simple_ros::NodeInfo* release_node_info();
+  ::simple_ros::NodeInfo* mutable_node_info();
+  void set_allocated_node_info(::simple_ros::NodeInfo* node_info);
+  private:
+  const ::simple_ros::NodeInfo& _internal_node_info() const;
+  ::simple_ros::NodeInfo* _internal_mutable_node_info();
+  public:
+  void unsafe_arena_set_allocated_node_info(
+      ::simple_ros::NodeInfo* node_info);
+  ::simple_ros::NodeInfo* unsafe_arena_release_node_info();
+
+  // @@protoc_insertion_point(class_scope:simple_ros.RegisterPublisherRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr topic_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_type_;
+  ::simple_ros::NodeInfo* node_info_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_ros_5frpc_2eproto;
+};
+// -------------------------------------------------------------------
+
+class RegisterPublisherResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:simple_ros.RegisterPublisherResponse) */ {
+ public:
+  inline RegisterPublisherResponse() : RegisterPublisherResponse(nullptr) {}
+  ~RegisterPublisherResponse() override;
+  explicit PROTOBUF_CONSTEXPR RegisterPublisherResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  RegisterPublisherResponse(const RegisterPublisherResponse& from);
+  RegisterPublisherResponse(RegisterPublisherResponse&& from) noexcept
+    : RegisterPublisherResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline RegisterPublisherResponse& operator=(const RegisterPublisherResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline RegisterPublisherResponse& operator=(RegisterPublisherResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const RegisterPublisherResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const RegisterPublisherResponse* internal_default_instance() {
+    return reinterpret_cast<const RegisterPublisherResponse*>(
+               &_RegisterPublisherResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    6;
+
+  friend void swap(RegisterPublisherResponse& a, RegisterPublisherResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(RegisterPublisherResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(RegisterPublisherResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  RegisterPublisherResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<RegisterPublisherResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const RegisterPublisherResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const RegisterPublisherResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(RegisterPublisherResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "simple_ros.RegisterPublisherResponse";
+  }
+  protected:
+  explicit RegisterPublisherResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMessageFieldNumber = 2,
+    kSuccessFieldNumber = 1,
+  };
+  // string message = 2;
+  void clear_message();
+  const std::string& message() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_message(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_message();
+  PROTOBUF_NODISCARD std::string* release_message();
+  void set_allocated_message(std::string* message);
+  private:
+  const std::string& _internal_message() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_message(const std::string& value);
+  std::string* _internal_mutable_message();
+  public:
+
+  // bool success = 1;
+  void clear_success();
+  bool success() const;
+  void set_success(bool value);
+  private:
+  bool _internal_success() const;
+  void _internal_set_success(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:simple_ros.RegisterPublisherResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr message_;
+  bool success_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_ros_5frpc_2eproto;
+};
+// -------------------------------------------------------------------
+
+class UnsubscribeRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:simple_ros.UnsubscribeRequest) */ {
+ public:
+  inline UnsubscribeRequest() : UnsubscribeRequest(nullptr) {}
+  ~UnsubscribeRequest() override;
+  explicit PROTOBUF_CONSTEXPR UnsubscribeRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  UnsubscribeRequest(const UnsubscribeRequest& from);
+  UnsubscribeRequest(UnsubscribeRequest&& from) noexcept
+    : UnsubscribeRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline UnsubscribeRequest& operator=(const UnsubscribeRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline UnsubscribeRequest& operator=(UnsubscribeRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const UnsubscribeRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const UnsubscribeRequest* internal_default_instance() {
+    return reinterpret_cast<const UnsubscribeRequest*>(
+               &_UnsubscribeRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    7;
+
+  friend void swap(UnsubscribeRequest& a, UnsubscribeRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(UnsubscribeRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(UnsubscribeRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  UnsubscribeRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<UnsubscribeRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const UnsubscribeRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const UnsubscribeRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(UnsubscribeRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "simple_ros.UnsubscribeRequest";
+  }
+  protected:
+  explicit UnsubscribeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTopicNameFieldNumber = 1,
+    kMsgTypeFieldNumber = 2,
+    kNodeInfoFieldNumber = 3,
+  };
+  // string topic_name = 1;
+  void clear_topic_name();
+  const std::string& topic_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_topic_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_topic_name();
+  PROTOBUF_NODISCARD std::string* release_topic_name();
+  void set_allocated_topic_name(std::string* topic_name);
+  private:
+  const std::string& _internal_topic_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_topic_name(const std::string& value);
+  std::string* _internal_mutable_topic_name();
+  public:
+
+  // string msg_type = 2;
+  void clear_msg_type();
+  const std::string& msg_type() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_msg_type(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_msg_type();
+  PROTOBUF_NODISCARD std::string* release_msg_type();
+  void set_allocated_msg_type(std::string* msg_type);
+  private:
+  const std::string& _internal_msg_type() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_msg_type(const std::string& value);
+  std::string* _internal_mutable_msg_type();
+  public:
+
+  // .simple_ros.NodeInfo node_info = 3;
+  bool has_node_info() const;
+  private:
+  bool _internal_has_node_info() const;
+  public:
+  void clear_node_info();
+  const ::simple_ros::NodeInfo& node_info() const;
+  PROTOBUF_NODISCARD ::simple_ros::NodeInfo* release_node_info();
+  ::simple_ros::NodeInfo* mutable_node_info();
+  void set_allocated_node_info(::simple_ros::NodeInfo* node_info);
+  private:
+  const ::simple_ros::NodeInfo& _internal_node_info() const;
+  ::simple_ros::NodeInfo* _internal_mutable_node_info();
+  public:
+  void unsafe_arena_set_allocated_node_info(
+      ::simple_ros::NodeInfo* node_info);
+  ::simple_ros::NodeInfo* unsafe_arena_release_node_info();
+
+  // @@protoc_insertion_point(class_scope:simple_ros.UnsubscribeRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr topic_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_type_;
+  ::simple_ros::NodeInfo* node_info_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_ros_5frpc_2eproto;
+};
+// -------------------------------------------------------------------
+
+class UnsubscribeResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:simple_ros.UnsubscribeResponse) */ {
+ public:
+  inline UnsubscribeResponse() : UnsubscribeResponse(nullptr) {}
+  ~UnsubscribeResponse() override;
+  explicit PROTOBUF_CONSTEXPR UnsubscribeResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  UnsubscribeResponse(const UnsubscribeResponse& from);
+  UnsubscribeResponse(UnsubscribeResponse&& from) noexcept
+    : UnsubscribeResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline UnsubscribeResponse& operator=(const UnsubscribeResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline UnsubscribeResponse& operator=(UnsubscribeResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const UnsubscribeResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const UnsubscribeResponse* internal_default_instance() {
+    return reinterpret_cast<const UnsubscribeResponse*>(
+               &_UnsubscribeResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    8;
+
+  friend void swap(UnsubscribeResponse& a, UnsubscribeResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(UnsubscribeResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(UnsubscribeResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  UnsubscribeResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<UnsubscribeResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const UnsubscribeResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const UnsubscribeResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(UnsubscribeResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "simple_ros.UnsubscribeResponse";
+  }
+  protected:
+  explicit UnsubscribeResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMessageFieldNumber = 2,
+    kSuccessFieldNumber = 1,
+  };
+  // string message = 2;
+  void clear_message();
+  const std::string& message() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_message(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_message();
+  PROTOBUF_NODISCARD std::string* release_message();
+  void set_allocated_message(std::string* message);
+  private:
+  const std::string& _internal_message() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_message(const std::string& value);
+  std::string* _internal_mutable_message();
+  public:
+
+  // bool success = 1;
+  void clear_success();
+  bool success() const;
+  void set_success(bool value);
+  private:
+  bool _internal_success() const;
+  void _internal_set_success(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:simple_ros.UnsubscribeResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr message_;
+  bool success_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_ros_5frpc_2eproto;
+};
+// -------------------------------------------------------------------
+
+class UnregisterPublisherRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:simple_ros.UnregisterPublisherRequest) */ {
+ public:
+  inline UnregisterPublisherRequest() : UnregisterPublisherRequest(nullptr) {}
+  ~UnregisterPublisherRequest() override;
+  explicit PROTOBUF_CONSTEXPR UnregisterPublisherRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  UnregisterPublisherRequest(const UnregisterPublisherRequest& from);
+  UnregisterPublisherRequest(UnregisterPublisherRequest&& from) noexcept
+    : UnregisterPublisherRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline UnregisterPublisherRequest& operator=(const UnregisterPublisherRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline UnregisterPublisherRequest& operator=(UnregisterPublisherRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const UnregisterPublisherRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const UnregisterPublisherRequest* internal_default_instance() {
+    return reinterpret_cast<const UnregisterPublisherRequest*>(
+               &_UnregisterPublisherRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    9;
+
+  friend void swap(UnregisterPublisherRequest& a, UnregisterPublisherRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(UnregisterPublisherRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(UnregisterPublisherRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  UnregisterPublisherRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<UnregisterPublisherRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const UnregisterPublisherRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const UnregisterPublisherRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(UnregisterPublisherRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "simple_ros.UnregisterPublisherRequest";
+  }
+  protected:
+  explicit UnregisterPublisherRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTopicNameFieldNumber = 1,
+    kMsgTypeFieldNumber = 2,
+    kNodeInfoFieldNumber = 3,
+  };
+  // string topic_name = 1;
+  void clear_topic_name();
+  const std::string& topic_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_topic_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_topic_name();
+  PROTOBUF_NODISCARD std::string* release_topic_name();
+  void set_allocated_topic_name(std::string* topic_name);
+  private:
+  const std::string& _internal_topic_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_topic_name(const std::string& value);
+  std::string* _internal_mutable_topic_name();
+  public:
+
+  // string msg_type = 2;
+  void clear_msg_type();
+  const std::string& msg_type() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_msg_type(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_msg_type();
+  PROTOBUF_NODISCARD std::string* release_msg_type();
+  void set_allocated_msg_type(std::string* msg_type);
+  private:
+  const std::string& _internal_msg_type() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_msg_type(const std::string& value);
+  std::string* _internal_mutable_msg_type();
+  public:
+
+  // .simple_ros.NodeInfo node_info = 3;
+  bool has_node_info() const;
+  private:
+  bool _internal_has_node_info() const;
+  public:
+  void clear_node_info();
+  const ::simple_ros::NodeInfo& node_info() const;
+  PROTOBUF_NODISCARD ::simple_ros::NodeInfo* release_node_info();
+  ::simple_ros::NodeInfo* mutable_node_info();
+  void set_allocated_node_info(::simple_ros::NodeInfo* node_info);
+  private:
+  const ::simple_ros::NodeInfo& _internal_node_info() const;
+  ::simple_ros::NodeInfo* _internal_mutable_node_info();
+  public:
+  void unsafe_arena_set_allocated_node_info(
+      ::simple_ros::NodeInfo* node_info);
+  ::simple_ros::NodeInfo* unsafe_arena_release_node_info();
+
+  // @@protoc_insertion_point(class_scope:simple_ros.UnregisterPublisherRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr topic_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_type_;
+  ::simple_ros::NodeInfo* node_info_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_ros_5frpc_2eproto;
+};
+// -------------------------------------------------------------------
+
+class UnregisterPublisherResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:simple_ros.UnregisterPublisherResponse) */ {
+ public:
+  inline UnregisterPublisherResponse() : UnregisterPublisherResponse(nullptr) {}
+  ~UnregisterPublisherResponse() override;
+  explicit PROTOBUF_CONSTEXPR UnregisterPublisherResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  UnregisterPublisherResponse(const UnregisterPublisherResponse& from);
+  UnregisterPublisherResponse(UnregisterPublisherResponse&& from) noexcept
+    : UnregisterPublisherResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline UnregisterPublisherResponse& operator=(const UnregisterPublisherResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline UnregisterPublisherResponse& operator=(UnregisterPublisherResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const UnregisterPublisherResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const UnregisterPublisherResponse* internal_default_instance() {
+    return reinterpret_cast<const UnregisterPublisherResponse*>(
+               &_UnregisterPublisherResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    10;
+
+  friend void swap(UnregisterPublisherResponse& a, UnregisterPublisherResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(UnregisterPublisherResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(UnregisterPublisherResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  UnregisterPublisherResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<UnregisterPublisherResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const UnregisterPublisherResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const UnregisterPublisherResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(UnregisterPublisherResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "simple_ros.UnregisterPublisherResponse";
+  }
+  protected:
+  explicit UnregisterPublisherResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMessageFieldNumber = 2,
+    kSuccessFieldNumber = 1,
+  };
+  // string message = 2;
+  void clear_message();
+  const std::string& message() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_message(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_message();
+  PROTOBUF_NODISCARD std::string* release_message();
+  void set_allocated_message(std::string* message);
+  private:
+  const std::string& _internal_message() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_message(const std::string& value);
+  std::string* _internal_mutable_message();
+  public:
+
+  // bool success = 1;
+  void clear_success();
+  bool success() const;
+  void set_success(bool value);
+  private:
+  bool _internal_success() const;
+  void _internal_set_success(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:simple_ros.UnregisterPublisherResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr message_;
+  bool success_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_ros_5frpc_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetNodesRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:simple_ros.GetNodesRequest) */ {
+ public:
+  inline GetNodesRequest() : GetNodesRequest(nullptr) {}
+  ~GetNodesRequest() override;
+  explicit PROTOBUF_CONSTEXPR GetNodesRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetNodesRequest(const GetNodesRequest& from);
+  GetNodesRequest(GetNodesRequest&& from) noexcept
+    : GetNodesRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetNodesRequest& operator=(const GetNodesRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetNodesRequest& operator=(GetNodesRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetNodesRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetNodesRequest* internal_default_instance() {
+    return reinterpret_cast<const GetNodesRequest*>(
+               &_GetNodesRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    11;
+
+  friend void swap(GetNodesRequest& a, GetNodesRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetNodesRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetNodesRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GetNodesRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetNodesRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetNodesRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const GetNodesRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetNodesRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "simple_ros.GetNodesRequest";
+  }
+  protected:
+  explicit GetNodesRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kFilterFieldNumber = 1,
+  };
+  // string filter = 1;
+  void clear_filter();
+  const std::string& filter() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_filter(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_filter();
+  PROTOBUF_NODISCARD std::string* release_filter();
+  void set_allocated_filter(std::string* filter);
+  private:
+  const std::string& _internal_filter() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_filter(const std::string& value);
+  std::string* _internal_mutable_filter();
+  public:
+
+  // @@protoc_insertion_point(class_scope:simple_ros.GetNodesRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr filter_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_ros_5frpc_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetNodesResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:simple_ros.GetNodesResponse) */ {
+ public:
+  inline GetNodesResponse() : GetNodesResponse(nullptr) {}
+  ~GetNodesResponse() override;
+  explicit PROTOBUF_CONSTEXPR GetNodesResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetNodesResponse(const GetNodesResponse& from);
+  GetNodesResponse(GetNodesResponse&& from) noexcept
+    : GetNodesResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetNodesResponse& operator=(const GetNodesResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetNodesResponse& operator=(GetNodesResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetNodesResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetNodesResponse* internal_default_instance() {
+    return reinterpret_cast<const GetNodesResponse*>(
+               &_GetNodesResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    12;
+
+  friend void swap(GetNodesResponse& a, GetNodesResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetNodesResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetNodesResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GetNodesResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetNodesResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetNodesResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const GetNodesResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetNodesResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "simple_ros.GetNodesResponse";
+  }
+  protected:
+  explicit GetNodesResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kNodesFieldNumber = 3,
+    kMessageFieldNumber = 2,
+    kSuccessFieldNumber = 1,
+  };
+  // repeated .simple_ros.NodeInfo nodes = 3;
+  int nodes_size() const;
+  private:
+  int _internal_nodes_size() const;
+  public:
+  void clear_nodes();
+  ::simple_ros::NodeInfo* mutable_nodes(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::NodeInfo >*
+      mutable_nodes();
+  private:
+  const ::simple_ros::NodeInfo& _internal_nodes(int index) const;
+  ::simple_ros::NodeInfo* _internal_add_nodes();
+  public:
+  const ::simple_ros::NodeInfo& nodes(int index) const;
+  ::simple_ros::NodeInfo* add_nodes();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::NodeInfo >&
+      nodes() const;
+
+  // string message = 2;
+  void clear_message();
+  const std::string& message() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_message(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_message();
+  PROTOBUF_NODISCARD std::string* release_message();
+  void set_allocated_message(std::string* message);
+  private:
+  const std::string& _internal_message() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_message(const std::string& value);
+  std::string* _internal_mutable_message();
+  public:
+
+  // bool success = 1;
+  void clear_success();
+  bool success() const;
+  void set_success(bool value);
+  private:
+  bool _internal_success() const;
+  void _internal_set_success(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:simple_ros.GetNodesResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::NodeInfo > nodes_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr message_;
+  bool success_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_ros_5frpc_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetNodeInfoRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:simple_ros.GetNodeInfoRequest) */ {
+ public:
+  inline GetNodeInfoRequest() : GetNodeInfoRequest(nullptr) {}
+  ~GetNodeInfoRequest() override;
+  explicit PROTOBUF_CONSTEXPR GetNodeInfoRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetNodeInfoRequest(const GetNodeInfoRequest& from);
+  GetNodeInfoRequest(GetNodeInfoRequest&& from) noexcept
+    : GetNodeInfoRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetNodeInfoRequest& operator=(const GetNodeInfoRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetNodeInfoRequest& operator=(GetNodeInfoRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetNodeInfoRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetNodeInfoRequest* internal_default_instance() {
+    return reinterpret_cast<const GetNodeInfoRequest*>(
+               &_GetNodeInfoRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    13;
+
+  friend void swap(GetNodeInfoRequest& a, GetNodeInfoRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetNodeInfoRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetNodeInfoRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GetNodeInfoRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetNodeInfoRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetNodeInfoRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const GetNodeInfoRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetNodeInfoRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "simple_ros.GetNodeInfoRequest";
+  }
+  protected:
+  explicit GetNodeInfoRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kNodeNameFieldNumber = 1,
+  };
+  // string node_name = 1;
+  void clear_node_name();
+  const std::string& node_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_node_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_node_name();
+  PROTOBUF_NODISCARD std::string* release_node_name();
+  void set_allocated_node_name(std::string* node_name);
+  private:
+  const std::string& _internal_node_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_node_name(const std::string& value);
+  std::string* _internal_mutable_node_name();
+  public:
+
+  // @@protoc_insertion_point(class_scope:simple_ros.GetNodeInfoRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr node_name_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_ros_5frpc_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetNodeInfoResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:simple_ros.GetNodeInfoResponse) */ {
+ public:
+  inline GetNodeInfoResponse() : GetNodeInfoResponse(nullptr) {}
+  ~GetNodeInfoResponse() override;
+  explicit PROTOBUF_CONSTEXPR GetNodeInfoResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetNodeInfoResponse(const GetNodeInfoResponse& from);
+  GetNodeInfoResponse(GetNodeInfoResponse&& from) noexcept
+    : GetNodeInfoResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetNodeInfoResponse& operator=(const GetNodeInfoResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetNodeInfoResponse& operator=(GetNodeInfoResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetNodeInfoResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetNodeInfoResponse* internal_default_instance() {
+    return reinterpret_cast<const GetNodeInfoResponse*>(
+               &_GetNodeInfoResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    14;
+
+  friend void swap(GetNodeInfoResponse& a, GetNodeInfoResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetNodeInfoResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetNodeInfoResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GetNodeInfoResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetNodeInfoResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetNodeInfoResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const GetNodeInfoResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetNodeInfoResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "simple_ros.GetNodeInfoResponse";
+  }
+  protected:
+  explicit GetNodeInfoResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPublishesFieldNumber = 4,
+    kSubscribesFieldNumber = 5,
+    kMessageFieldNumber = 2,
+    kNodeInfoFieldNumber = 3,
+    kSuccessFieldNumber = 1,
+  };
+  // repeated .simple_ros.TopicInfo publishes = 4;
+  int publishes_size() const;
+  private:
+  int _internal_publishes_size() const;
+  public:
+  void clear_publishes();
+  ::simple_ros::TopicInfo* mutable_publishes(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::TopicInfo >*
+      mutable_publishes();
+  private:
+  const ::simple_ros::TopicInfo& _internal_publishes(int index) const;
+  ::simple_ros::TopicInfo* _internal_add_publishes();
+  public:
+  const ::simple_ros::TopicInfo& publishes(int index) const;
+  ::simple_ros::TopicInfo* add_publishes();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::TopicInfo >&
+      publishes() const;
+
+  // repeated .simple_ros.TopicInfo subscribes = 5;
+  int subscribes_size() const;
+  private:
+  int _internal_subscribes_size() const;
+  public:
+  void clear_subscribes();
+  ::simple_ros::TopicInfo* mutable_subscribes(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::TopicInfo >*
+      mutable_subscribes();
+  private:
+  const ::simple_ros::TopicInfo& _internal_subscribes(int index) const;
+  ::simple_ros::TopicInfo* _internal_add_subscribes();
+  public:
+  const ::simple_ros::TopicInfo& subscribes(int index) const;
+  ::simple_ros::TopicInfo* add_subscribes();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::TopicInfo >&
+      subscribes() const;
+
+  // string message = 2;
+  void clear_message();
+  const std::string& message() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_message(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_message();
+  PROTOBUF_NODISCARD std::string* release_message();
+  void set_allocated_message(std::string* message);
+  private:
+  const std::string& _internal_message() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_message(const std::string& value);
+  std::string* _internal_mutable_message();
+  public:
+
+  // .simple_ros.NodeInfo node_info = 3;
+  bool has_node_info() const;
+  private:
+  bool _internal_has_node_info() const;
+  public:
+  void clear_node_info();
+  const ::simple_ros::NodeInfo& node_info() const;
+  PROTOBUF_NODISCARD ::simple_ros::NodeInfo* release_node_info();
+  ::simple_ros::NodeInfo* mutable_node_info();
+  void set_allocated_node_info(::simple_ros::NodeInfo* node_info);
+  private:
+  const ::simple_ros::NodeInfo& _internal_node_info() const;
+  ::simple_ros::NodeInfo* _internal_mutable_node_info();
+  public:
+  void unsafe_arena_set_allocated_node_info(
+      ::simple_ros::NodeInfo* node_info);
+  ::simple_ros::NodeInfo* unsafe_arena_release_node_info();
+
+  // bool success = 1;
+  void clear_success();
+  bool success() const;
+  void set_success(bool value);
+  private:
+  bool _internal_success() const;
+  void _internal_set_success(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:simple_ros.GetNodeInfoResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::TopicInfo > publishes_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::TopicInfo > subscribes_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr message_;
+  ::simple_ros::NodeInfo* node_info_;
+  bool success_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_ros_5frpc_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetTopicsRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:simple_ros.GetTopicsRequest) */ {
+ public:
+  inline GetTopicsRequest() : GetTopicsRequest(nullptr) {}
+  ~GetTopicsRequest() override;
+  explicit PROTOBUF_CONSTEXPR GetTopicsRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetTopicsRequest(const GetTopicsRequest& from);
+  GetTopicsRequest(GetTopicsRequest&& from) noexcept
+    : GetTopicsRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetTopicsRequest& operator=(const GetTopicsRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetTopicsRequest& operator=(GetTopicsRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetTopicsRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetTopicsRequest* internal_default_instance() {
+    return reinterpret_cast<const GetTopicsRequest*>(
+               &_GetTopicsRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    15;
+
+  friend void swap(GetTopicsRequest& a, GetTopicsRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetTopicsRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetTopicsRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GetTopicsRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetTopicsRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetTopicsRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const GetTopicsRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetTopicsRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "simple_ros.GetTopicsRequest";
+  }
+  protected:
+  explicit GetTopicsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kFilterFieldNumber = 1,
+  };
+  // string filter = 1;
+  void clear_filter();
+  const std::string& filter() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_filter(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_filter();
+  PROTOBUF_NODISCARD std::string* release_filter();
+  void set_allocated_filter(std::string* filter);
+  private:
+  const std::string& _internal_filter() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_filter(const std::string& value);
+  std::string* _internal_mutable_filter();
+  public:
+
+  // @@protoc_insertion_point(class_scope:simple_ros.GetTopicsRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr filter_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_ros_5frpc_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetTopicsResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:simple_ros.GetTopicsResponse) */ {
+ public:
+  inline GetTopicsResponse() : GetTopicsResponse(nullptr) {}
+  ~GetTopicsResponse() override;
+  explicit PROTOBUF_CONSTEXPR GetTopicsResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetTopicsResponse(const GetTopicsResponse& from);
+  GetTopicsResponse(GetTopicsResponse&& from) noexcept
+    : GetTopicsResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetTopicsResponse& operator=(const GetTopicsResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetTopicsResponse& operator=(GetTopicsResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetTopicsResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetTopicsResponse* internal_default_instance() {
+    return reinterpret_cast<const GetTopicsResponse*>(
+               &_GetTopicsResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    16;
+
+  friend void swap(GetTopicsResponse& a, GetTopicsResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetTopicsResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetTopicsResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GetTopicsResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetTopicsResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetTopicsResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const GetTopicsResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetTopicsResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "simple_ros.GetTopicsResponse";
+  }
+  protected:
+  explicit GetTopicsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTopicsFieldNumber = 3,
+    kMessageFieldNumber = 2,
+    kSuccessFieldNumber = 1,
+  };
+  // repeated .simple_ros.TopicInfo topics = 3;
+  int topics_size() const;
+  private:
+  int _internal_topics_size() const;
+  public:
+  void clear_topics();
+  ::simple_ros::TopicInfo* mutable_topics(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::TopicInfo >*
+      mutable_topics();
+  private:
+  const ::simple_ros::TopicInfo& _internal_topics(int index) const;
+  ::simple_ros::TopicInfo* _internal_add_topics();
+  public:
+  const ::simple_ros::TopicInfo& topics(int index) const;
+  ::simple_ros::TopicInfo* add_topics();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::TopicInfo >&
+      topics() const;
+
+  // string message = 2;
+  void clear_message();
+  const std::string& message() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_message(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_message();
+  PROTOBUF_NODISCARD std::string* release_message();
+  void set_allocated_message(std::string* message);
+  private:
+  const std::string& _internal_message() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_message(const std::string& value);
+  std::string* _internal_mutable_message();
+  public:
+
+  // bool success = 1;
+  void clear_success();
+  bool success() const;
+  void set_success(bool value);
+  private:
+  bool _internal_success() const;
+  void _internal_set_success(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:simple_ros.GetTopicsResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::TopicInfo > topics_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr message_;
+  bool success_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_ros_5frpc_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetTopicInfoRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:simple_ros.GetTopicInfoRequest) */ {
+ public:
+  inline GetTopicInfoRequest() : GetTopicInfoRequest(nullptr) {}
+  ~GetTopicInfoRequest() override;
+  explicit PROTOBUF_CONSTEXPR GetTopicInfoRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetTopicInfoRequest(const GetTopicInfoRequest& from);
+  GetTopicInfoRequest(GetTopicInfoRequest&& from) noexcept
+    : GetTopicInfoRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetTopicInfoRequest& operator=(const GetTopicInfoRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetTopicInfoRequest& operator=(GetTopicInfoRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetTopicInfoRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetTopicInfoRequest* internal_default_instance() {
+    return reinterpret_cast<const GetTopicInfoRequest*>(
+               &_GetTopicInfoRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    17;
+
+  friend void swap(GetTopicInfoRequest& a, GetTopicInfoRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetTopicInfoRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetTopicInfoRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GetTopicInfoRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetTopicInfoRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetTopicInfoRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const GetTopicInfoRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetTopicInfoRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "simple_ros.GetTopicInfoRequest";
+  }
+  protected:
+  explicit GetTopicInfoRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTopicNameFieldNumber = 1,
+  };
+  // string topic_name = 1;
+  void clear_topic_name();
+  const std::string& topic_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_topic_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_topic_name();
+  PROTOBUF_NODISCARD std::string* release_topic_name();
+  void set_allocated_topic_name(std::string* topic_name);
+  private:
+  const std::string& _internal_topic_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_topic_name(const std::string& value);
+  std::string* _internal_mutable_topic_name();
+  public:
+
+  // @@protoc_insertion_point(class_scope:simple_ros.GetTopicInfoRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr topic_name_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_ros_5frpc_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetTopicInfoResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:simple_ros.GetTopicInfoResponse) */ {
+ public:
+  inline GetTopicInfoResponse() : GetTopicInfoResponse(nullptr) {}
+  ~GetTopicInfoResponse() override;
+  explicit PROTOBUF_CONSTEXPR GetTopicInfoResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetTopicInfoResponse(const GetTopicInfoResponse& from);
+  GetTopicInfoResponse(GetTopicInfoResponse&& from) noexcept
+    : GetTopicInfoResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetTopicInfoResponse& operator=(const GetTopicInfoResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetTopicInfoResponse& operator=(GetTopicInfoResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetTopicInfoResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetTopicInfoResponse* internal_default_instance() {
+    return reinterpret_cast<const GetTopicInfoResponse*>(
+               &_GetTopicInfoResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    18;
+
+  friend void swap(GetTopicInfoResponse& a, GetTopicInfoResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetTopicInfoResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetTopicInfoResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GetTopicInfoResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetTopicInfoResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetTopicInfoResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const GetTopicInfoResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetTopicInfoResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "simple_ros.GetTopicInfoResponse";
+  }
+  protected:
+  explicit GetTopicInfoResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPublishersFieldNumber = 5,
+    kSubscribersFieldNumber = 6,
+    kMessageFieldNumber = 2,
+    kTopicNameFieldNumber = 3,
+    kMsgTypeFieldNumber = 4,
+    kSuccessFieldNumber = 1,
+  };
+  // repeated .simple_ros.NodeInfo publishers = 5;
+  int publishers_size() const;
+  private:
+  int _internal_publishers_size() const;
+  public:
+  void clear_publishers();
+  ::simple_ros::NodeInfo* mutable_publishers(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::NodeInfo >*
+      mutable_publishers();
+  private:
+  const ::simple_ros::NodeInfo& _internal_publishers(int index) const;
+  ::simple_ros::NodeInfo* _internal_add_publishers();
+  public:
+  const ::simple_ros::NodeInfo& publishers(int index) const;
+  ::simple_ros::NodeInfo* add_publishers();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::NodeInfo >&
+      publishers() const;
+
+  // repeated .simple_ros.NodeInfo subscribers = 6;
+  int subscribers_size() const;
+  private:
+  int _internal_subscribers_size() const;
+  public:
+  void clear_subscribers();
+  ::simple_ros::NodeInfo* mutable_subscribers(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::NodeInfo >*
+      mutable_subscribers();
+  private:
+  const ::simple_ros::NodeInfo& _internal_subscribers(int index) const;
+  ::simple_ros::NodeInfo* _internal_add_subscribers();
+  public:
+  const ::simple_ros::NodeInfo& subscribers(int index) const;
+  ::simple_ros::NodeInfo* add_subscribers();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::NodeInfo >&
+      subscribers() const;
+
+  // string message = 2;
+  void clear_message();
+  const std::string& message() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_message(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_message();
+  PROTOBUF_NODISCARD std::string* release_message();
+  void set_allocated_message(std::string* message);
+  private:
+  const std::string& _internal_message() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_message(const std::string& value);
+  std::string* _internal_mutable_message();
+  public:
+
+  // string topic_name = 3;
+  void clear_topic_name();
+  const std::string& topic_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_topic_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_topic_name();
+  PROTOBUF_NODISCARD std::string* release_topic_name();
+  void set_allocated_topic_name(std::string* topic_name);
+  private:
+  const std::string& _internal_topic_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_topic_name(const std::string& value);
+  std::string* _internal_mutable_topic_name();
+  public:
+
+  // string msg_type = 4;
+  void clear_msg_type();
+  const std::string& msg_type() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_msg_type(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_msg_type();
+  PROTOBUF_NODISCARD std::string* release_msg_type();
+  void set_allocated_msg_type(std::string* msg_type);
+  private:
+  const std::string& _internal_msg_type() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_msg_type(const std::string& value);
+  std::string* _internal_mutable_msg_type();
+  public:
+
+  // bool success = 1;
+  void clear_success();
+  bool success() const;
+  void set_success(bool value);
+  private:
+  bool _internal_success() const;
+  void _internal_set_success(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:simple_ros.GetTopicInfoResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::NodeInfo > publishers_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::NodeInfo > subscribers_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr message_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr topic_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_type_;
+  bool success_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_ros_5frpc_2eproto;
+};
 // ===================================================================
 
 
@@ -360,9 +3576,2337 @@ inline void NodeInfo::set_allocated_node_name(std::string* node_name) {
   // @@protoc_insertion_point(field_set_allocated:simple_ros.NodeInfo.node_name)
 }
 
+// -------------------------------------------------------------------
+
+// TopicTargetsUpdate
+
+// string topic = 1;
+inline void TopicTargetsUpdate::clear_topic() {
+  topic_.ClearToEmpty();
+}
+inline const std::string& TopicTargetsUpdate::topic() const {
+  // @@protoc_insertion_point(field_get:simple_ros.TopicTargetsUpdate.topic)
+  return _internal_topic();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void TopicTargetsUpdate::set_topic(ArgT0&& arg0, ArgT... args) {
+ 
+ topic_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:simple_ros.TopicTargetsUpdate.topic)
+}
+inline std::string* TopicTargetsUpdate::mutable_topic() {
+  std::string* _s = _internal_mutable_topic();
+  // @@protoc_insertion_point(field_mutable:simple_ros.TopicTargetsUpdate.topic)
+  return _s;
+}
+inline const std::string& TopicTargetsUpdate::_internal_topic() const {
+  return topic_.Get();
+}
+inline void TopicTargetsUpdate::_internal_set_topic(const std::string& value) {
+  
+  topic_.Set(value, GetArenaForAllocation());
+}
+inline std::string* TopicTargetsUpdate::_internal_mutable_topic() {
+  
+  return topic_.Mutable(GetArenaForAllocation());
+}
+inline std::string* TopicTargetsUpdate::release_topic() {
+  // @@protoc_insertion_point(field_release:simple_ros.TopicTargetsUpdate.topic)
+  return topic_.Release();
+}
+inline void TopicTargetsUpdate::set_allocated_topic(std::string* topic) {
+  if (topic != nullptr) {
+    
+  } else {
+    
+  }
+  topic_.SetAllocated(topic, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (topic_.IsDefault()) {
+    topic_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:simple_ros.TopicTargetsUpdate.topic)
+}
+
+// repeated .simple_ros.NodeInfo add_targets = 2;
+inline int TopicTargetsUpdate::_internal_add_targets_size() const {
+  return add_targets_.size();
+}
+inline int TopicTargetsUpdate::add_targets_size() const {
+  return _internal_add_targets_size();
+}
+inline void TopicTargetsUpdate::clear_add_targets() {
+  add_targets_.Clear();
+}
+inline ::simple_ros::NodeInfo* TopicTargetsUpdate::mutable_add_targets(int index) {
+  // @@protoc_insertion_point(field_mutable:simple_ros.TopicTargetsUpdate.add_targets)
+  return add_targets_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::NodeInfo >*
+TopicTargetsUpdate::mutable_add_targets() {
+  // @@protoc_insertion_point(field_mutable_list:simple_ros.TopicTargetsUpdate.add_targets)
+  return &add_targets_;
+}
+inline const ::simple_ros::NodeInfo& TopicTargetsUpdate::_internal_add_targets(int index) const {
+  return add_targets_.Get(index);
+}
+inline const ::simple_ros::NodeInfo& TopicTargetsUpdate::add_targets(int index) const {
+  // @@protoc_insertion_point(field_get:simple_ros.TopicTargetsUpdate.add_targets)
+  return _internal_add_targets(index);
+}
+inline ::simple_ros::NodeInfo* TopicTargetsUpdate::_internal_add_add_targets() {
+  return add_targets_.Add();
+}
+inline ::simple_ros::NodeInfo* TopicTargetsUpdate::add_add_targets() {
+  ::simple_ros::NodeInfo* _add = _internal_add_add_targets();
+  // @@protoc_insertion_point(field_add:simple_ros.TopicTargetsUpdate.add_targets)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::NodeInfo >&
+TopicTargetsUpdate::add_targets() const {
+  // @@protoc_insertion_point(field_list:simple_ros.TopicTargetsUpdate.add_targets)
+  return add_targets_;
+}
+
+// repeated .simple_ros.NodeInfo remove_targets = 3;
+inline int TopicTargetsUpdate::_internal_remove_targets_size() const {
+  return remove_targets_.size();
+}
+inline int TopicTargetsUpdate::remove_targets_size() const {
+  return _internal_remove_targets_size();
+}
+inline void TopicTargetsUpdate::clear_remove_targets() {
+  remove_targets_.Clear();
+}
+inline ::simple_ros::NodeInfo* TopicTargetsUpdate::mutable_remove_targets(int index) {
+  // @@protoc_insertion_point(field_mutable:simple_ros.TopicTargetsUpdate.remove_targets)
+  return remove_targets_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::NodeInfo >*
+TopicTargetsUpdate::mutable_remove_targets() {
+  // @@protoc_insertion_point(field_mutable_list:simple_ros.TopicTargetsUpdate.remove_targets)
+  return &remove_targets_;
+}
+inline const ::simple_ros::NodeInfo& TopicTargetsUpdate::_internal_remove_targets(int index) const {
+  return remove_targets_.Get(index);
+}
+inline const ::simple_ros::NodeInfo& TopicTargetsUpdate::remove_targets(int index) const {
+  // @@protoc_insertion_point(field_get:simple_ros.TopicTargetsUpdate.remove_targets)
+  return _internal_remove_targets(index);
+}
+inline ::simple_ros::NodeInfo* TopicTargetsUpdate::_internal_add_remove_targets() {
+  return remove_targets_.Add();
+}
+inline ::simple_ros::NodeInfo* TopicTargetsUpdate::add_remove_targets() {
+  ::simple_ros::NodeInfo* _add = _internal_add_remove_targets();
+  // @@protoc_insertion_point(field_add:simple_ros.TopicTargetsUpdate.remove_targets)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::NodeInfo >&
+TopicTargetsUpdate::remove_targets() const {
+  // @@protoc_insertion_point(field_list:simple_ros.TopicTargetsUpdate.remove_targets)
+  return remove_targets_;
+}
+
+// -------------------------------------------------------------------
+
+// TopicInfo
+
+// string topic_name = 1;
+inline void TopicInfo::clear_topic_name() {
+  topic_name_.ClearToEmpty();
+}
+inline const std::string& TopicInfo::topic_name() const {
+  // @@protoc_insertion_point(field_get:simple_ros.TopicInfo.topic_name)
+  return _internal_topic_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void TopicInfo::set_topic_name(ArgT0&& arg0, ArgT... args) {
+ 
+ topic_name_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:simple_ros.TopicInfo.topic_name)
+}
+inline std::string* TopicInfo::mutable_topic_name() {
+  std::string* _s = _internal_mutable_topic_name();
+  // @@protoc_insertion_point(field_mutable:simple_ros.TopicInfo.topic_name)
+  return _s;
+}
+inline const std::string& TopicInfo::_internal_topic_name() const {
+  return topic_name_.Get();
+}
+inline void TopicInfo::_internal_set_topic_name(const std::string& value) {
+  
+  topic_name_.Set(value, GetArenaForAllocation());
+}
+inline std::string* TopicInfo::_internal_mutable_topic_name() {
+  
+  return topic_name_.Mutable(GetArenaForAllocation());
+}
+inline std::string* TopicInfo::release_topic_name() {
+  // @@protoc_insertion_point(field_release:simple_ros.TopicInfo.topic_name)
+  return topic_name_.Release();
+}
+inline void TopicInfo::set_allocated_topic_name(std::string* topic_name) {
+  if (topic_name != nullptr) {
+    
+  } else {
+    
+  }
+  topic_name_.SetAllocated(topic_name, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (topic_name_.IsDefault()) {
+    topic_name_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:simple_ros.TopicInfo.topic_name)
+}
+
+// string msg_type = 2;
+inline void TopicInfo::clear_msg_type() {
+  msg_type_.ClearToEmpty();
+}
+inline const std::string& TopicInfo::msg_type() const {
+  // @@protoc_insertion_point(field_get:simple_ros.TopicInfo.msg_type)
+  return _internal_msg_type();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void TopicInfo::set_msg_type(ArgT0&& arg0, ArgT... args) {
+ 
+ msg_type_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:simple_ros.TopicInfo.msg_type)
+}
+inline std::string* TopicInfo::mutable_msg_type() {
+  std::string* _s = _internal_mutable_msg_type();
+  // @@protoc_insertion_point(field_mutable:simple_ros.TopicInfo.msg_type)
+  return _s;
+}
+inline const std::string& TopicInfo::_internal_msg_type() const {
+  return msg_type_.Get();
+}
+inline void TopicInfo::_internal_set_msg_type(const std::string& value) {
+  
+  msg_type_.Set(value, GetArenaForAllocation());
+}
+inline std::string* TopicInfo::_internal_mutable_msg_type() {
+  
+  return msg_type_.Mutable(GetArenaForAllocation());
+}
+inline std::string* TopicInfo::release_msg_type() {
+  // @@protoc_insertion_point(field_release:simple_ros.TopicInfo.msg_type)
+  return msg_type_.Release();
+}
+inline void TopicInfo::set_allocated_msg_type(std::string* msg_type) {
+  if (msg_type != nullptr) {
+    
+  } else {
+    
+  }
+  msg_type_.SetAllocated(msg_type, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (msg_type_.IsDefault()) {
+    msg_type_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:simple_ros.TopicInfo.msg_type)
+}
+
+// -------------------------------------------------------------------
+
+// SubscribeRequest
+
+// string topic_name = 1;
+inline void SubscribeRequest::clear_topic_name() {
+  topic_name_.ClearToEmpty();
+}
+inline const std::string& SubscribeRequest::topic_name() const {
+  // @@protoc_insertion_point(field_get:simple_ros.SubscribeRequest.topic_name)
+  return _internal_topic_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SubscribeRequest::set_topic_name(ArgT0&& arg0, ArgT... args) {
+ 
+ topic_name_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:simple_ros.SubscribeRequest.topic_name)
+}
+inline std::string* SubscribeRequest::mutable_topic_name() {
+  std::string* _s = _internal_mutable_topic_name();
+  // @@protoc_insertion_point(field_mutable:simple_ros.SubscribeRequest.topic_name)
+  return _s;
+}
+inline const std::string& SubscribeRequest::_internal_topic_name() const {
+  return topic_name_.Get();
+}
+inline void SubscribeRequest::_internal_set_topic_name(const std::string& value) {
+  
+  topic_name_.Set(value, GetArenaForAllocation());
+}
+inline std::string* SubscribeRequest::_internal_mutable_topic_name() {
+  
+  return topic_name_.Mutable(GetArenaForAllocation());
+}
+inline std::string* SubscribeRequest::release_topic_name() {
+  // @@protoc_insertion_point(field_release:simple_ros.SubscribeRequest.topic_name)
+  return topic_name_.Release();
+}
+inline void SubscribeRequest::set_allocated_topic_name(std::string* topic_name) {
+  if (topic_name != nullptr) {
+    
+  } else {
+    
+  }
+  topic_name_.SetAllocated(topic_name, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (topic_name_.IsDefault()) {
+    topic_name_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:simple_ros.SubscribeRequest.topic_name)
+}
+
+// string msg_type = 2;
+inline void SubscribeRequest::clear_msg_type() {
+  msg_type_.ClearToEmpty();
+}
+inline const std::string& SubscribeRequest::msg_type() const {
+  // @@protoc_insertion_point(field_get:simple_ros.SubscribeRequest.msg_type)
+  return _internal_msg_type();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SubscribeRequest::set_msg_type(ArgT0&& arg0, ArgT... args) {
+ 
+ msg_type_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:simple_ros.SubscribeRequest.msg_type)
+}
+inline std::string* SubscribeRequest::mutable_msg_type() {
+  std::string* _s = _internal_mutable_msg_type();
+  // @@protoc_insertion_point(field_mutable:simple_ros.SubscribeRequest.msg_type)
+  return _s;
+}
+inline const std::string& SubscribeRequest::_internal_msg_type() const {
+  return msg_type_.Get();
+}
+inline void SubscribeRequest::_internal_set_msg_type(const std::string& value) {
+  
+  msg_type_.Set(value, GetArenaForAllocation());
+}
+inline std::string* SubscribeRequest::_internal_mutable_msg_type() {
+  
+  return msg_type_.Mutable(GetArenaForAllocation());
+}
+inline std::string* SubscribeRequest::release_msg_type() {
+  // @@protoc_insertion_point(field_release:simple_ros.SubscribeRequest.msg_type)
+  return msg_type_.Release();
+}
+inline void SubscribeRequest::set_allocated_msg_type(std::string* msg_type) {
+  if (msg_type != nullptr) {
+    
+  } else {
+    
+  }
+  msg_type_.SetAllocated(msg_type, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (msg_type_.IsDefault()) {
+    msg_type_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:simple_ros.SubscribeRequest.msg_type)
+}
+
+// .simple_ros.NodeInfo node_info = 3;
+inline bool SubscribeRequest::_internal_has_node_info() const {
+  return this != internal_default_instance() && node_info_ != nullptr;
+}
+inline bool SubscribeRequest::has_node_info() const {
+  return _internal_has_node_info();
+}
+inline void SubscribeRequest::clear_node_info() {
+  if (GetArenaForAllocation() == nullptr && node_info_ != nullptr) {
+    delete node_info_;
+  }
+  node_info_ = nullptr;
+}
+inline const ::simple_ros::NodeInfo& SubscribeRequest::_internal_node_info() const {
+  const ::simple_ros::NodeInfo* p = node_info_;
+  return p != nullptr ? *p : reinterpret_cast<const ::simple_ros::NodeInfo&>(
+      ::simple_ros::_NodeInfo_default_instance_);
+}
+inline const ::simple_ros::NodeInfo& SubscribeRequest::node_info() const {
+  // @@protoc_insertion_point(field_get:simple_ros.SubscribeRequest.node_info)
+  return _internal_node_info();
+}
+inline void SubscribeRequest::unsafe_arena_set_allocated_node_info(
+    ::simple_ros::NodeInfo* node_info) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(node_info_);
+  }
+  node_info_ = node_info;
+  if (node_info) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:simple_ros.SubscribeRequest.node_info)
+}
+inline ::simple_ros::NodeInfo* SubscribeRequest::release_node_info() {
+  
+  ::simple_ros::NodeInfo* temp = node_info_;
+  node_info_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::simple_ros::NodeInfo* SubscribeRequest::unsafe_arena_release_node_info() {
+  // @@protoc_insertion_point(field_release:simple_ros.SubscribeRequest.node_info)
+  
+  ::simple_ros::NodeInfo* temp = node_info_;
+  node_info_ = nullptr;
+  return temp;
+}
+inline ::simple_ros::NodeInfo* SubscribeRequest::_internal_mutable_node_info() {
+  
+  if (node_info_ == nullptr) {
+    auto* p = CreateMaybeMessage<::simple_ros::NodeInfo>(GetArenaForAllocation());
+    node_info_ = p;
+  }
+  return node_info_;
+}
+inline ::simple_ros::NodeInfo* SubscribeRequest::mutable_node_info() {
+  ::simple_ros::NodeInfo* _msg = _internal_mutable_node_info();
+  // @@protoc_insertion_point(field_mutable:simple_ros.SubscribeRequest.node_info)
+  return _msg;
+}
+inline void SubscribeRequest::set_allocated_node_info(::simple_ros::NodeInfo* node_info) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete node_info_;
+  }
+  if (node_info) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(node_info);
+    if (message_arena != submessage_arena) {
+      node_info = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, node_info, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  node_info_ = node_info;
+  // @@protoc_insertion_point(field_set_allocated:simple_ros.SubscribeRequest.node_info)
+}
+
+// -------------------------------------------------------------------
+
+// SubscribeResponse
+
+// bool success = 1;
+inline void SubscribeResponse::clear_success() {
+  success_ = false;
+}
+inline bool SubscribeResponse::_internal_success() const {
+  return success_;
+}
+inline bool SubscribeResponse::success() const {
+  // @@protoc_insertion_point(field_get:simple_ros.SubscribeResponse.success)
+  return _internal_success();
+}
+inline void SubscribeResponse::_internal_set_success(bool value) {
+  
+  success_ = value;
+}
+inline void SubscribeResponse::set_success(bool value) {
+  _internal_set_success(value);
+  // @@protoc_insertion_point(field_set:simple_ros.SubscribeResponse.success)
+}
+
+// string message = 2;
+inline void SubscribeResponse::clear_message() {
+  message_.ClearToEmpty();
+}
+inline const std::string& SubscribeResponse::message() const {
+  // @@protoc_insertion_point(field_get:simple_ros.SubscribeResponse.message)
+  return _internal_message();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SubscribeResponse::set_message(ArgT0&& arg0, ArgT... args) {
+ 
+ message_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:simple_ros.SubscribeResponse.message)
+}
+inline std::string* SubscribeResponse::mutable_message() {
+  std::string* _s = _internal_mutable_message();
+  // @@protoc_insertion_point(field_mutable:simple_ros.SubscribeResponse.message)
+  return _s;
+}
+inline const std::string& SubscribeResponse::_internal_message() const {
+  return message_.Get();
+}
+inline void SubscribeResponse::_internal_set_message(const std::string& value) {
+  
+  message_.Set(value, GetArenaForAllocation());
+}
+inline std::string* SubscribeResponse::_internal_mutable_message() {
+  
+  return message_.Mutable(GetArenaForAllocation());
+}
+inline std::string* SubscribeResponse::release_message() {
+  // @@protoc_insertion_point(field_release:simple_ros.SubscribeResponse.message)
+  return message_.Release();
+}
+inline void SubscribeResponse::set_allocated_message(std::string* message) {
+  if (message != nullptr) {
+    
+  } else {
+    
+  }
+  message_.SetAllocated(message, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (message_.IsDefault()) {
+    message_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:simple_ros.SubscribeResponse.message)
+}
+
+// repeated .simple_ros.NodeInfo node_info = 3;
+inline int SubscribeResponse::_internal_node_info_size() const {
+  return node_info_.size();
+}
+inline int SubscribeResponse::node_info_size() const {
+  return _internal_node_info_size();
+}
+inline void SubscribeResponse::clear_node_info() {
+  node_info_.Clear();
+}
+inline ::simple_ros::NodeInfo* SubscribeResponse::mutable_node_info(int index) {
+  // @@protoc_insertion_point(field_mutable:simple_ros.SubscribeResponse.node_info)
+  return node_info_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::NodeInfo >*
+SubscribeResponse::mutable_node_info() {
+  // @@protoc_insertion_point(field_mutable_list:simple_ros.SubscribeResponse.node_info)
+  return &node_info_;
+}
+inline const ::simple_ros::NodeInfo& SubscribeResponse::_internal_node_info(int index) const {
+  return node_info_.Get(index);
+}
+inline const ::simple_ros::NodeInfo& SubscribeResponse::node_info(int index) const {
+  // @@protoc_insertion_point(field_get:simple_ros.SubscribeResponse.node_info)
+  return _internal_node_info(index);
+}
+inline ::simple_ros::NodeInfo* SubscribeResponse::_internal_add_node_info() {
+  return node_info_.Add();
+}
+inline ::simple_ros::NodeInfo* SubscribeResponse::add_node_info() {
+  ::simple_ros::NodeInfo* _add = _internal_add_node_info();
+  // @@protoc_insertion_point(field_add:simple_ros.SubscribeResponse.node_info)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::NodeInfo >&
+SubscribeResponse::node_info() const {
+  // @@protoc_insertion_point(field_list:simple_ros.SubscribeResponse.node_info)
+  return node_info_;
+}
+
+// -------------------------------------------------------------------
+
+// RegisterPublisherRequest
+
+// string topic_name = 1;
+inline void RegisterPublisherRequest::clear_topic_name() {
+  topic_name_.ClearToEmpty();
+}
+inline const std::string& RegisterPublisherRequest::topic_name() const {
+  // @@protoc_insertion_point(field_get:simple_ros.RegisterPublisherRequest.topic_name)
+  return _internal_topic_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void RegisterPublisherRequest::set_topic_name(ArgT0&& arg0, ArgT... args) {
+ 
+ topic_name_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:simple_ros.RegisterPublisherRequest.topic_name)
+}
+inline std::string* RegisterPublisherRequest::mutable_topic_name() {
+  std::string* _s = _internal_mutable_topic_name();
+  // @@protoc_insertion_point(field_mutable:simple_ros.RegisterPublisherRequest.topic_name)
+  return _s;
+}
+inline const std::string& RegisterPublisherRequest::_internal_topic_name() const {
+  return topic_name_.Get();
+}
+inline void RegisterPublisherRequest::_internal_set_topic_name(const std::string& value) {
+  
+  topic_name_.Set(value, GetArenaForAllocation());
+}
+inline std::string* RegisterPublisherRequest::_internal_mutable_topic_name() {
+  
+  return topic_name_.Mutable(GetArenaForAllocation());
+}
+inline std::string* RegisterPublisherRequest::release_topic_name() {
+  // @@protoc_insertion_point(field_release:simple_ros.RegisterPublisherRequest.topic_name)
+  return topic_name_.Release();
+}
+inline void RegisterPublisherRequest::set_allocated_topic_name(std::string* topic_name) {
+  if (topic_name != nullptr) {
+    
+  } else {
+    
+  }
+  topic_name_.SetAllocated(topic_name, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (topic_name_.IsDefault()) {
+    topic_name_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:simple_ros.RegisterPublisherRequest.topic_name)
+}
+
+// string msg_type = 2;
+inline void RegisterPublisherRequest::clear_msg_type() {
+  msg_type_.ClearToEmpty();
+}
+inline const std::string& RegisterPublisherRequest::msg_type() const {
+  // @@protoc_insertion_point(field_get:simple_ros.RegisterPublisherRequest.msg_type)
+  return _internal_msg_type();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void RegisterPublisherRequest::set_msg_type(ArgT0&& arg0, ArgT... args) {
+ 
+ msg_type_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:simple_ros.RegisterPublisherRequest.msg_type)
+}
+inline std::string* RegisterPublisherRequest::mutable_msg_type() {
+  std::string* _s = _internal_mutable_msg_type();
+  // @@protoc_insertion_point(field_mutable:simple_ros.RegisterPublisherRequest.msg_type)
+  return _s;
+}
+inline const std::string& RegisterPublisherRequest::_internal_msg_type() const {
+  return msg_type_.Get();
+}
+inline void RegisterPublisherRequest::_internal_set_msg_type(const std::string& value) {
+  
+  msg_type_.Set(value, GetArenaForAllocation());
+}
+inline std::string* RegisterPublisherRequest::_internal_mutable_msg_type() {
+  
+  return msg_type_.Mutable(GetArenaForAllocation());
+}
+inline std::string* RegisterPublisherRequest::release_msg_type() {
+  // @@protoc_insertion_point(field_release:simple_ros.RegisterPublisherRequest.msg_type)
+  return msg_type_.Release();
+}
+inline void RegisterPublisherRequest::set_allocated_msg_type(std::string* msg_type) {
+  if (msg_type != nullptr) {
+    
+  } else {
+    
+  }
+  msg_type_.SetAllocated(msg_type, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (msg_type_.IsDefault()) {
+    msg_type_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:simple_ros.RegisterPublisherRequest.msg_type)
+}
+
+// .simple_ros.NodeInfo node_info = 3;
+inline bool RegisterPublisherRequest::_internal_has_node_info() const {
+  return this != internal_default_instance() && node_info_ != nullptr;
+}
+inline bool RegisterPublisherRequest::has_node_info() const {
+  return _internal_has_node_info();
+}
+inline void RegisterPublisherRequest::clear_node_info() {
+  if (GetArenaForAllocation() == nullptr && node_info_ != nullptr) {
+    delete node_info_;
+  }
+  node_info_ = nullptr;
+}
+inline const ::simple_ros::NodeInfo& RegisterPublisherRequest::_internal_node_info() const {
+  const ::simple_ros::NodeInfo* p = node_info_;
+  return p != nullptr ? *p : reinterpret_cast<const ::simple_ros::NodeInfo&>(
+      ::simple_ros::_NodeInfo_default_instance_);
+}
+inline const ::simple_ros::NodeInfo& RegisterPublisherRequest::node_info() const {
+  // @@protoc_insertion_point(field_get:simple_ros.RegisterPublisherRequest.node_info)
+  return _internal_node_info();
+}
+inline void RegisterPublisherRequest::unsafe_arena_set_allocated_node_info(
+    ::simple_ros::NodeInfo* node_info) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(node_info_);
+  }
+  node_info_ = node_info;
+  if (node_info) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:simple_ros.RegisterPublisherRequest.node_info)
+}
+inline ::simple_ros::NodeInfo* RegisterPublisherRequest::release_node_info() {
+  
+  ::simple_ros::NodeInfo* temp = node_info_;
+  node_info_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::simple_ros::NodeInfo* RegisterPublisherRequest::unsafe_arena_release_node_info() {
+  // @@protoc_insertion_point(field_release:simple_ros.RegisterPublisherRequest.node_info)
+  
+  ::simple_ros::NodeInfo* temp = node_info_;
+  node_info_ = nullptr;
+  return temp;
+}
+inline ::simple_ros::NodeInfo* RegisterPublisherRequest::_internal_mutable_node_info() {
+  
+  if (node_info_ == nullptr) {
+    auto* p = CreateMaybeMessage<::simple_ros::NodeInfo>(GetArenaForAllocation());
+    node_info_ = p;
+  }
+  return node_info_;
+}
+inline ::simple_ros::NodeInfo* RegisterPublisherRequest::mutable_node_info() {
+  ::simple_ros::NodeInfo* _msg = _internal_mutable_node_info();
+  // @@protoc_insertion_point(field_mutable:simple_ros.RegisterPublisherRequest.node_info)
+  return _msg;
+}
+inline void RegisterPublisherRequest::set_allocated_node_info(::simple_ros::NodeInfo* node_info) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete node_info_;
+  }
+  if (node_info) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(node_info);
+    if (message_arena != submessage_arena) {
+      node_info = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, node_info, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  node_info_ = node_info;
+  // @@protoc_insertion_point(field_set_allocated:simple_ros.RegisterPublisherRequest.node_info)
+}
+
+// -------------------------------------------------------------------
+
+// RegisterPublisherResponse
+
+// bool success = 1;
+inline void RegisterPublisherResponse::clear_success() {
+  success_ = false;
+}
+inline bool RegisterPublisherResponse::_internal_success() const {
+  return success_;
+}
+inline bool RegisterPublisherResponse::success() const {
+  // @@protoc_insertion_point(field_get:simple_ros.RegisterPublisherResponse.success)
+  return _internal_success();
+}
+inline void RegisterPublisherResponse::_internal_set_success(bool value) {
+  
+  success_ = value;
+}
+inline void RegisterPublisherResponse::set_success(bool value) {
+  _internal_set_success(value);
+  // @@protoc_insertion_point(field_set:simple_ros.RegisterPublisherResponse.success)
+}
+
+// string message = 2;
+inline void RegisterPublisherResponse::clear_message() {
+  message_.ClearToEmpty();
+}
+inline const std::string& RegisterPublisherResponse::message() const {
+  // @@protoc_insertion_point(field_get:simple_ros.RegisterPublisherResponse.message)
+  return _internal_message();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void RegisterPublisherResponse::set_message(ArgT0&& arg0, ArgT... args) {
+ 
+ message_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:simple_ros.RegisterPublisherResponse.message)
+}
+inline std::string* RegisterPublisherResponse::mutable_message() {
+  std::string* _s = _internal_mutable_message();
+  // @@protoc_insertion_point(field_mutable:simple_ros.RegisterPublisherResponse.message)
+  return _s;
+}
+inline const std::string& RegisterPublisherResponse::_internal_message() const {
+  return message_.Get();
+}
+inline void RegisterPublisherResponse::_internal_set_message(const std::string& value) {
+  
+  message_.Set(value, GetArenaForAllocation());
+}
+inline std::string* RegisterPublisherResponse::_internal_mutable_message() {
+  
+  return message_.Mutable(GetArenaForAllocation());
+}
+inline std::string* RegisterPublisherResponse::release_message() {
+  // @@protoc_insertion_point(field_release:simple_ros.RegisterPublisherResponse.message)
+  return message_.Release();
+}
+inline void RegisterPublisherResponse::set_allocated_message(std::string* message) {
+  if (message != nullptr) {
+    
+  } else {
+    
+  }
+  message_.SetAllocated(message, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (message_.IsDefault()) {
+    message_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:simple_ros.RegisterPublisherResponse.message)
+}
+
+// -------------------------------------------------------------------
+
+// UnsubscribeRequest
+
+// string topic_name = 1;
+inline void UnsubscribeRequest::clear_topic_name() {
+  topic_name_.ClearToEmpty();
+}
+inline const std::string& UnsubscribeRequest::topic_name() const {
+  // @@protoc_insertion_point(field_get:simple_ros.UnsubscribeRequest.topic_name)
+  return _internal_topic_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UnsubscribeRequest::set_topic_name(ArgT0&& arg0, ArgT... args) {
+ 
+ topic_name_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:simple_ros.UnsubscribeRequest.topic_name)
+}
+inline std::string* UnsubscribeRequest::mutable_topic_name() {
+  std::string* _s = _internal_mutable_topic_name();
+  // @@protoc_insertion_point(field_mutable:simple_ros.UnsubscribeRequest.topic_name)
+  return _s;
+}
+inline const std::string& UnsubscribeRequest::_internal_topic_name() const {
+  return topic_name_.Get();
+}
+inline void UnsubscribeRequest::_internal_set_topic_name(const std::string& value) {
+  
+  topic_name_.Set(value, GetArenaForAllocation());
+}
+inline std::string* UnsubscribeRequest::_internal_mutable_topic_name() {
+  
+  return topic_name_.Mutable(GetArenaForAllocation());
+}
+inline std::string* UnsubscribeRequest::release_topic_name() {
+  // @@protoc_insertion_point(field_release:simple_ros.UnsubscribeRequest.topic_name)
+  return topic_name_.Release();
+}
+inline void UnsubscribeRequest::set_allocated_topic_name(std::string* topic_name) {
+  if (topic_name != nullptr) {
+    
+  } else {
+    
+  }
+  topic_name_.SetAllocated(topic_name, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (topic_name_.IsDefault()) {
+    topic_name_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:simple_ros.UnsubscribeRequest.topic_name)
+}
+
+// string msg_type = 2;
+inline void UnsubscribeRequest::clear_msg_type() {
+  msg_type_.ClearToEmpty();
+}
+inline const std::string& UnsubscribeRequest::msg_type() const {
+  // @@protoc_insertion_point(field_get:simple_ros.UnsubscribeRequest.msg_type)
+  return _internal_msg_type();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UnsubscribeRequest::set_msg_type(ArgT0&& arg0, ArgT... args) {
+ 
+ msg_type_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:simple_ros.UnsubscribeRequest.msg_type)
+}
+inline std::string* UnsubscribeRequest::mutable_msg_type() {
+  std::string* _s = _internal_mutable_msg_type();
+  // @@protoc_insertion_point(field_mutable:simple_ros.UnsubscribeRequest.msg_type)
+  return _s;
+}
+inline const std::string& UnsubscribeRequest::_internal_msg_type() const {
+  return msg_type_.Get();
+}
+inline void UnsubscribeRequest::_internal_set_msg_type(const std::string& value) {
+  
+  msg_type_.Set(value, GetArenaForAllocation());
+}
+inline std::string* UnsubscribeRequest::_internal_mutable_msg_type() {
+  
+  return msg_type_.Mutable(GetArenaForAllocation());
+}
+inline std::string* UnsubscribeRequest::release_msg_type() {
+  // @@protoc_insertion_point(field_release:simple_ros.UnsubscribeRequest.msg_type)
+  return msg_type_.Release();
+}
+inline void UnsubscribeRequest::set_allocated_msg_type(std::string* msg_type) {
+  if (msg_type != nullptr) {
+    
+  } else {
+    
+  }
+  msg_type_.SetAllocated(msg_type, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (msg_type_.IsDefault()) {
+    msg_type_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:simple_ros.UnsubscribeRequest.msg_type)
+}
+
+// .simple_ros.NodeInfo node_info = 3;
+inline bool UnsubscribeRequest::_internal_has_node_info() const {
+  return this != internal_default_instance() && node_info_ != nullptr;
+}
+inline bool UnsubscribeRequest::has_node_info() const {
+  return _internal_has_node_info();
+}
+inline void UnsubscribeRequest::clear_node_info() {
+  if (GetArenaForAllocation() == nullptr && node_info_ != nullptr) {
+    delete node_info_;
+  }
+  node_info_ = nullptr;
+}
+inline const ::simple_ros::NodeInfo& UnsubscribeRequest::_internal_node_info() const {
+  const ::simple_ros::NodeInfo* p = node_info_;
+  return p != nullptr ? *p : reinterpret_cast<const ::simple_ros::NodeInfo&>(
+      ::simple_ros::_NodeInfo_default_instance_);
+}
+inline const ::simple_ros::NodeInfo& UnsubscribeRequest::node_info() const {
+  // @@protoc_insertion_point(field_get:simple_ros.UnsubscribeRequest.node_info)
+  return _internal_node_info();
+}
+inline void UnsubscribeRequest::unsafe_arena_set_allocated_node_info(
+    ::simple_ros::NodeInfo* node_info) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(node_info_);
+  }
+  node_info_ = node_info;
+  if (node_info) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:simple_ros.UnsubscribeRequest.node_info)
+}
+inline ::simple_ros::NodeInfo* UnsubscribeRequest::release_node_info() {
+  
+  ::simple_ros::NodeInfo* temp = node_info_;
+  node_info_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::simple_ros::NodeInfo* UnsubscribeRequest::unsafe_arena_release_node_info() {
+  // @@protoc_insertion_point(field_release:simple_ros.UnsubscribeRequest.node_info)
+  
+  ::simple_ros::NodeInfo* temp = node_info_;
+  node_info_ = nullptr;
+  return temp;
+}
+inline ::simple_ros::NodeInfo* UnsubscribeRequest::_internal_mutable_node_info() {
+  
+  if (node_info_ == nullptr) {
+    auto* p = CreateMaybeMessage<::simple_ros::NodeInfo>(GetArenaForAllocation());
+    node_info_ = p;
+  }
+  return node_info_;
+}
+inline ::simple_ros::NodeInfo* UnsubscribeRequest::mutable_node_info() {
+  ::simple_ros::NodeInfo* _msg = _internal_mutable_node_info();
+  // @@protoc_insertion_point(field_mutable:simple_ros.UnsubscribeRequest.node_info)
+  return _msg;
+}
+inline void UnsubscribeRequest::set_allocated_node_info(::simple_ros::NodeInfo* node_info) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete node_info_;
+  }
+  if (node_info) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(node_info);
+    if (message_arena != submessage_arena) {
+      node_info = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, node_info, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  node_info_ = node_info;
+  // @@protoc_insertion_point(field_set_allocated:simple_ros.UnsubscribeRequest.node_info)
+}
+
+// -------------------------------------------------------------------
+
+// UnsubscribeResponse
+
+// bool success = 1;
+inline void UnsubscribeResponse::clear_success() {
+  success_ = false;
+}
+inline bool UnsubscribeResponse::_internal_success() const {
+  return success_;
+}
+inline bool UnsubscribeResponse::success() const {
+  // @@protoc_insertion_point(field_get:simple_ros.UnsubscribeResponse.success)
+  return _internal_success();
+}
+inline void UnsubscribeResponse::_internal_set_success(bool value) {
+  
+  success_ = value;
+}
+inline void UnsubscribeResponse::set_success(bool value) {
+  _internal_set_success(value);
+  // @@protoc_insertion_point(field_set:simple_ros.UnsubscribeResponse.success)
+}
+
+// string message = 2;
+inline void UnsubscribeResponse::clear_message() {
+  message_.ClearToEmpty();
+}
+inline const std::string& UnsubscribeResponse::message() const {
+  // @@protoc_insertion_point(field_get:simple_ros.UnsubscribeResponse.message)
+  return _internal_message();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UnsubscribeResponse::set_message(ArgT0&& arg0, ArgT... args) {
+ 
+ message_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:simple_ros.UnsubscribeResponse.message)
+}
+inline std::string* UnsubscribeResponse::mutable_message() {
+  std::string* _s = _internal_mutable_message();
+  // @@protoc_insertion_point(field_mutable:simple_ros.UnsubscribeResponse.message)
+  return _s;
+}
+inline const std::string& UnsubscribeResponse::_internal_message() const {
+  return message_.Get();
+}
+inline void UnsubscribeResponse::_internal_set_message(const std::string& value) {
+  
+  message_.Set(value, GetArenaForAllocation());
+}
+inline std::string* UnsubscribeResponse::_internal_mutable_message() {
+  
+  return message_.Mutable(GetArenaForAllocation());
+}
+inline std::string* UnsubscribeResponse::release_message() {
+  // @@protoc_insertion_point(field_release:simple_ros.UnsubscribeResponse.message)
+  return message_.Release();
+}
+inline void UnsubscribeResponse::set_allocated_message(std::string* message) {
+  if (message != nullptr) {
+    
+  } else {
+    
+  }
+  message_.SetAllocated(message, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (message_.IsDefault()) {
+    message_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:simple_ros.UnsubscribeResponse.message)
+}
+
+// -------------------------------------------------------------------
+
+// UnregisterPublisherRequest
+
+// string topic_name = 1;
+inline void UnregisterPublisherRequest::clear_topic_name() {
+  topic_name_.ClearToEmpty();
+}
+inline const std::string& UnregisterPublisherRequest::topic_name() const {
+  // @@protoc_insertion_point(field_get:simple_ros.UnregisterPublisherRequest.topic_name)
+  return _internal_topic_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UnregisterPublisherRequest::set_topic_name(ArgT0&& arg0, ArgT... args) {
+ 
+ topic_name_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:simple_ros.UnregisterPublisherRequest.topic_name)
+}
+inline std::string* UnregisterPublisherRequest::mutable_topic_name() {
+  std::string* _s = _internal_mutable_topic_name();
+  // @@protoc_insertion_point(field_mutable:simple_ros.UnregisterPublisherRequest.topic_name)
+  return _s;
+}
+inline const std::string& UnregisterPublisherRequest::_internal_topic_name() const {
+  return topic_name_.Get();
+}
+inline void UnregisterPublisherRequest::_internal_set_topic_name(const std::string& value) {
+  
+  topic_name_.Set(value, GetArenaForAllocation());
+}
+inline std::string* UnregisterPublisherRequest::_internal_mutable_topic_name() {
+  
+  return topic_name_.Mutable(GetArenaForAllocation());
+}
+inline std::string* UnregisterPublisherRequest::release_topic_name() {
+  // @@protoc_insertion_point(field_release:simple_ros.UnregisterPublisherRequest.topic_name)
+  return topic_name_.Release();
+}
+inline void UnregisterPublisherRequest::set_allocated_topic_name(std::string* topic_name) {
+  if (topic_name != nullptr) {
+    
+  } else {
+    
+  }
+  topic_name_.SetAllocated(topic_name, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (topic_name_.IsDefault()) {
+    topic_name_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:simple_ros.UnregisterPublisherRequest.topic_name)
+}
+
+// string msg_type = 2;
+inline void UnregisterPublisherRequest::clear_msg_type() {
+  msg_type_.ClearToEmpty();
+}
+inline const std::string& UnregisterPublisherRequest::msg_type() const {
+  // @@protoc_insertion_point(field_get:simple_ros.UnregisterPublisherRequest.msg_type)
+  return _internal_msg_type();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UnregisterPublisherRequest::set_msg_type(ArgT0&& arg0, ArgT... args) {
+ 
+ msg_type_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:simple_ros.UnregisterPublisherRequest.msg_type)
+}
+inline std::string* UnregisterPublisherRequest::mutable_msg_type() {
+  std::string* _s = _internal_mutable_msg_type();
+  // @@protoc_insertion_point(field_mutable:simple_ros.UnregisterPublisherRequest.msg_type)
+  return _s;
+}
+inline const std::string& UnregisterPublisherRequest::_internal_msg_type() const {
+  return msg_type_.Get();
+}
+inline void UnregisterPublisherRequest::_internal_set_msg_type(const std::string& value) {
+  
+  msg_type_.Set(value, GetArenaForAllocation());
+}
+inline std::string* UnregisterPublisherRequest::_internal_mutable_msg_type() {
+  
+  return msg_type_.Mutable(GetArenaForAllocation());
+}
+inline std::string* UnregisterPublisherRequest::release_msg_type() {
+  // @@protoc_insertion_point(field_release:simple_ros.UnregisterPublisherRequest.msg_type)
+  return msg_type_.Release();
+}
+inline void UnregisterPublisherRequest::set_allocated_msg_type(std::string* msg_type) {
+  if (msg_type != nullptr) {
+    
+  } else {
+    
+  }
+  msg_type_.SetAllocated(msg_type, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (msg_type_.IsDefault()) {
+    msg_type_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:simple_ros.UnregisterPublisherRequest.msg_type)
+}
+
+// .simple_ros.NodeInfo node_info = 3;
+inline bool UnregisterPublisherRequest::_internal_has_node_info() const {
+  return this != internal_default_instance() && node_info_ != nullptr;
+}
+inline bool UnregisterPublisherRequest::has_node_info() const {
+  return _internal_has_node_info();
+}
+inline void UnregisterPublisherRequest::clear_node_info() {
+  if (GetArenaForAllocation() == nullptr && node_info_ != nullptr) {
+    delete node_info_;
+  }
+  node_info_ = nullptr;
+}
+inline const ::simple_ros::NodeInfo& UnregisterPublisherRequest::_internal_node_info() const {
+  const ::simple_ros::NodeInfo* p = node_info_;
+  return p != nullptr ? *p : reinterpret_cast<const ::simple_ros::NodeInfo&>(
+      ::simple_ros::_NodeInfo_default_instance_);
+}
+inline const ::simple_ros::NodeInfo& UnregisterPublisherRequest::node_info() const {
+  // @@protoc_insertion_point(field_get:simple_ros.UnregisterPublisherRequest.node_info)
+  return _internal_node_info();
+}
+inline void UnregisterPublisherRequest::unsafe_arena_set_allocated_node_info(
+    ::simple_ros::NodeInfo* node_info) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(node_info_);
+  }
+  node_info_ = node_info;
+  if (node_info) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:simple_ros.UnregisterPublisherRequest.node_info)
+}
+inline ::simple_ros::NodeInfo* UnregisterPublisherRequest::release_node_info() {
+  
+  ::simple_ros::NodeInfo* temp = node_info_;
+  node_info_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::simple_ros::NodeInfo* UnregisterPublisherRequest::unsafe_arena_release_node_info() {
+  // @@protoc_insertion_point(field_release:simple_ros.UnregisterPublisherRequest.node_info)
+  
+  ::simple_ros::NodeInfo* temp = node_info_;
+  node_info_ = nullptr;
+  return temp;
+}
+inline ::simple_ros::NodeInfo* UnregisterPublisherRequest::_internal_mutable_node_info() {
+  
+  if (node_info_ == nullptr) {
+    auto* p = CreateMaybeMessage<::simple_ros::NodeInfo>(GetArenaForAllocation());
+    node_info_ = p;
+  }
+  return node_info_;
+}
+inline ::simple_ros::NodeInfo* UnregisterPublisherRequest::mutable_node_info() {
+  ::simple_ros::NodeInfo* _msg = _internal_mutable_node_info();
+  // @@protoc_insertion_point(field_mutable:simple_ros.UnregisterPublisherRequest.node_info)
+  return _msg;
+}
+inline void UnregisterPublisherRequest::set_allocated_node_info(::simple_ros::NodeInfo* node_info) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete node_info_;
+  }
+  if (node_info) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(node_info);
+    if (message_arena != submessage_arena) {
+      node_info = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, node_info, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  node_info_ = node_info;
+  // @@protoc_insertion_point(field_set_allocated:simple_ros.UnregisterPublisherRequest.node_info)
+}
+
+// -------------------------------------------------------------------
+
+// UnregisterPublisherResponse
+
+// bool success = 1;
+inline void UnregisterPublisherResponse::clear_success() {
+  success_ = false;
+}
+inline bool UnregisterPublisherResponse::_internal_success() const {
+  return success_;
+}
+inline bool UnregisterPublisherResponse::success() const {
+  // @@protoc_insertion_point(field_get:simple_ros.UnregisterPublisherResponse.success)
+  return _internal_success();
+}
+inline void UnregisterPublisherResponse::_internal_set_success(bool value) {
+  
+  success_ = value;
+}
+inline void UnregisterPublisherResponse::set_success(bool value) {
+  _internal_set_success(value);
+  // @@protoc_insertion_point(field_set:simple_ros.UnregisterPublisherResponse.success)
+}
+
+// string message = 2;
+inline void UnregisterPublisherResponse::clear_message() {
+  message_.ClearToEmpty();
+}
+inline const std::string& UnregisterPublisherResponse::message() const {
+  // @@protoc_insertion_point(field_get:simple_ros.UnregisterPublisherResponse.message)
+  return _internal_message();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UnregisterPublisherResponse::set_message(ArgT0&& arg0, ArgT... args) {
+ 
+ message_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:simple_ros.UnregisterPublisherResponse.message)
+}
+inline std::string* UnregisterPublisherResponse::mutable_message() {
+  std::string* _s = _internal_mutable_message();
+  // @@protoc_insertion_point(field_mutable:simple_ros.UnregisterPublisherResponse.message)
+  return _s;
+}
+inline const std::string& UnregisterPublisherResponse::_internal_message() const {
+  return message_.Get();
+}
+inline void UnregisterPublisherResponse::_internal_set_message(const std::string& value) {
+  
+  message_.Set(value, GetArenaForAllocation());
+}
+inline std::string* UnregisterPublisherResponse::_internal_mutable_message() {
+  
+  return message_.Mutable(GetArenaForAllocation());
+}
+inline std::string* UnregisterPublisherResponse::release_message() {
+  // @@protoc_insertion_point(field_release:simple_ros.UnregisterPublisherResponse.message)
+  return message_.Release();
+}
+inline void UnregisterPublisherResponse::set_allocated_message(std::string* message) {
+  if (message != nullptr) {
+    
+  } else {
+    
+  }
+  message_.SetAllocated(message, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (message_.IsDefault()) {
+    message_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:simple_ros.UnregisterPublisherResponse.message)
+}
+
+// -------------------------------------------------------------------
+
+// GetNodesRequest
+
+// string filter = 1;
+inline void GetNodesRequest::clear_filter() {
+  filter_.ClearToEmpty();
+}
+inline const std::string& GetNodesRequest::filter() const {
+  // @@protoc_insertion_point(field_get:simple_ros.GetNodesRequest.filter)
+  return _internal_filter();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetNodesRequest::set_filter(ArgT0&& arg0, ArgT... args) {
+ 
+ filter_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:simple_ros.GetNodesRequest.filter)
+}
+inline std::string* GetNodesRequest::mutable_filter() {
+  std::string* _s = _internal_mutable_filter();
+  // @@protoc_insertion_point(field_mutable:simple_ros.GetNodesRequest.filter)
+  return _s;
+}
+inline const std::string& GetNodesRequest::_internal_filter() const {
+  return filter_.Get();
+}
+inline void GetNodesRequest::_internal_set_filter(const std::string& value) {
+  
+  filter_.Set(value, GetArenaForAllocation());
+}
+inline std::string* GetNodesRequest::_internal_mutable_filter() {
+  
+  return filter_.Mutable(GetArenaForAllocation());
+}
+inline std::string* GetNodesRequest::release_filter() {
+  // @@protoc_insertion_point(field_release:simple_ros.GetNodesRequest.filter)
+  return filter_.Release();
+}
+inline void GetNodesRequest::set_allocated_filter(std::string* filter) {
+  if (filter != nullptr) {
+    
+  } else {
+    
+  }
+  filter_.SetAllocated(filter, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (filter_.IsDefault()) {
+    filter_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:simple_ros.GetNodesRequest.filter)
+}
+
+// -------------------------------------------------------------------
+
+// GetNodesResponse
+
+// bool success = 1;
+inline void GetNodesResponse::clear_success() {
+  success_ = false;
+}
+inline bool GetNodesResponse::_internal_success() const {
+  return success_;
+}
+inline bool GetNodesResponse::success() const {
+  // @@protoc_insertion_point(field_get:simple_ros.GetNodesResponse.success)
+  return _internal_success();
+}
+inline void GetNodesResponse::_internal_set_success(bool value) {
+  
+  success_ = value;
+}
+inline void GetNodesResponse::set_success(bool value) {
+  _internal_set_success(value);
+  // @@protoc_insertion_point(field_set:simple_ros.GetNodesResponse.success)
+}
+
+// string message = 2;
+inline void GetNodesResponse::clear_message() {
+  message_.ClearToEmpty();
+}
+inline const std::string& GetNodesResponse::message() const {
+  // @@protoc_insertion_point(field_get:simple_ros.GetNodesResponse.message)
+  return _internal_message();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetNodesResponse::set_message(ArgT0&& arg0, ArgT... args) {
+ 
+ message_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:simple_ros.GetNodesResponse.message)
+}
+inline std::string* GetNodesResponse::mutable_message() {
+  std::string* _s = _internal_mutable_message();
+  // @@protoc_insertion_point(field_mutable:simple_ros.GetNodesResponse.message)
+  return _s;
+}
+inline const std::string& GetNodesResponse::_internal_message() const {
+  return message_.Get();
+}
+inline void GetNodesResponse::_internal_set_message(const std::string& value) {
+  
+  message_.Set(value, GetArenaForAllocation());
+}
+inline std::string* GetNodesResponse::_internal_mutable_message() {
+  
+  return message_.Mutable(GetArenaForAllocation());
+}
+inline std::string* GetNodesResponse::release_message() {
+  // @@protoc_insertion_point(field_release:simple_ros.GetNodesResponse.message)
+  return message_.Release();
+}
+inline void GetNodesResponse::set_allocated_message(std::string* message) {
+  if (message != nullptr) {
+    
+  } else {
+    
+  }
+  message_.SetAllocated(message, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (message_.IsDefault()) {
+    message_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:simple_ros.GetNodesResponse.message)
+}
+
+// repeated .simple_ros.NodeInfo nodes = 3;
+inline int GetNodesResponse::_internal_nodes_size() const {
+  return nodes_.size();
+}
+inline int GetNodesResponse::nodes_size() const {
+  return _internal_nodes_size();
+}
+inline void GetNodesResponse::clear_nodes() {
+  nodes_.Clear();
+}
+inline ::simple_ros::NodeInfo* GetNodesResponse::mutable_nodes(int index) {
+  // @@protoc_insertion_point(field_mutable:simple_ros.GetNodesResponse.nodes)
+  return nodes_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::NodeInfo >*
+GetNodesResponse::mutable_nodes() {
+  // @@protoc_insertion_point(field_mutable_list:simple_ros.GetNodesResponse.nodes)
+  return &nodes_;
+}
+inline const ::simple_ros::NodeInfo& GetNodesResponse::_internal_nodes(int index) const {
+  return nodes_.Get(index);
+}
+inline const ::simple_ros::NodeInfo& GetNodesResponse::nodes(int index) const {
+  // @@protoc_insertion_point(field_get:simple_ros.GetNodesResponse.nodes)
+  return _internal_nodes(index);
+}
+inline ::simple_ros::NodeInfo* GetNodesResponse::_internal_add_nodes() {
+  return nodes_.Add();
+}
+inline ::simple_ros::NodeInfo* GetNodesResponse::add_nodes() {
+  ::simple_ros::NodeInfo* _add = _internal_add_nodes();
+  // @@protoc_insertion_point(field_add:simple_ros.GetNodesResponse.nodes)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::NodeInfo >&
+GetNodesResponse::nodes() const {
+  // @@protoc_insertion_point(field_list:simple_ros.GetNodesResponse.nodes)
+  return nodes_;
+}
+
+// -------------------------------------------------------------------
+
+// GetNodeInfoRequest
+
+// string node_name = 1;
+inline void GetNodeInfoRequest::clear_node_name() {
+  node_name_.ClearToEmpty();
+}
+inline const std::string& GetNodeInfoRequest::node_name() const {
+  // @@protoc_insertion_point(field_get:simple_ros.GetNodeInfoRequest.node_name)
+  return _internal_node_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetNodeInfoRequest::set_node_name(ArgT0&& arg0, ArgT... args) {
+ 
+ node_name_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:simple_ros.GetNodeInfoRequest.node_name)
+}
+inline std::string* GetNodeInfoRequest::mutable_node_name() {
+  std::string* _s = _internal_mutable_node_name();
+  // @@protoc_insertion_point(field_mutable:simple_ros.GetNodeInfoRequest.node_name)
+  return _s;
+}
+inline const std::string& GetNodeInfoRequest::_internal_node_name() const {
+  return node_name_.Get();
+}
+inline void GetNodeInfoRequest::_internal_set_node_name(const std::string& value) {
+  
+  node_name_.Set(value, GetArenaForAllocation());
+}
+inline std::string* GetNodeInfoRequest::_internal_mutable_node_name() {
+  
+  return node_name_.Mutable(GetArenaForAllocation());
+}
+inline std::string* GetNodeInfoRequest::release_node_name() {
+  // @@protoc_insertion_point(field_release:simple_ros.GetNodeInfoRequest.node_name)
+  return node_name_.Release();
+}
+inline void GetNodeInfoRequest::set_allocated_node_name(std::string* node_name) {
+  if (node_name != nullptr) {
+    
+  } else {
+    
+  }
+  node_name_.SetAllocated(node_name, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (node_name_.IsDefault()) {
+    node_name_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:simple_ros.GetNodeInfoRequest.node_name)
+}
+
+// -------------------------------------------------------------------
+
+// GetNodeInfoResponse
+
+// bool success = 1;
+inline void GetNodeInfoResponse::clear_success() {
+  success_ = false;
+}
+inline bool GetNodeInfoResponse::_internal_success() const {
+  return success_;
+}
+inline bool GetNodeInfoResponse::success() const {
+  // @@protoc_insertion_point(field_get:simple_ros.GetNodeInfoResponse.success)
+  return _internal_success();
+}
+inline void GetNodeInfoResponse::_internal_set_success(bool value) {
+  
+  success_ = value;
+}
+inline void GetNodeInfoResponse::set_success(bool value) {
+  _internal_set_success(value);
+  // @@protoc_insertion_point(field_set:simple_ros.GetNodeInfoResponse.success)
+}
+
+// string message = 2;
+inline void GetNodeInfoResponse::clear_message() {
+  message_.ClearToEmpty();
+}
+inline const std::string& GetNodeInfoResponse::message() const {
+  // @@protoc_insertion_point(field_get:simple_ros.GetNodeInfoResponse.message)
+  return _internal_message();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetNodeInfoResponse::set_message(ArgT0&& arg0, ArgT... args) {
+ 
+ message_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:simple_ros.GetNodeInfoResponse.message)
+}
+inline std::string* GetNodeInfoResponse::mutable_message() {
+  std::string* _s = _internal_mutable_message();
+  // @@protoc_insertion_point(field_mutable:simple_ros.GetNodeInfoResponse.message)
+  return _s;
+}
+inline const std::string& GetNodeInfoResponse::_internal_message() const {
+  return message_.Get();
+}
+inline void GetNodeInfoResponse::_internal_set_message(const std::string& value) {
+  
+  message_.Set(value, GetArenaForAllocation());
+}
+inline std::string* GetNodeInfoResponse::_internal_mutable_message() {
+  
+  return message_.Mutable(GetArenaForAllocation());
+}
+inline std::string* GetNodeInfoResponse::release_message() {
+  // @@protoc_insertion_point(field_release:simple_ros.GetNodeInfoResponse.message)
+  return message_.Release();
+}
+inline void GetNodeInfoResponse::set_allocated_message(std::string* message) {
+  if (message != nullptr) {
+    
+  } else {
+    
+  }
+  message_.SetAllocated(message, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (message_.IsDefault()) {
+    message_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:simple_ros.GetNodeInfoResponse.message)
+}
+
+// .simple_ros.NodeInfo node_info = 3;
+inline bool GetNodeInfoResponse::_internal_has_node_info() const {
+  return this != internal_default_instance() && node_info_ != nullptr;
+}
+inline bool GetNodeInfoResponse::has_node_info() const {
+  return _internal_has_node_info();
+}
+inline void GetNodeInfoResponse::clear_node_info() {
+  if (GetArenaForAllocation() == nullptr && node_info_ != nullptr) {
+    delete node_info_;
+  }
+  node_info_ = nullptr;
+}
+inline const ::simple_ros::NodeInfo& GetNodeInfoResponse::_internal_node_info() const {
+  const ::simple_ros::NodeInfo* p = node_info_;
+  return p != nullptr ? *p : reinterpret_cast<const ::simple_ros::NodeInfo&>(
+      ::simple_ros::_NodeInfo_default_instance_);
+}
+inline const ::simple_ros::NodeInfo& GetNodeInfoResponse::node_info() const {
+  // @@protoc_insertion_point(field_get:simple_ros.GetNodeInfoResponse.node_info)
+  return _internal_node_info();
+}
+inline void GetNodeInfoResponse::unsafe_arena_set_allocated_node_info(
+    ::simple_ros::NodeInfo* node_info) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(node_info_);
+  }
+  node_info_ = node_info;
+  if (node_info) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:simple_ros.GetNodeInfoResponse.node_info)
+}
+inline ::simple_ros::NodeInfo* GetNodeInfoResponse::release_node_info() {
+  
+  ::simple_ros::NodeInfo* temp = node_info_;
+  node_info_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::simple_ros::NodeInfo* GetNodeInfoResponse::unsafe_arena_release_node_info() {
+  // @@protoc_insertion_point(field_release:simple_ros.GetNodeInfoResponse.node_info)
+  
+  ::simple_ros::NodeInfo* temp = node_info_;
+  node_info_ = nullptr;
+  return temp;
+}
+inline ::simple_ros::NodeInfo* GetNodeInfoResponse::_internal_mutable_node_info() {
+  
+  if (node_info_ == nullptr) {
+    auto* p = CreateMaybeMessage<::simple_ros::NodeInfo>(GetArenaForAllocation());
+    node_info_ = p;
+  }
+  return node_info_;
+}
+inline ::simple_ros::NodeInfo* GetNodeInfoResponse::mutable_node_info() {
+  ::simple_ros::NodeInfo* _msg = _internal_mutable_node_info();
+  // @@protoc_insertion_point(field_mutable:simple_ros.GetNodeInfoResponse.node_info)
+  return _msg;
+}
+inline void GetNodeInfoResponse::set_allocated_node_info(::simple_ros::NodeInfo* node_info) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete node_info_;
+  }
+  if (node_info) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(node_info);
+    if (message_arena != submessage_arena) {
+      node_info = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, node_info, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  node_info_ = node_info;
+  // @@protoc_insertion_point(field_set_allocated:simple_ros.GetNodeInfoResponse.node_info)
+}
+
+// repeated .simple_ros.TopicInfo publishes = 4;
+inline int GetNodeInfoResponse::_internal_publishes_size() const {
+  return publishes_.size();
+}
+inline int GetNodeInfoResponse::publishes_size() const {
+  return _internal_publishes_size();
+}
+inline void GetNodeInfoResponse::clear_publishes() {
+  publishes_.Clear();
+}
+inline ::simple_ros::TopicInfo* GetNodeInfoResponse::mutable_publishes(int index) {
+  // @@protoc_insertion_point(field_mutable:simple_ros.GetNodeInfoResponse.publishes)
+  return publishes_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::TopicInfo >*
+GetNodeInfoResponse::mutable_publishes() {
+  // @@protoc_insertion_point(field_mutable_list:simple_ros.GetNodeInfoResponse.publishes)
+  return &publishes_;
+}
+inline const ::simple_ros::TopicInfo& GetNodeInfoResponse::_internal_publishes(int index) const {
+  return publishes_.Get(index);
+}
+inline const ::simple_ros::TopicInfo& GetNodeInfoResponse::publishes(int index) const {
+  // @@protoc_insertion_point(field_get:simple_ros.GetNodeInfoResponse.publishes)
+  return _internal_publishes(index);
+}
+inline ::simple_ros::TopicInfo* GetNodeInfoResponse::_internal_add_publishes() {
+  return publishes_.Add();
+}
+inline ::simple_ros::TopicInfo* GetNodeInfoResponse::add_publishes() {
+  ::simple_ros::TopicInfo* _add = _internal_add_publishes();
+  // @@protoc_insertion_point(field_add:simple_ros.GetNodeInfoResponse.publishes)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::TopicInfo >&
+GetNodeInfoResponse::publishes() const {
+  // @@protoc_insertion_point(field_list:simple_ros.GetNodeInfoResponse.publishes)
+  return publishes_;
+}
+
+// repeated .simple_ros.TopicInfo subscribes = 5;
+inline int GetNodeInfoResponse::_internal_subscribes_size() const {
+  return subscribes_.size();
+}
+inline int GetNodeInfoResponse::subscribes_size() const {
+  return _internal_subscribes_size();
+}
+inline void GetNodeInfoResponse::clear_subscribes() {
+  subscribes_.Clear();
+}
+inline ::simple_ros::TopicInfo* GetNodeInfoResponse::mutable_subscribes(int index) {
+  // @@protoc_insertion_point(field_mutable:simple_ros.GetNodeInfoResponse.subscribes)
+  return subscribes_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::TopicInfo >*
+GetNodeInfoResponse::mutable_subscribes() {
+  // @@protoc_insertion_point(field_mutable_list:simple_ros.GetNodeInfoResponse.subscribes)
+  return &subscribes_;
+}
+inline const ::simple_ros::TopicInfo& GetNodeInfoResponse::_internal_subscribes(int index) const {
+  return subscribes_.Get(index);
+}
+inline const ::simple_ros::TopicInfo& GetNodeInfoResponse::subscribes(int index) const {
+  // @@protoc_insertion_point(field_get:simple_ros.GetNodeInfoResponse.subscribes)
+  return _internal_subscribes(index);
+}
+inline ::simple_ros::TopicInfo* GetNodeInfoResponse::_internal_add_subscribes() {
+  return subscribes_.Add();
+}
+inline ::simple_ros::TopicInfo* GetNodeInfoResponse::add_subscribes() {
+  ::simple_ros::TopicInfo* _add = _internal_add_subscribes();
+  // @@protoc_insertion_point(field_add:simple_ros.GetNodeInfoResponse.subscribes)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::TopicInfo >&
+GetNodeInfoResponse::subscribes() const {
+  // @@protoc_insertion_point(field_list:simple_ros.GetNodeInfoResponse.subscribes)
+  return subscribes_;
+}
+
+// -------------------------------------------------------------------
+
+// GetTopicsRequest
+
+// string filter = 1;
+inline void GetTopicsRequest::clear_filter() {
+  filter_.ClearToEmpty();
+}
+inline const std::string& GetTopicsRequest::filter() const {
+  // @@protoc_insertion_point(field_get:simple_ros.GetTopicsRequest.filter)
+  return _internal_filter();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetTopicsRequest::set_filter(ArgT0&& arg0, ArgT... args) {
+ 
+ filter_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:simple_ros.GetTopicsRequest.filter)
+}
+inline std::string* GetTopicsRequest::mutable_filter() {
+  std::string* _s = _internal_mutable_filter();
+  // @@protoc_insertion_point(field_mutable:simple_ros.GetTopicsRequest.filter)
+  return _s;
+}
+inline const std::string& GetTopicsRequest::_internal_filter() const {
+  return filter_.Get();
+}
+inline void GetTopicsRequest::_internal_set_filter(const std::string& value) {
+  
+  filter_.Set(value, GetArenaForAllocation());
+}
+inline std::string* GetTopicsRequest::_internal_mutable_filter() {
+  
+  return filter_.Mutable(GetArenaForAllocation());
+}
+inline std::string* GetTopicsRequest::release_filter() {
+  // @@protoc_insertion_point(field_release:simple_ros.GetTopicsRequest.filter)
+  return filter_.Release();
+}
+inline void GetTopicsRequest::set_allocated_filter(std::string* filter) {
+  if (filter != nullptr) {
+    
+  } else {
+    
+  }
+  filter_.SetAllocated(filter, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (filter_.IsDefault()) {
+    filter_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:simple_ros.GetTopicsRequest.filter)
+}
+
+// -------------------------------------------------------------------
+
+// GetTopicsResponse
+
+// bool success = 1;
+inline void GetTopicsResponse::clear_success() {
+  success_ = false;
+}
+inline bool GetTopicsResponse::_internal_success() const {
+  return success_;
+}
+inline bool GetTopicsResponse::success() const {
+  // @@protoc_insertion_point(field_get:simple_ros.GetTopicsResponse.success)
+  return _internal_success();
+}
+inline void GetTopicsResponse::_internal_set_success(bool value) {
+  
+  success_ = value;
+}
+inline void GetTopicsResponse::set_success(bool value) {
+  _internal_set_success(value);
+  // @@protoc_insertion_point(field_set:simple_ros.GetTopicsResponse.success)
+}
+
+// string message = 2;
+inline void GetTopicsResponse::clear_message() {
+  message_.ClearToEmpty();
+}
+inline const std::string& GetTopicsResponse::message() const {
+  // @@protoc_insertion_point(field_get:simple_ros.GetTopicsResponse.message)
+  return _internal_message();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetTopicsResponse::set_message(ArgT0&& arg0, ArgT... args) {
+ 
+ message_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:simple_ros.GetTopicsResponse.message)
+}
+inline std::string* GetTopicsResponse::mutable_message() {
+  std::string* _s = _internal_mutable_message();
+  // @@protoc_insertion_point(field_mutable:simple_ros.GetTopicsResponse.message)
+  return _s;
+}
+inline const std::string& GetTopicsResponse::_internal_message() const {
+  return message_.Get();
+}
+inline void GetTopicsResponse::_internal_set_message(const std::string& value) {
+  
+  message_.Set(value, GetArenaForAllocation());
+}
+inline std::string* GetTopicsResponse::_internal_mutable_message() {
+  
+  return message_.Mutable(GetArenaForAllocation());
+}
+inline std::string* GetTopicsResponse::release_message() {
+  // @@protoc_insertion_point(field_release:simple_ros.GetTopicsResponse.message)
+  return message_.Release();
+}
+inline void GetTopicsResponse::set_allocated_message(std::string* message) {
+  if (message != nullptr) {
+    
+  } else {
+    
+  }
+  message_.SetAllocated(message, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (message_.IsDefault()) {
+    message_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:simple_ros.GetTopicsResponse.message)
+}
+
+// repeated .simple_ros.TopicInfo topics = 3;
+inline int GetTopicsResponse::_internal_topics_size() const {
+  return topics_.size();
+}
+inline int GetTopicsResponse::topics_size() const {
+  return _internal_topics_size();
+}
+inline void GetTopicsResponse::clear_topics() {
+  topics_.Clear();
+}
+inline ::simple_ros::TopicInfo* GetTopicsResponse::mutable_topics(int index) {
+  // @@protoc_insertion_point(field_mutable:simple_ros.GetTopicsResponse.topics)
+  return topics_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::TopicInfo >*
+GetTopicsResponse::mutable_topics() {
+  // @@protoc_insertion_point(field_mutable_list:simple_ros.GetTopicsResponse.topics)
+  return &topics_;
+}
+inline const ::simple_ros::TopicInfo& GetTopicsResponse::_internal_topics(int index) const {
+  return topics_.Get(index);
+}
+inline const ::simple_ros::TopicInfo& GetTopicsResponse::topics(int index) const {
+  // @@protoc_insertion_point(field_get:simple_ros.GetTopicsResponse.topics)
+  return _internal_topics(index);
+}
+inline ::simple_ros::TopicInfo* GetTopicsResponse::_internal_add_topics() {
+  return topics_.Add();
+}
+inline ::simple_ros::TopicInfo* GetTopicsResponse::add_topics() {
+  ::simple_ros::TopicInfo* _add = _internal_add_topics();
+  // @@protoc_insertion_point(field_add:simple_ros.GetTopicsResponse.topics)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::TopicInfo >&
+GetTopicsResponse::topics() const {
+  // @@protoc_insertion_point(field_list:simple_ros.GetTopicsResponse.topics)
+  return topics_;
+}
+
+// -------------------------------------------------------------------
+
+// GetTopicInfoRequest
+
+// string topic_name = 1;
+inline void GetTopicInfoRequest::clear_topic_name() {
+  topic_name_.ClearToEmpty();
+}
+inline const std::string& GetTopicInfoRequest::topic_name() const {
+  // @@protoc_insertion_point(field_get:simple_ros.GetTopicInfoRequest.topic_name)
+  return _internal_topic_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetTopicInfoRequest::set_topic_name(ArgT0&& arg0, ArgT... args) {
+ 
+ topic_name_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:simple_ros.GetTopicInfoRequest.topic_name)
+}
+inline std::string* GetTopicInfoRequest::mutable_topic_name() {
+  std::string* _s = _internal_mutable_topic_name();
+  // @@protoc_insertion_point(field_mutable:simple_ros.GetTopicInfoRequest.topic_name)
+  return _s;
+}
+inline const std::string& GetTopicInfoRequest::_internal_topic_name() const {
+  return topic_name_.Get();
+}
+inline void GetTopicInfoRequest::_internal_set_topic_name(const std::string& value) {
+  
+  topic_name_.Set(value, GetArenaForAllocation());
+}
+inline std::string* GetTopicInfoRequest::_internal_mutable_topic_name() {
+  
+  return topic_name_.Mutable(GetArenaForAllocation());
+}
+inline std::string* GetTopicInfoRequest::release_topic_name() {
+  // @@protoc_insertion_point(field_release:simple_ros.GetTopicInfoRequest.topic_name)
+  return topic_name_.Release();
+}
+inline void GetTopicInfoRequest::set_allocated_topic_name(std::string* topic_name) {
+  if (topic_name != nullptr) {
+    
+  } else {
+    
+  }
+  topic_name_.SetAllocated(topic_name, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (topic_name_.IsDefault()) {
+    topic_name_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:simple_ros.GetTopicInfoRequest.topic_name)
+}
+
+// -------------------------------------------------------------------
+
+// GetTopicInfoResponse
+
+// bool success = 1;
+inline void GetTopicInfoResponse::clear_success() {
+  success_ = false;
+}
+inline bool GetTopicInfoResponse::_internal_success() const {
+  return success_;
+}
+inline bool GetTopicInfoResponse::success() const {
+  // @@protoc_insertion_point(field_get:simple_ros.GetTopicInfoResponse.success)
+  return _internal_success();
+}
+inline void GetTopicInfoResponse::_internal_set_success(bool value) {
+  
+  success_ = value;
+}
+inline void GetTopicInfoResponse::set_success(bool value) {
+  _internal_set_success(value);
+  // @@protoc_insertion_point(field_set:simple_ros.GetTopicInfoResponse.success)
+}
+
+// string message = 2;
+inline void GetTopicInfoResponse::clear_message() {
+  message_.ClearToEmpty();
+}
+inline const std::string& GetTopicInfoResponse::message() const {
+  // @@protoc_insertion_point(field_get:simple_ros.GetTopicInfoResponse.message)
+  return _internal_message();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetTopicInfoResponse::set_message(ArgT0&& arg0, ArgT... args) {
+ 
+ message_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:simple_ros.GetTopicInfoResponse.message)
+}
+inline std::string* GetTopicInfoResponse::mutable_message() {
+  std::string* _s = _internal_mutable_message();
+  // @@protoc_insertion_point(field_mutable:simple_ros.GetTopicInfoResponse.message)
+  return _s;
+}
+inline const std::string& GetTopicInfoResponse::_internal_message() const {
+  return message_.Get();
+}
+inline void GetTopicInfoResponse::_internal_set_message(const std::string& value) {
+  
+  message_.Set(value, GetArenaForAllocation());
+}
+inline std::string* GetTopicInfoResponse::_internal_mutable_message() {
+  
+  return message_.Mutable(GetArenaForAllocation());
+}
+inline std::string* GetTopicInfoResponse::release_message() {
+  // @@protoc_insertion_point(field_release:simple_ros.GetTopicInfoResponse.message)
+  return message_.Release();
+}
+inline void GetTopicInfoResponse::set_allocated_message(std::string* message) {
+  if (message != nullptr) {
+    
+  } else {
+    
+  }
+  message_.SetAllocated(message, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (message_.IsDefault()) {
+    message_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:simple_ros.GetTopicInfoResponse.message)
+}
+
+// string topic_name = 3;
+inline void GetTopicInfoResponse::clear_topic_name() {
+  topic_name_.ClearToEmpty();
+}
+inline const std::string& GetTopicInfoResponse::topic_name() const {
+  // @@protoc_insertion_point(field_get:simple_ros.GetTopicInfoResponse.topic_name)
+  return _internal_topic_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetTopicInfoResponse::set_topic_name(ArgT0&& arg0, ArgT... args) {
+ 
+ topic_name_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:simple_ros.GetTopicInfoResponse.topic_name)
+}
+inline std::string* GetTopicInfoResponse::mutable_topic_name() {
+  std::string* _s = _internal_mutable_topic_name();
+  // @@protoc_insertion_point(field_mutable:simple_ros.GetTopicInfoResponse.topic_name)
+  return _s;
+}
+inline const std::string& GetTopicInfoResponse::_internal_topic_name() const {
+  return topic_name_.Get();
+}
+inline void GetTopicInfoResponse::_internal_set_topic_name(const std::string& value) {
+  
+  topic_name_.Set(value, GetArenaForAllocation());
+}
+inline std::string* GetTopicInfoResponse::_internal_mutable_topic_name() {
+  
+  return topic_name_.Mutable(GetArenaForAllocation());
+}
+inline std::string* GetTopicInfoResponse::release_topic_name() {
+  // @@protoc_insertion_point(field_release:simple_ros.GetTopicInfoResponse.topic_name)
+  return topic_name_.Release();
+}
+inline void GetTopicInfoResponse::set_allocated_topic_name(std::string* topic_name) {
+  if (topic_name != nullptr) {
+    
+  } else {
+    
+  }
+  topic_name_.SetAllocated(topic_name, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (topic_name_.IsDefault()) {
+    topic_name_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:simple_ros.GetTopicInfoResponse.topic_name)
+}
+
+// string msg_type = 4;
+inline void GetTopicInfoResponse::clear_msg_type() {
+  msg_type_.ClearToEmpty();
+}
+inline const std::string& GetTopicInfoResponse::msg_type() const {
+  // @@protoc_insertion_point(field_get:simple_ros.GetTopicInfoResponse.msg_type)
+  return _internal_msg_type();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetTopicInfoResponse::set_msg_type(ArgT0&& arg0, ArgT... args) {
+ 
+ msg_type_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:simple_ros.GetTopicInfoResponse.msg_type)
+}
+inline std::string* GetTopicInfoResponse::mutable_msg_type() {
+  std::string* _s = _internal_mutable_msg_type();
+  // @@protoc_insertion_point(field_mutable:simple_ros.GetTopicInfoResponse.msg_type)
+  return _s;
+}
+inline const std::string& GetTopicInfoResponse::_internal_msg_type() const {
+  return msg_type_.Get();
+}
+inline void GetTopicInfoResponse::_internal_set_msg_type(const std::string& value) {
+  
+  msg_type_.Set(value, GetArenaForAllocation());
+}
+inline std::string* GetTopicInfoResponse::_internal_mutable_msg_type() {
+  
+  return msg_type_.Mutable(GetArenaForAllocation());
+}
+inline std::string* GetTopicInfoResponse::release_msg_type() {
+  // @@protoc_insertion_point(field_release:simple_ros.GetTopicInfoResponse.msg_type)
+  return msg_type_.Release();
+}
+inline void GetTopicInfoResponse::set_allocated_msg_type(std::string* msg_type) {
+  if (msg_type != nullptr) {
+    
+  } else {
+    
+  }
+  msg_type_.SetAllocated(msg_type, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (msg_type_.IsDefault()) {
+    msg_type_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:simple_ros.GetTopicInfoResponse.msg_type)
+}
+
+// repeated .simple_ros.NodeInfo publishers = 5;
+inline int GetTopicInfoResponse::_internal_publishers_size() const {
+  return publishers_.size();
+}
+inline int GetTopicInfoResponse::publishers_size() const {
+  return _internal_publishers_size();
+}
+inline void GetTopicInfoResponse::clear_publishers() {
+  publishers_.Clear();
+}
+inline ::simple_ros::NodeInfo* GetTopicInfoResponse::mutable_publishers(int index) {
+  // @@protoc_insertion_point(field_mutable:simple_ros.GetTopicInfoResponse.publishers)
+  return publishers_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::NodeInfo >*
+GetTopicInfoResponse::mutable_publishers() {
+  // @@protoc_insertion_point(field_mutable_list:simple_ros.GetTopicInfoResponse.publishers)
+  return &publishers_;
+}
+inline const ::simple_ros::NodeInfo& GetTopicInfoResponse::_internal_publishers(int index) const {
+  return publishers_.Get(index);
+}
+inline const ::simple_ros::NodeInfo& GetTopicInfoResponse::publishers(int index) const {
+  // @@protoc_insertion_point(field_get:simple_ros.GetTopicInfoResponse.publishers)
+  return _internal_publishers(index);
+}
+inline ::simple_ros::NodeInfo* GetTopicInfoResponse::_internal_add_publishers() {
+  return publishers_.Add();
+}
+inline ::simple_ros::NodeInfo* GetTopicInfoResponse::add_publishers() {
+  ::simple_ros::NodeInfo* _add = _internal_add_publishers();
+  // @@protoc_insertion_point(field_add:simple_ros.GetTopicInfoResponse.publishers)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::NodeInfo >&
+GetTopicInfoResponse::publishers() const {
+  // @@protoc_insertion_point(field_list:simple_ros.GetTopicInfoResponse.publishers)
+  return publishers_;
+}
+
+// repeated .simple_ros.NodeInfo subscribers = 6;
+inline int GetTopicInfoResponse::_internal_subscribers_size() const {
+  return subscribers_.size();
+}
+inline int GetTopicInfoResponse::subscribers_size() const {
+  return _internal_subscribers_size();
+}
+inline void GetTopicInfoResponse::clear_subscribers() {
+  subscribers_.Clear();
+}
+inline ::simple_ros::NodeInfo* GetTopicInfoResponse::mutable_subscribers(int index) {
+  // @@protoc_insertion_point(field_mutable:simple_ros.GetTopicInfoResponse.subscribers)
+  return subscribers_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::NodeInfo >*
+GetTopicInfoResponse::mutable_subscribers() {
+  // @@protoc_insertion_point(field_mutable_list:simple_ros.GetTopicInfoResponse.subscribers)
+  return &subscribers_;
+}
+inline const ::simple_ros::NodeInfo& GetTopicInfoResponse::_internal_subscribers(int index) const {
+  return subscribers_.Get(index);
+}
+inline const ::simple_ros::NodeInfo& GetTopicInfoResponse::subscribers(int index) const {
+  // @@protoc_insertion_point(field_get:simple_ros.GetTopicInfoResponse.subscribers)
+  return _internal_subscribers(index);
+}
+inline ::simple_ros::NodeInfo* GetTopicInfoResponse::_internal_add_subscribers() {
+  return subscribers_.Add();
+}
+inline ::simple_ros::NodeInfo* GetTopicInfoResponse::add_subscribers() {
+  ::simple_ros::NodeInfo* _add = _internal_add_subscribers();
+  // @@protoc_insertion_point(field_add:simple_ros.GetTopicInfoResponse.subscribers)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::simple_ros::NodeInfo >&
+GetTopicInfoResponse::subscribers() const {
+  // @@protoc_insertion_point(field_list:simple_ros.GetTopicInfoResponse.subscribers)
+  return subscribers_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 

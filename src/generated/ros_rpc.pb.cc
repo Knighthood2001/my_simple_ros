@@ -35,8 +35,253 @@ struct NodeInfoDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 NodeInfoDefaultTypeInternal _NodeInfo_default_instance_;
+PROTOBUF_CONSTEXPR TopicTargetsUpdate::TopicTargetsUpdate(
+    ::_pbi::ConstantInitialized)
+  : add_targets_()
+  , remove_targets_()
+  , topic_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}){}
+struct TopicTargetsUpdateDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR TopicTargetsUpdateDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~TopicTargetsUpdateDefaultTypeInternal() {}
+  union {
+    TopicTargetsUpdate _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 TopicTargetsUpdateDefaultTypeInternal _TopicTargetsUpdate_default_instance_;
+PROTOBUF_CONSTEXPR TopicInfo::TopicInfo(
+    ::_pbi::ConstantInitialized)
+  : topic_name_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , msg_type_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}){}
+struct TopicInfoDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR TopicInfoDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~TopicInfoDefaultTypeInternal() {}
+  union {
+    TopicInfo _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 TopicInfoDefaultTypeInternal _TopicInfo_default_instance_;
+PROTOBUF_CONSTEXPR SubscribeRequest::SubscribeRequest(
+    ::_pbi::ConstantInitialized)
+  : topic_name_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , msg_type_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , node_info_(nullptr){}
+struct SubscribeRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SubscribeRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SubscribeRequestDefaultTypeInternal() {}
+  union {
+    SubscribeRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SubscribeRequestDefaultTypeInternal _SubscribeRequest_default_instance_;
+PROTOBUF_CONSTEXPR SubscribeResponse::SubscribeResponse(
+    ::_pbi::ConstantInitialized)
+  : node_info_()
+  , message_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , success_(false){}
+struct SubscribeResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SubscribeResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SubscribeResponseDefaultTypeInternal() {}
+  union {
+    SubscribeResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SubscribeResponseDefaultTypeInternal _SubscribeResponse_default_instance_;
+PROTOBUF_CONSTEXPR RegisterPublisherRequest::RegisterPublisherRequest(
+    ::_pbi::ConstantInitialized)
+  : topic_name_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , msg_type_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , node_info_(nullptr){}
+struct RegisterPublisherRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR RegisterPublisherRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~RegisterPublisherRequestDefaultTypeInternal() {}
+  union {
+    RegisterPublisherRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RegisterPublisherRequestDefaultTypeInternal _RegisterPublisherRequest_default_instance_;
+PROTOBUF_CONSTEXPR RegisterPublisherResponse::RegisterPublisherResponse(
+    ::_pbi::ConstantInitialized)
+  : message_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , success_(false){}
+struct RegisterPublisherResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR RegisterPublisherResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~RegisterPublisherResponseDefaultTypeInternal() {}
+  union {
+    RegisterPublisherResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RegisterPublisherResponseDefaultTypeInternal _RegisterPublisherResponse_default_instance_;
+PROTOBUF_CONSTEXPR UnsubscribeRequest::UnsubscribeRequest(
+    ::_pbi::ConstantInitialized)
+  : topic_name_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , msg_type_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , node_info_(nullptr){}
+struct UnsubscribeRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR UnsubscribeRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~UnsubscribeRequestDefaultTypeInternal() {}
+  union {
+    UnsubscribeRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 UnsubscribeRequestDefaultTypeInternal _UnsubscribeRequest_default_instance_;
+PROTOBUF_CONSTEXPR UnsubscribeResponse::UnsubscribeResponse(
+    ::_pbi::ConstantInitialized)
+  : message_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , success_(false){}
+struct UnsubscribeResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR UnsubscribeResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~UnsubscribeResponseDefaultTypeInternal() {}
+  union {
+    UnsubscribeResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 UnsubscribeResponseDefaultTypeInternal _UnsubscribeResponse_default_instance_;
+PROTOBUF_CONSTEXPR UnregisterPublisherRequest::UnregisterPublisherRequest(
+    ::_pbi::ConstantInitialized)
+  : topic_name_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , msg_type_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , node_info_(nullptr){}
+struct UnregisterPublisherRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR UnregisterPublisherRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~UnregisterPublisherRequestDefaultTypeInternal() {}
+  union {
+    UnregisterPublisherRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 UnregisterPublisherRequestDefaultTypeInternal _UnregisterPublisherRequest_default_instance_;
+PROTOBUF_CONSTEXPR UnregisterPublisherResponse::UnregisterPublisherResponse(
+    ::_pbi::ConstantInitialized)
+  : message_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , success_(false){}
+struct UnregisterPublisherResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR UnregisterPublisherResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~UnregisterPublisherResponseDefaultTypeInternal() {}
+  union {
+    UnregisterPublisherResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 UnregisterPublisherResponseDefaultTypeInternal _UnregisterPublisherResponse_default_instance_;
+PROTOBUF_CONSTEXPR GetNodesRequest::GetNodesRequest(
+    ::_pbi::ConstantInitialized)
+  : filter_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}){}
+struct GetNodesRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetNodesRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GetNodesRequestDefaultTypeInternal() {}
+  union {
+    GetNodesRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetNodesRequestDefaultTypeInternal _GetNodesRequest_default_instance_;
+PROTOBUF_CONSTEXPR GetNodesResponse::GetNodesResponse(
+    ::_pbi::ConstantInitialized)
+  : nodes_()
+  , message_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , success_(false){}
+struct GetNodesResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetNodesResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GetNodesResponseDefaultTypeInternal() {}
+  union {
+    GetNodesResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetNodesResponseDefaultTypeInternal _GetNodesResponse_default_instance_;
+PROTOBUF_CONSTEXPR GetNodeInfoRequest::GetNodeInfoRequest(
+    ::_pbi::ConstantInitialized)
+  : node_name_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}){}
+struct GetNodeInfoRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetNodeInfoRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GetNodeInfoRequestDefaultTypeInternal() {}
+  union {
+    GetNodeInfoRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetNodeInfoRequestDefaultTypeInternal _GetNodeInfoRequest_default_instance_;
+PROTOBUF_CONSTEXPR GetNodeInfoResponse::GetNodeInfoResponse(
+    ::_pbi::ConstantInitialized)
+  : publishes_()
+  , subscribes_()
+  , message_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , node_info_(nullptr)
+  , success_(false){}
+struct GetNodeInfoResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetNodeInfoResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GetNodeInfoResponseDefaultTypeInternal() {}
+  union {
+    GetNodeInfoResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetNodeInfoResponseDefaultTypeInternal _GetNodeInfoResponse_default_instance_;
+PROTOBUF_CONSTEXPR GetTopicsRequest::GetTopicsRequest(
+    ::_pbi::ConstantInitialized)
+  : filter_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}){}
+struct GetTopicsRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetTopicsRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GetTopicsRequestDefaultTypeInternal() {}
+  union {
+    GetTopicsRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetTopicsRequestDefaultTypeInternal _GetTopicsRequest_default_instance_;
+PROTOBUF_CONSTEXPR GetTopicsResponse::GetTopicsResponse(
+    ::_pbi::ConstantInitialized)
+  : topics_()
+  , message_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , success_(false){}
+struct GetTopicsResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetTopicsResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GetTopicsResponseDefaultTypeInternal() {}
+  union {
+    GetTopicsResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetTopicsResponseDefaultTypeInternal _GetTopicsResponse_default_instance_;
+PROTOBUF_CONSTEXPR GetTopicInfoRequest::GetTopicInfoRequest(
+    ::_pbi::ConstantInitialized)
+  : topic_name_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}){}
+struct GetTopicInfoRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetTopicInfoRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GetTopicInfoRequestDefaultTypeInternal() {}
+  union {
+    GetTopicInfoRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetTopicInfoRequestDefaultTypeInternal _GetTopicInfoRequest_default_instance_;
+PROTOBUF_CONSTEXPR GetTopicInfoResponse::GetTopicInfoResponse(
+    ::_pbi::ConstantInitialized)
+  : publishers_()
+  , subscribers_()
+  , message_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , topic_name_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , msg_type_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , success_(false){}
+struct GetTopicInfoResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetTopicInfoResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GetTopicInfoResponseDefaultTypeInternal() {}
+  union {
+    GetTopicInfoResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetTopicInfoResponseDefaultTypeInternal _GetTopicInfoResponse_default_instance_;
 }  // namespace simple_ros
-static ::_pb::Metadata file_level_metadata_ros_5frpc_2eproto[1];
+static ::_pb::Metadata file_level_metadata_ros_5frpc_2eproto[19];
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_ros_5frpc_2eproto = nullptr;
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_ros_5frpc_2eproto = nullptr;
 
@@ -50,25 +295,272 @@ const uint32_t TableStruct_ros_5frpc_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
   PROTOBUF_FIELD_OFFSET(::simple_ros::NodeInfo, ip_),
   PROTOBUF_FIELD_OFFSET(::simple_ros::NodeInfo, port_),
   PROTOBUF_FIELD_OFFSET(::simple_ros::NodeInfo, node_name_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::simple_ros::TopicTargetsUpdate, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::simple_ros::TopicTargetsUpdate, topic_),
+  PROTOBUF_FIELD_OFFSET(::simple_ros::TopicTargetsUpdate, add_targets_),
+  PROTOBUF_FIELD_OFFSET(::simple_ros::TopicTargetsUpdate, remove_targets_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::simple_ros::TopicInfo, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::simple_ros::TopicInfo, topic_name_),
+  PROTOBUF_FIELD_OFFSET(::simple_ros::TopicInfo, msg_type_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::simple_ros::SubscribeRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::simple_ros::SubscribeRequest, topic_name_),
+  PROTOBUF_FIELD_OFFSET(::simple_ros::SubscribeRequest, msg_type_),
+  PROTOBUF_FIELD_OFFSET(::simple_ros::SubscribeRequest, node_info_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::simple_ros::SubscribeResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::simple_ros::SubscribeResponse, success_),
+  PROTOBUF_FIELD_OFFSET(::simple_ros::SubscribeResponse, message_),
+  PROTOBUF_FIELD_OFFSET(::simple_ros::SubscribeResponse, node_info_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::simple_ros::RegisterPublisherRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::simple_ros::RegisterPublisherRequest, topic_name_),
+  PROTOBUF_FIELD_OFFSET(::simple_ros::RegisterPublisherRequest, msg_type_),
+  PROTOBUF_FIELD_OFFSET(::simple_ros::RegisterPublisherRequest, node_info_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::simple_ros::RegisterPublisherResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::simple_ros::RegisterPublisherResponse, success_),
+  PROTOBUF_FIELD_OFFSET(::simple_ros::RegisterPublisherResponse, message_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::simple_ros::UnsubscribeRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::simple_ros::UnsubscribeRequest, topic_name_),
+  PROTOBUF_FIELD_OFFSET(::simple_ros::UnsubscribeRequest, msg_type_),
+  PROTOBUF_FIELD_OFFSET(::simple_ros::UnsubscribeRequest, node_info_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::simple_ros::UnsubscribeResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::simple_ros::UnsubscribeResponse, success_),
+  PROTOBUF_FIELD_OFFSET(::simple_ros::UnsubscribeResponse, message_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::simple_ros::UnregisterPublisherRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::simple_ros::UnregisterPublisherRequest, topic_name_),
+  PROTOBUF_FIELD_OFFSET(::simple_ros::UnregisterPublisherRequest, msg_type_),
+  PROTOBUF_FIELD_OFFSET(::simple_ros::UnregisterPublisherRequest, node_info_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::simple_ros::UnregisterPublisherResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::simple_ros::UnregisterPublisherResponse, success_),
+  PROTOBUF_FIELD_OFFSET(::simple_ros::UnregisterPublisherResponse, message_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::simple_ros::GetNodesRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::simple_ros::GetNodesRequest, filter_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::simple_ros::GetNodesResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::simple_ros::GetNodesResponse, success_),
+  PROTOBUF_FIELD_OFFSET(::simple_ros::GetNodesResponse, message_),
+  PROTOBUF_FIELD_OFFSET(::simple_ros::GetNodesResponse, nodes_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::simple_ros::GetNodeInfoRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::simple_ros::GetNodeInfoRequest, node_name_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::simple_ros::GetNodeInfoResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::simple_ros::GetNodeInfoResponse, success_),
+  PROTOBUF_FIELD_OFFSET(::simple_ros::GetNodeInfoResponse, message_),
+  PROTOBUF_FIELD_OFFSET(::simple_ros::GetNodeInfoResponse, node_info_),
+  PROTOBUF_FIELD_OFFSET(::simple_ros::GetNodeInfoResponse, publishes_),
+  PROTOBUF_FIELD_OFFSET(::simple_ros::GetNodeInfoResponse, subscribes_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::simple_ros::GetTopicsRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::simple_ros::GetTopicsRequest, filter_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::simple_ros::GetTopicsResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::simple_ros::GetTopicsResponse, success_),
+  PROTOBUF_FIELD_OFFSET(::simple_ros::GetTopicsResponse, message_),
+  PROTOBUF_FIELD_OFFSET(::simple_ros::GetTopicsResponse, topics_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::simple_ros::GetTopicInfoRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::simple_ros::GetTopicInfoRequest, topic_name_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::simple_ros::GetTopicInfoResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::simple_ros::GetTopicInfoResponse, success_),
+  PROTOBUF_FIELD_OFFSET(::simple_ros::GetTopicInfoResponse, message_),
+  PROTOBUF_FIELD_OFFSET(::simple_ros::GetTopicInfoResponse, topic_name_),
+  PROTOBUF_FIELD_OFFSET(::simple_ros::GetTopicInfoResponse, msg_type_),
+  PROTOBUF_FIELD_OFFSET(::simple_ros::GetTopicInfoResponse, publishers_),
+  PROTOBUF_FIELD_OFFSET(::simple_ros::GetTopicInfoResponse, subscribers_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::simple_ros::NodeInfo)},
+  { 9, -1, -1, sizeof(::simple_ros::TopicTargetsUpdate)},
+  { 18, -1, -1, sizeof(::simple_ros::TopicInfo)},
+  { 26, -1, -1, sizeof(::simple_ros::SubscribeRequest)},
+  { 35, -1, -1, sizeof(::simple_ros::SubscribeResponse)},
+  { 44, -1, -1, sizeof(::simple_ros::RegisterPublisherRequest)},
+  { 53, -1, -1, sizeof(::simple_ros::RegisterPublisherResponse)},
+  { 61, -1, -1, sizeof(::simple_ros::UnsubscribeRequest)},
+  { 70, -1, -1, sizeof(::simple_ros::UnsubscribeResponse)},
+  { 78, -1, -1, sizeof(::simple_ros::UnregisterPublisherRequest)},
+  { 87, -1, -1, sizeof(::simple_ros::UnregisterPublisherResponse)},
+  { 95, -1, -1, sizeof(::simple_ros::GetNodesRequest)},
+  { 102, -1, -1, sizeof(::simple_ros::GetNodesResponse)},
+  { 111, -1, -1, sizeof(::simple_ros::GetNodeInfoRequest)},
+  { 118, -1, -1, sizeof(::simple_ros::GetNodeInfoResponse)},
+  { 129, -1, -1, sizeof(::simple_ros::GetTopicsRequest)},
+  { 136, -1, -1, sizeof(::simple_ros::GetTopicsResponse)},
+  { 145, -1, -1, sizeof(::simple_ros::GetTopicInfoRequest)},
+  { 152, -1, -1, sizeof(::simple_ros::GetTopicInfoResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
   &::simple_ros::_NodeInfo_default_instance_._instance,
+  &::simple_ros::_TopicTargetsUpdate_default_instance_._instance,
+  &::simple_ros::_TopicInfo_default_instance_._instance,
+  &::simple_ros::_SubscribeRequest_default_instance_._instance,
+  &::simple_ros::_SubscribeResponse_default_instance_._instance,
+  &::simple_ros::_RegisterPublisherRequest_default_instance_._instance,
+  &::simple_ros::_RegisterPublisherResponse_default_instance_._instance,
+  &::simple_ros::_UnsubscribeRequest_default_instance_._instance,
+  &::simple_ros::_UnsubscribeResponse_default_instance_._instance,
+  &::simple_ros::_UnregisterPublisherRequest_default_instance_._instance,
+  &::simple_ros::_UnregisterPublisherResponse_default_instance_._instance,
+  &::simple_ros::_GetNodesRequest_default_instance_._instance,
+  &::simple_ros::_GetNodesResponse_default_instance_._instance,
+  &::simple_ros::_GetNodeInfoRequest_default_instance_._instance,
+  &::simple_ros::_GetNodeInfoResponse_default_instance_._instance,
+  &::simple_ros::_GetTopicsRequest_default_instance_._instance,
+  &::simple_ros::_GetTopicsResponse_default_instance_._instance,
+  &::simple_ros::_GetTopicInfoRequest_default_instance_._instance,
+  &::simple_ros::_GetTopicInfoResponse_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_ros_5frpc_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\rros_rpc.proto\022\nsimple_ros\"7\n\010NodeInfo\022"
   "\n\n\002ip\030\001 \001(\t\022\014\n\004port\030\002 \001(\005\022\021\n\tnode_name\030\003"
-  " \001(\tb\006proto3"
+  " \001(\t\"|\n\022TopicTargetsUpdate\022\r\n\005topic\030\001 \001("
+  "\t\022)\n\013add_targets\030\002 \003(\0132\024.simple_ros.Node"
+  "Info\022,\n\016remove_targets\030\003 \003(\0132\024.simple_ro"
+  "s.NodeInfo\"1\n\tTopicInfo\022\022\n\ntopic_name\030\001 "
+  "\001(\t\022\020\n\010msg_type\030\002 \001(\t\"a\n\020SubscribeReques"
+  "t\022\022\n\ntopic_name\030\001 \001(\t\022\020\n\010msg_type\030\002 \001(\t\022"
+  "\'\n\tnode_info\030\003 \001(\0132\024.simple_ros.NodeInfo"
+  "\"^\n\021SubscribeResponse\022\017\n\007success\030\001 \001(\010\022\017"
+  "\n\007message\030\002 \001(\t\022\'\n\tnode_info\030\003 \003(\0132\024.sim"
+  "ple_ros.NodeInfo\"i\n\030RegisterPublisherReq"
+  "uest\022\022\n\ntopic_name\030\001 \001(\t\022\020\n\010msg_type\030\002 \001"
+  "(\t\022\'\n\tnode_info\030\003 \001(\0132\024.simple_ros.NodeI"
+  "nfo\"=\n\031RegisterPublisherResponse\022\017\n\007succ"
+  "ess\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\"c\n\022Unsubscrib"
+  "eRequest\022\022\n\ntopic_name\030\001 \001(\t\022\020\n\010msg_type"
+  "\030\002 \001(\t\022\'\n\tnode_info\030\003 \001(\0132\024.simple_ros.N"
+  "odeInfo\"7\n\023UnsubscribeResponse\022\017\n\007succes"
+  "s\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\"k\n\032UnregisterPu"
+  "blisherRequest\022\022\n\ntopic_name\030\001 \001(\t\022\020\n\010ms"
+  "g_type\030\002 \001(\t\022\'\n\tnode_info\030\003 \001(\0132\024.simple"
+  "_ros.NodeInfo\"\?\n\033UnregisterPublisherResp"
+  "onse\022\017\n\007success\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\"!"
+  "\n\017GetNodesRequest\022\016\n\006filter\030\001 \001(\t\"Y\n\020Get"
+  "NodesResponse\022\017\n\007success\030\001 \001(\010\022\017\n\007messag"
+  "e\030\002 \001(\t\022#\n\005nodes\030\003 \003(\0132\024.simple_ros.Node"
+  "Info\"\'\n\022GetNodeInfoRequest\022\021\n\tnode_name\030"
+  "\001 \001(\t\"\265\001\n\023GetNodeInfoResponse\022\017\n\007success"
+  "\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\022\'\n\tnode_info\030\003 \001"
+  "(\0132\024.simple_ros.NodeInfo\022(\n\tpublishes\030\004 "
+  "\003(\0132\025.simple_ros.TopicInfo\022)\n\nsubscribes"
+  "\030\005 \003(\0132\025.simple_ros.TopicInfo\"\"\n\020GetTopi"
+  "csRequest\022\016\n\006filter\030\001 \001(\t\"\\\n\021GetTopicsRe"
+  "sponse\022\017\n\007success\030\001 \001(\010\022\017\n\007message\030\002 \001(\t"
+  "\022%\n\006topics\030\003 \003(\0132\025.simple_ros.TopicInfo\""
+  ")\n\023GetTopicInfoRequest\022\022\n\ntopic_name\030\001 \001"
+  "(\t\"\263\001\n\024GetTopicInfoResponse\022\017\n\007success\030\001"
+  " \001(\010\022\017\n\007message\030\002 \001(\t\022\022\n\ntopic_name\030\003 \001("
+  "\t\022\020\n\010msg_type\030\004 \001(\t\022(\n\npublishers\030\005 \003(\0132"
+  "\024.simple_ros.NodeInfo\022)\n\013subscribers\030\006 \003"
+  "(\0132\024.simple_ros.NodeInfo2\247\005\n\rRosRpcServi"
+  "ce\022H\n\tSubscribe\022\034.simple_ros.SubscribeRe"
+  "quest\032\035.simple_ros.SubscribeResponse\022`\n\021"
+  "RegisterPublisher\022$.simple_ros.RegisterP"
+  "ublisherRequest\032%.simple_ros.RegisterPub"
+  "lisherResponse\022N\n\013Unsubscribe\022\036.simple_r"
+  "os.UnsubscribeRequest\032\037.simple_ros.Unsub"
+  "scribeResponse\022f\n\023UnregisterPublisher\022&."
+  "simple_ros.UnregisterPublisherRequest\032\'."
+  "simple_ros.UnregisterPublisherResponse\022E"
+  "\n\010GetNodes\022\033.simple_ros.GetNodesRequest\032"
+  "\034.simple_ros.GetNodesResponse\022N\n\013GetNode"
+  "Info\022\036.simple_ros.GetNodeInfoRequest\032\037.s"
+  "imple_ros.GetNodeInfoResponse\022H\n\tGetTopi"
+  "cs\022\034.simple_ros.GetTopicsRequest\032\035.simpl"
+  "e_ros.GetTopicsResponse\022Q\n\014GetTopicInfo\022"
+  "\037.simple_ros.GetTopicInfoRequest\032 .simpl"
+  "e_ros.GetTopicInfoResponseb\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_ros_5frpc_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_ros_5frpc_2eproto = {
-    false, false, 92, descriptor_table_protodef_ros_5frpc_2eproto,
+    false, false, 2354, descriptor_table_protodef_ros_5frpc_2eproto,
     "ros_rpc.proto",
-    &descriptor_table_ros_5frpc_2eproto_once, nullptr, 0, 1,
+    &descriptor_table_ros_5frpc_2eproto_once, nullptr, 0, 19,
     schemas, file_default_instances, TableStruct_ros_5frpc_2eproto::offsets,
     file_level_metadata_ros_5frpc_2eproto, file_level_enum_descriptors_ros_5frpc_2eproto,
     file_level_service_descriptors_ros_5frpc_2eproto,
@@ -350,12 +842,4651 @@ void NodeInfo::InternalSwap(NodeInfo* other) {
       file_level_metadata_ros_5frpc_2eproto[0]);
 }
 
+// ===================================================================
+
+class TopicTargetsUpdate::_Internal {
+ public:
+};
+
+TopicTargetsUpdate::TopicTargetsUpdate(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  add_targets_(arena),
+  remove_targets_(arena) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:simple_ros.TopicTargetsUpdate)
+}
+TopicTargetsUpdate::TopicTargetsUpdate(const TopicTargetsUpdate& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      add_targets_(from.add_targets_),
+      remove_targets_(from.remove_targets_) {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  topic_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    topic_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_topic().empty()) {
+    topic_.Set(from._internal_topic(), 
+      GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:simple_ros.TopicTargetsUpdate)
+}
+
+inline void TopicTargetsUpdate::SharedCtor() {
+topic_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  topic_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+TopicTargetsUpdate::~TopicTargetsUpdate() {
+  // @@protoc_insertion_point(destructor:simple_ros.TopicTargetsUpdate)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void TopicTargetsUpdate::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  topic_.Destroy();
+}
+
+void TopicTargetsUpdate::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void TopicTargetsUpdate::Clear() {
+// @@protoc_insertion_point(message_clear_start:simple_ros.TopicTargetsUpdate)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  add_targets_.Clear();
+  remove_targets_.Clear();
+  topic_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* TopicTargetsUpdate::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string topic = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_topic();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "simple_ros.TopicTargetsUpdate.topic"));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .simple_ros.NodeInfo add_targets = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_add_targets(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .simple_ros.NodeInfo remove_targets = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_remove_targets(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* TopicTargetsUpdate::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:simple_ros.TopicTargetsUpdate)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string topic = 1;
+  if (!this->_internal_topic().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_topic().data(), static_cast<int>(this->_internal_topic().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "simple_ros.TopicTargetsUpdate.topic");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_topic(), target);
+  }
+
+  // repeated .simple_ros.NodeInfo add_targets = 2;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_add_targets_size()); i < n; i++) {
+    const auto& repfield = this->_internal_add_targets(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(2, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  // repeated .simple_ros.NodeInfo remove_targets = 3;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_remove_targets_size()); i < n; i++) {
+    const auto& repfield = this->_internal_remove_targets(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(3, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:simple_ros.TopicTargetsUpdate)
+  return target;
+}
+
+size_t TopicTargetsUpdate::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:simple_ros.TopicTargetsUpdate)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .simple_ros.NodeInfo add_targets = 2;
+  total_size += 1UL * this->_internal_add_targets_size();
+  for (const auto& msg : this->add_targets_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .simple_ros.NodeInfo remove_targets = 3;
+  total_size += 1UL * this->_internal_remove_targets_size();
+  for (const auto& msg : this->remove_targets_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // string topic = 1;
+  if (!this->_internal_topic().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_topic());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData TopicTargetsUpdate::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    TopicTargetsUpdate::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*TopicTargetsUpdate::GetClassData() const { return &_class_data_; }
+
+void TopicTargetsUpdate::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<TopicTargetsUpdate *>(to)->MergeFrom(
+      static_cast<const TopicTargetsUpdate &>(from));
+}
+
+
+void TopicTargetsUpdate::MergeFrom(const TopicTargetsUpdate& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:simple_ros.TopicTargetsUpdate)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  add_targets_.MergeFrom(from.add_targets_);
+  remove_targets_.MergeFrom(from.remove_targets_);
+  if (!from._internal_topic().empty()) {
+    _internal_set_topic(from._internal_topic());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void TopicTargetsUpdate::CopyFrom(const TopicTargetsUpdate& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:simple_ros.TopicTargetsUpdate)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool TopicTargetsUpdate::IsInitialized() const {
+  return true;
+}
+
+void TopicTargetsUpdate::InternalSwap(TopicTargetsUpdate* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  add_targets_.InternalSwap(&other->add_targets_);
+  remove_targets_.InternalSwap(&other->remove_targets_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &topic_, lhs_arena,
+      &other->topic_, rhs_arena
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata TopicTargetsUpdate::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_ros_5frpc_2eproto_getter, &descriptor_table_ros_5frpc_2eproto_once,
+      file_level_metadata_ros_5frpc_2eproto[1]);
+}
+
+// ===================================================================
+
+class TopicInfo::_Internal {
+ public:
+};
+
+TopicInfo::TopicInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:simple_ros.TopicInfo)
+}
+TopicInfo::TopicInfo(const TopicInfo& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  topic_name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    topic_name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_topic_name().empty()) {
+    topic_name_.Set(from._internal_topic_name(), 
+      GetArenaForAllocation());
+  }
+  msg_type_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    msg_type_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_msg_type().empty()) {
+    msg_type_.Set(from._internal_msg_type(), 
+      GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:simple_ros.TopicInfo)
+}
+
+inline void TopicInfo::SharedCtor() {
+topic_name_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  topic_name_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+msg_type_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  msg_type_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+TopicInfo::~TopicInfo() {
+  // @@protoc_insertion_point(destructor:simple_ros.TopicInfo)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void TopicInfo::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  topic_name_.Destroy();
+  msg_type_.Destroy();
+}
+
+void TopicInfo::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void TopicInfo::Clear() {
+// @@protoc_insertion_point(message_clear_start:simple_ros.TopicInfo)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  topic_name_.ClearToEmpty();
+  msg_type_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* TopicInfo::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string topic_name = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_topic_name();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "simple_ros.TopicInfo.topic_name"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string msg_type = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_msg_type();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "simple_ros.TopicInfo.msg_type"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* TopicInfo::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:simple_ros.TopicInfo)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string topic_name = 1;
+  if (!this->_internal_topic_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_topic_name().data(), static_cast<int>(this->_internal_topic_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "simple_ros.TopicInfo.topic_name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_topic_name(), target);
+  }
+
+  // string msg_type = 2;
+  if (!this->_internal_msg_type().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_msg_type().data(), static_cast<int>(this->_internal_msg_type().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "simple_ros.TopicInfo.msg_type");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_msg_type(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:simple_ros.TopicInfo)
+  return target;
+}
+
+size_t TopicInfo::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:simple_ros.TopicInfo)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string topic_name = 1;
+  if (!this->_internal_topic_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_topic_name());
+  }
+
+  // string msg_type = 2;
+  if (!this->_internal_msg_type().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_msg_type());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData TopicInfo::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    TopicInfo::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*TopicInfo::GetClassData() const { return &_class_data_; }
+
+void TopicInfo::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<TopicInfo *>(to)->MergeFrom(
+      static_cast<const TopicInfo &>(from));
+}
+
+
+void TopicInfo::MergeFrom(const TopicInfo& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:simple_ros.TopicInfo)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_topic_name().empty()) {
+    _internal_set_topic_name(from._internal_topic_name());
+  }
+  if (!from._internal_msg_type().empty()) {
+    _internal_set_msg_type(from._internal_msg_type());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void TopicInfo::CopyFrom(const TopicInfo& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:simple_ros.TopicInfo)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool TopicInfo::IsInitialized() const {
+  return true;
+}
+
+void TopicInfo::InternalSwap(TopicInfo* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &topic_name_, lhs_arena,
+      &other->topic_name_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &msg_type_, lhs_arena,
+      &other->msg_type_, rhs_arena
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata TopicInfo::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_ros_5frpc_2eproto_getter, &descriptor_table_ros_5frpc_2eproto_once,
+      file_level_metadata_ros_5frpc_2eproto[2]);
+}
+
+// ===================================================================
+
+class SubscribeRequest::_Internal {
+ public:
+  static const ::simple_ros::NodeInfo& node_info(const SubscribeRequest* msg);
+};
+
+const ::simple_ros::NodeInfo&
+SubscribeRequest::_Internal::node_info(const SubscribeRequest* msg) {
+  return *msg->node_info_;
+}
+SubscribeRequest::SubscribeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:simple_ros.SubscribeRequest)
+}
+SubscribeRequest::SubscribeRequest(const SubscribeRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  topic_name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    topic_name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_topic_name().empty()) {
+    topic_name_.Set(from._internal_topic_name(), 
+      GetArenaForAllocation());
+  }
+  msg_type_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    msg_type_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_msg_type().empty()) {
+    msg_type_.Set(from._internal_msg_type(), 
+      GetArenaForAllocation());
+  }
+  if (from._internal_has_node_info()) {
+    node_info_ = new ::simple_ros::NodeInfo(*from.node_info_);
+  } else {
+    node_info_ = nullptr;
+  }
+  // @@protoc_insertion_point(copy_constructor:simple_ros.SubscribeRequest)
+}
+
+inline void SubscribeRequest::SharedCtor() {
+topic_name_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  topic_name_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+msg_type_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  msg_type_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+node_info_ = nullptr;
+}
+
+SubscribeRequest::~SubscribeRequest() {
+  // @@protoc_insertion_point(destructor:simple_ros.SubscribeRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void SubscribeRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  topic_name_.Destroy();
+  msg_type_.Destroy();
+  if (this != internal_default_instance()) delete node_info_;
+}
+
+void SubscribeRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void SubscribeRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:simple_ros.SubscribeRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  topic_name_.ClearToEmpty();
+  msg_type_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && node_info_ != nullptr) {
+    delete node_info_;
+  }
+  node_info_ = nullptr;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* SubscribeRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string topic_name = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_topic_name();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "simple_ros.SubscribeRequest.topic_name"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string msg_type = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_msg_type();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "simple_ros.SubscribeRequest.msg_type"));
+        } else
+          goto handle_unusual;
+        continue;
+      // .simple_ros.NodeInfo node_info = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_node_info(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* SubscribeRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:simple_ros.SubscribeRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string topic_name = 1;
+  if (!this->_internal_topic_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_topic_name().data(), static_cast<int>(this->_internal_topic_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "simple_ros.SubscribeRequest.topic_name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_topic_name(), target);
+  }
+
+  // string msg_type = 2;
+  if (!this->_internal_msg_type().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_msg_type().data(), static_cast<int>(this->_internal_msg_type().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "simple_ros.SubscribeRequest.msg_type");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_msg_type(), target);
+  }
+
+  // .simple_ros.NodeInfo node_info = 3;
+  if (this->_internal_has_node_info()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(3, _Internal::node_info(this),
+        _Internal::node_info(this).GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:simple_ros.SubscribeRequest)
+  return target;
+}
+
+size_t SubscribeRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:simple_ros.SubscribeRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string topic_name = 1;
+  if (!this->_internal_topic_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_topic_name());
+  }
+
+  // string msg_type = 2;
+  if (!this->_internal_msg_type().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_msg_type());
+  }
+
+  // .simple_ros.NodeInfo node_info = 3;
+  if (this->_internal_has_node_info()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *node_info_);
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SubscribeRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    SubscribeRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SubscribeRequest::GetClassData() const { return &_class_data_; }
+
+void SubscribeRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<SubscribeRequest *>(to)->MergeFrom(
+      static_cast<const SubscribeRequest &>(from));
+}
+
+
+void SubscribeRequest::MergeFrom(const SubscribeRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:simple_ros.SubscribeRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_topic_name().empty()) {
+    _internal_set_topic_name(from._internal_topic_name());
+  }
+  if (!from._internal_msg_type().empty()) {
+    _internal_set_msg_type(from._internal_msg_type());
+  }
+  if (from._internal_has_node_info()) {
+    _internal_mutable_node_info()->::simple_ros::NodeInfo::MergeFrom(from._internal_node_info());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void SubscribeRequest::CopyFrom(const SubscribeRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:simple_ros.SubscribeRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool SubscribeRequest::IsInitialized() const {
+  return true;
+}
+
+void SubscribeRequest::InternalSwap(SubscribeRequest* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &topic_name_, lhs_arena,
+      &other->topic_name_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &msg_type_, lhs_arena,
+      &other->msg_type_, rhs_arena
+  );
+  swap(node_info_, other->node_info_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata SubscribeRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_ros_5frpc_2eproto_getter, &descriptor_table_ros_5frpc_2eproto_once,
+      file_level_metadata_ros_5frpc_2eproto[3]);
+}
+
+// ===================================================================
+
+class SubscribeResponse::_Internal {
+ public:
+};
+
+SubscribeResponse::SubscribeResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  node_info_(arena) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:simple_ros.SubscribeResponse)
+}
+SubscribeResponse::SubscribeResponse(const SubscribeResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      node_info_(from.node_info_) {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  message_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    message_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_message().empty()) {
+    message_.Set(from._internal_message(), 
+      GetArenaForAllocation());
+  }
+  success_ = from.success_;
+  // @@protoc_insertion_point(copy_constructor:simple_ros.SubscribeResponse)
+}
+
+inline void SubscribeResponse::SharedCtor() {
+message_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  message_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+success_ = false;
+}
+
+SubscribeResponse::~SubscribeResponse() {
+  // @@protoc_insertion_point(destructor:simple_ros.SubscribeResponse)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void SubscribeResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  message_.Destroy();
+}
+
+void SubscribeResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void SubscribeResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:simple_ros.SubscribeResponse)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  node_info_.Clear();
+  message_.ClearToEmpty();
+  success_ = false;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* SubscribeResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // bool success = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          success_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string message = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_message();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "simple_ros.SubscribeResponse.message"));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .simple_ros.NodeInfo node_info = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_node_info(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* SubscribeResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:simple_ros.SubscribeResponse)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bool success = 1;
+  if (this->_internal_success() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(1, this->_internal_success(), target);
+  }
+
+  // string message = 2;
+  if (!this->_internal_message().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_message().data(), static_cast<int>(this->_internal_message().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "simple_ros.SubscribeResponse.message");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_message(), target);
+  }
+
+  // repeated .simple_ros.NodeInfo node_info = 3;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_node_info_size()); i < n; i++) {
+    const auto& repfield = this->_internal_node_info(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(3, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:simple_ros.SubscribeResponse)
+  return target;
+}
+
+size_t SubscribeResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:simple_ros.SubscribeResponse)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .simple_ros.NodeInfo node_info = 3;
+  total_size += 1UL * this->_internal_node_info_size();
+  for (const auto& msg : this->node_info_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // string message = 2;
+  if (!this->_internal_message().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_message());
+  }
+
+  // bool success = 1;
+  if (this->_internal_success() != 0) {
+    total_size += 1 + 1;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SubscribeResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    SubscribeResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SubscribeResponse::GetClassData() const { return &_class_data_; }
+
+void SubscribeResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<SubscribeResponse *>(to)->MergeFrom(
+      static_cast<const SubscribeResponse &>(from));
+}
+
+
+void SubscribeResponse::MergeFrom(const SubscribeResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:simple_ros.SubscribeResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  node_info_.MergeFrom(from.node_info_);
+  if (!from._internal_message().empty()) {
+    _internal_set_message(from._internal_message());
+  }
+  if (from._internal_success() != 0) {
+    _internal_set_success(from._internal_success());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void SubscribeResponse::CopyFrom(const SubscribeResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:simple_ros.SubscribeResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool SubscribeResponse::IsInitialized() const {
+  return true;
+}
+
+void SubscribeResponse::InternalSwap(SubscribeResponse* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  node_info_.InternalSwap(&other->node_info_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &message_, lhs_arena,
+      &other->message_, rhs_arena
+  );
+  swap(success_, other->success_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata SubscribeResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_ros_5frpc_2eproto_getter, &descriptor_table_ros_5frpc_2eproto_once,
+      file_level_metadata_ros_5frpc_2eproto[4]);
+}
+
+// ===================================================================
+
+class RegisterPublisherRequest::_Internal {
+ public:
+  static const ::simple_ros::NodeInfo& node_info(const RegisterPublisherRequest* msg);
+};
+
+const ::simple_ros::NodeInfo&
+RegisterPublisherRequest::_Internal::node_info(const RegisterPublisherRequest* msg) {
+  return *msg->node_info_;
+}
+RegisterPublisherRequest::RegisterPublisherRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:simple_ros.RegisterPublisherRequest)
+}
+RegisterPublisherRequest::RegisterPublisherRequest(const RegisterPublisherRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  topic_name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    topic_name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_topic_name().empty()) {
+    topic_name_.Set(from._internal_topic_name(), 
+      GetArenaForAllocation());
+  }
+  msg_type_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    msg_type_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_msg_type().empty()) {
+    msg_type_.Set(from._internal_msg_type(), 
+      GetArenaForAllocation());
+  }
+  if (from._internal_has_node_info()) {
+    node_info_ = new ::simple_ros::NodeInfo(*from.node_info_);
+  } else {
+    node_info_ = nullptr;
+  }
+  // @@protoc_insertion_point(copy_constructor:simple_ros.RegisterPublisherRequest)
+}
+
+inline void RegisterPublisherRequest::SharedCtor() {
+topic_name_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  topic_name_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+msg_type_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  msg_type_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+node_info_ = nullptr;
+}
+
+RegisterPublisherRequest::~RegisterPublisherRequest() {
+  // @@protoc_insertion_point(destructor:simple_ros.RegisterPublisherRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void RegisterPublisherRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  topic_name_.Destroy();
+  msg_type_.Destroy();
+  if (this != internal_default_instance()) delete node_info_;
+}
+
+void RegisterPublisherRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void RegisterPublisherRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:simple_ros.RegisterPublisherRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  topic_name_.ClearToEmpty();
+  msg_type_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && node_info_ != nullptr) {
+    delete node_info_;
+  }
+  node_info_ = nullptr;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* RegisterPublisherRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string topic_name = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_topic_name();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "simple_ros.RegisterPublisherRequest.topic_name"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string msg_type = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_msg_type();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "simple_ros.RegisterPublisherRequest.msg_type"));
+        } else
+          goto handle_unusual;
+        continue;
+      // .simple_ros.NodeInfo node_info = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_node_info(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* RegisterPublisherRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:simple_ros.RegisterPublisherRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string topic_name = 1;
+  if (!this->_internal_topic_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_topic_name().data(), static_cast<int>(this->_internal_topic_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "simple_ros.RegisterPublisherRequest.topic_name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_topic_name(), target);
+  }
+
+  // string msg_type = 2;
+  if (!this->_internal_msg_type().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_msg_type().data(), static_cast<int>(this->_internal_msg_type().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "simple_ros.RegisterPublisherRequest.msg_type");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_msg_type(), target);
+  }
+
+  // .simple_ros.NodeInfo node_info = 3;
+  if (this->_internal_has_node_info()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(3, _Internal::node_info(this),
+        _Internal::node_info(this).GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:simple_ros.RegisterPublisherRequest)
+  return target;
+}
+
+size_t RegisterPublisherRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:simple_ros.RegisterPublisherRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string topic_name = 1;
+  if (!this->_internal_topic_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_topic_name());
+  }
+
+  // string msg_type = 2;
+  if (!this->_internal_msg_type().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_msg_type());
+  }
+
+  // .simple_ros.NodeInfo node_info = 3;
+  if (this->_internal_has_node_info()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *node_info_);
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData RegisterPublisherRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    RegisterPublisherRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*RegisterPublisherRequest::GetClassData() const { return &_class_data_; }
+
+void RegisterPublisherRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<RegisterPublisherRequest *>(to)->MergeFrom(
+      static_cast<const RegisterPublisherRequest &>(from));
+}
+
+
+void RegisterPublisherRequest::MergeFrom(const RegisterPublisherRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:simple_ros.RegisterPublisherRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_topic_name().empty()) {
+    _internal_set_topic_name(from._internal_topic_name());
+  }
+  if (!from._internal_msg_type().empty()) {
+    _internal_set_msg_type(from._internal_msg_type());
+  }
+  if (from._internal_has_node_info()) {
+    _internal_mutable_node_info()->::simple_ros::NodeInfo::MergeFrom(from._internal_node_info());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void RegisterPublisherRequest::CopyFrom(const RegisterPublisherRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:simple_ros.RegisterPublisherRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool RegisterPublisherRequest::IsInitialized() const {
+  return true;
+}
+
+void RegisterPublisherRequest::InternalSwap(RegisterPublisherRequest* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &topic_name_, lhs_arena,
+      &other->topic_name_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &msg_type_, lhs_arena,
+      &other->msg_type_, rhs_arena
+  );
+  swap(node_info_, other->node_info_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata RegisterPublisherRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_ros_5frpc_2eproto_getter, &descriptor_table_ros_5frpc_2eproto_once,
+      file_level_metadata_ros_5frpc_2eproto[5]);
+}
+
+// ===================================================================
+
+class RegisterPublisherResponse::_Internal {
+ public:
+};
+
+RegisterPublisherResponse::RegisterPublisherResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:simple_ros.RegisterPublisherResponse)
+}
+RegisterPublisherResponse::RegisterPublisherResponse(const RegisterPublisherResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  message_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    message_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_message().empty()) {
+    message_.Set(from._internal_message(), 
+      GetArenaForAllocation());
+  }
+  success_ = from.success_;
+  // @@protoc_insertion_point(copy_constructor:simple_ros.RegisterPublisherResponse)
+}
+
+inline void RegisterPublisherResponse::SharedCtor() {
+message_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  message_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+success_ = false;
+}
+
+RegisterPublisherResponse::~RegisterPublisherResponse() {
+  // @@protoc_insertion_point(destructor:simple_ros.RegisterPublisherResponse)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void RegisterPublisherResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  message_.Destroy();
+}
+
+void RegisterPublisherResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void RegisterPublisherResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:simple_ros.RegisterPublisherResponse)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  message_.ClearToEmpty();
+  success_ = false;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* RegisterPublisherResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // bool success = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          success_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string message = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_message();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "simple_ros.RegisterPublisherResponse.message"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* RegisterPublisherResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:simple_ros.RegisterPublisherResponse)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bool success = 1;
+  if (this->_internal_success() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(1, this->_internal_success(), target);
+  }
+
+  // string message = 2;
+  if (!this->_internal_message().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_message().data(), static_cast<int>(this->_internal_message().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "simple_ros.RegisterPublisherResponse.message");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_message(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:simple_ros.RegisterPublisherResponse)
+  return target;
+}
+
+size_t RegisterPublisherResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:simple_ros.RegisterPublisherResponse)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string message = 2;
+  if (!this->_internal_message().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_message());
+  }
+
+  // bool success = 1;
+  if (this->_internal_success() != 0) {
+    total_size += 1 + 1;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData RegisterPublisherResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    RegisterPublisherResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*RegisterPublisherResponse::GetClassData() const { return &_class_data_; }
+
+void RegisterPublisherResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<RegisterPublisherResponse *>(to)->MergeFrom(
+      static_cast<const RegisterPublisherResponse &>(from));
+}
+
+
+void RegisterPublisherResponse::MergeFrom(const RegisterPublisherResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:simple_ros.RegisterPublisherResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_message().empty()) {
+    _internal_set_message(from._internal_message());
+  }
+  if (from._internal_success() != 0) {
+    _internal_set_success(from._internal_success());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void RegisterPublisherResponse::CopyFrom(const RegisterPublisherResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:simple_ros.RegisterPublisherResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool RegisterPublisherResponse::IsInitialized() const {
+  return true;
+}
+
+void RegisterPublisherResponse::InternalSwap(RegisterPublisherResponse* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &message_, lhs_arena,
+      &other->message_, rhs_arena
+  );
+  swap(success_, other->success_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata RegisterPublisherResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_ros_5frpc_2eproto_getter, &descriptor_table_ros_5frpc_2eproto_once,
+      file_level_metadata_ros_5frpc_2eproto[6]);
+}
+
+// ===================================================================
+
+class UnsubscribeRequest::_Internal {
+ public:
+  static const ::simple_ros::NodeInfo& node_info(const UnsubscribeRequest* msg);
+};
+
+const ::simple_ros::NodeInfo&
+UnsubscribeRequest::_Internal::node_info(const UnsubscribeRequest* msg) {
+  return *msg->node_info_;
+}
+UnsubscribeRequest::UnsubscribeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:simple_ros.UnsubscribeRequest)
+}
+UnsubscribeRequest::UnsubscribeRequest(const UnsubscribeRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  topic_name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    topic_name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_topic_name().empty()) {
+    topic_name_.Set(from._internal_topic_name(), 
+      GetArenaForAllocation());
+  }
+  msg_type_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    msg_type_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_msg_type().empty()) {
+    msg_type_.Set(from._internal_msg_type(), 
+      GetArenaForAllocation());
+  }
+  if (from._internal_has_node_info()) {
+    node_info_ = new ::simple_ros::NodeInfo(*from.node_info_);
+  } else {
+    node_info_ = nullptr;
+  }
+  // @@protoc_insertion_point(copy_constructor:simple_ros.UnsubscribeRequest)
+}
+
+inline void UnsubscribeRequest::SharedCtor() {
+topic_name_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  topic_name_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+msg_type_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  msg_type_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+node_info_ = nullptr;
+}
+
+UnsubscribeRequest::~UnsubscribeRequest() {
+  // @@protoc_insertion_point(destructor:simple_ros.UnsubscribeRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void UnsubscribeRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  topic_name_.Destroy();
+  msg_type_.Destroy();
+  if (this != internal_default_instance()) delete node_info_;
+}
+
+void UnsubscribeRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void UnsubscribeRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:simple_ros.UnsubscribeRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  topic_name_.ClearToEmpty();
+  msg_type_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && node_info_ != nullptr) {
+    delete node_info_;
+  }
+  node_info_ = nullptr;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* UnsubscribeRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string topic_name = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_topic_name();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "simple_ros.UnsubscribeRequest.topic_name"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string msg_type = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_msg_type();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "simple_ros.UnsubscribeRequest.msg_type"));
+        } else
+          goto handle_unusual;
+        continue;
+      // .simple_ros.NodeInfo node_info = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_node_info(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* UnsubscribeRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:simple_ros.UnsubscribeRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string topic_name = 1;
+  if (!this->_internal_topic_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_topic_name().data(), static_cast<int>(this->_internal_topic_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "simple_ros.UnsubscribeRequest.topic_name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_topic_name(), target);
+  }
+
+  // string msg_type = 2;
+  if (!this->_internal_msg_type().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_msg_type().data(), static_cast<int>(this->_internal_msg_type().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "simple_ros.UnsubscribeRequest.msg_type");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_msg_type(), target);
+  }
+
+  // .simple_ros.NodeInfo node_info = 3;
+  if (this->_internal_has_node_info()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(3, _Internal::node_info(this),
+        _Internal::node_info(this).GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:simple_ros.UnsubscribeRequest)
+  return target;
+}
+
+size_t UnsubscribeRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:simple_ros.UnsubscribeRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string topic_name = 1;
+  if (!this->_internal_topic_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_topic_name());
+  }
+
+  // string msg_type = 2;
+  if (!this->_internal_msg_type().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_msg_type());
+  }
+
+  // .simple_ros.NodeInfo node_info = 3;
+  if (this->_internal_has_node_info()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *node_info_);
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData UnsubscribeRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    UnsubscribeRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*UnsubscribeRequest::GetClassData() const { return &_class_data_; }
+
+void UnsubscribeRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<UnsubscribeRequest *>(to)->MergeFrom(
+      static_cast<const UnsubscribeRequest &>(from));
+}
+
+
+void UnsubscribeRequest::MergeFrom(const UnsubscribeRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:simple_ros.UnsubscribeRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_topic_name().empty()) {
+    _internal_set_topic_name(from._internal_topic_name());
+  }
+  if (!from._internal_msg_type().empty()) {
+    _internal_set_msg_type(from._internal_msg_type());
+  }
+  if (from._internal_has_node_info()) {
+    _internal_mutable_node_info()->::simple_ros::NodeInfo::MergeFrom(from._internal_node_info());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void UnsubscribeRequest::CopyFrom(const UnsubscribeRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:simple_ros.UnsubscribeRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool UnsubscribeRequest::IsInitialized() const {
+  return true;
+}
+
+void UnsubscribeRequest::InternalSwap(UnsubscribeRequest* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &topic_name_, lhs_arena,
+      &other->topic_name_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &msg_type_, lhs_arena,
+      &other->msg_type_, rhs_arena
+  );
+  swap(node_info_, other->node_info_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata UnsubscribeRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_ros_5frpc_2eproto_getter, &descriptor_table_ros_5frpc_2eproto_once,
+      file_level_metadata_ros_5frpc_2eproto[7]);
+}
+
+// ===================================================================
+
+class UnsubscribeResponse::_Internal {
+ public:
+};
+
+UnsubscribeResponse::UnsubscribeResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:simple_ros.UnsubscribeResponse)
+}
+UnsubscribeResponse::UnsubscribeResponse(const UnsubscribeResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  message_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    message_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_message().empty()) {
+    message_.Set(from._internal_message(), 
+      GetArenaForAllocation());
+  }
+  success_ = from.success_;
+  // @@protoc_insertion_point(copy_constructor:simple_ros.UnsubscribeResponse)
+}
+
+inline void UnsubscribeResponse::SharedCtor() {
+message_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  message_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+success_ = false;
+}
+
+UnsubscribeResponse::~UnsubscribeResponse() {
+  // @@protoc_insertion_point(destructor:simple_ros.UnsubscribeResponse)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void UnsubscribeResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  message_.Destroy();
+}
+
+void UnsubscribeResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void UnsubscribeResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:simple_ros.UnsubscribeResponse)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  message_.ClearToEmpty();
+  success_ = false;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* UnsubscribeResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // bool success = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          success_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string message = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_message();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "simple_ros.UnsubscribeResponse.message"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* UnsubscribeResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:simple_ros.UnsubscribeResponse)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bool success = 1;
+  if (this->_internal_success() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(1, this->_internal_success(), target);
+  }
+
+  // string message = 2;
+  if (!this->_internal_message().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_message().data(), static_cast<int>(this->_internal_message().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "simple_ros.UnsubscribeResponse.message");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_message(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:simple_ros.UnsubscribeResponse)
+  return target;
+}
+
+size_t UnsubscribeResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:simple_ros.UnsubscribeResponse)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string message = 2;
+  if (!this->_internal_message().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_message());
+  }
+
+  // bool success = 1;
+  if (this->_internal_success() != 0) {
+    total_size += 1 + 1;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData UnsubscribeResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    UnsubscribeResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*UnsubscribeResponse::GetClassData() const { return &_class_data_; }
+
+void UnsubscribeResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<UnsubscribeResponse *>(to)->MergeFrom(
+      static_cast<const UnsubscribeResponse &>(from));
+}
+
+
+void UnsubscribeResponse::MergeFrom(const UnsubscribeResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:simple_ros.UnsubscribeResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_message().empty()) {
+    _internal_set_message(from._internal_message());
+  }
+  if (from._internal_success() != 0) {
+    _internal_set_success(from._internal_success());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void UnsubscribeResponse::CopyFrom(const UnsubscribeResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:simple_ros.UnsubscribeResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool UnsubscribeResponse::IsInitialized() const {
+  return true;
+}
+
+void UnsubscribeResponse::InternalSwap(UnsubscribeResponse* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &message_, lhs_arena,
+      &other->message_, rhs_arena
+  );
+  swap(success_, other->success_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata UnsubscribeResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_ros_5frpc_2eproto_getter, &descriptor_table_ros_5frpc_2eproto_once,
+      file_level_metadata_ros_5frpc_2eproto[8]);
+}
+
+// ===================================================================
+
+class UnregisterPublisherRequest::_Internal {
+ public:
+  static const ::simple_ros::NodeInfo& node_info(const UnregisterPublisherRequest* msg);
+};
+
+const ::simple_ros::NodeInfo&
+UnregisterPublisherRequest::_Internal::node_info(const UnregisterPublisherRequest* msg) {
+  return *msg->node_info_;
+}
+UnregisterPublisherRequest::UnregisterPublisherRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:simple_ros.UnregisterPublisherRequest)
+}
+UnregisterPublisherRequest::UnregisterPublisherRequest(const UnregisterPublisherRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  topic_name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    topic_name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_topic_name().empty()) {
+    topic_name_.Set(from._internal_topic_name(), 
+      GetArenaForAllocation());
+  }
+  msg_type_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    msg_type_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_msg_type().empty()) {
+    msg_type_.Set(from._internal_msg_type(), 
+      GetArenaForAllocation());
+  }
+  if (from._internal_has_node_info()) {
+    node_info_ = new ::simple_ros::NodeInfo(*from.node_info_);
+  } else {
+    node_info_ = nullptr;
+  }
+  // @@protoc_insertion_point(copy_constructor:simple_ros.UnregisterPublisherRequest)
+}
+
+inline void UnregisterPublisherRequest::SharedCtor() {
+topic_name_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  topic_name_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+msg_type_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  msg_type_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+node_info_ = nullptr;
+}
+
+UnregisterPublisherRequest::~UnregisterPublisherRequest() {
+  // @@protoc_insertion_point(destructor:simple_ros.UnregisterPublisherRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void UnregisterPublisherRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  topic_name_.Destroy();
+  msg_type_.Destroy();
+  if (this != internal_default_instance()) delete node_info_;
+}
+
+void UnregisterPublisherRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void UnregisterPublisherRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:simple_ros.UnregisterPublisherRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  topic_name_.ClearToEmpty();
+  msg_type_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && node_info_ != nullptr) {
+    delete node_info_;
+  }
+  node_info_ = nullptr;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* UnregisterPublisherRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string topic_name = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_topic_name();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "simple_ros.UnregisterPublisherRequest.topic_name"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string msg_type = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_msg_type();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "simple_ros.UnregisterPublisherRequest.msg_type"));
+        } else
+          goto handle_unusual;
+        continue;
+      // .simple_ros.NodeInfo node_info = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_node_info(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* UnregisterPublisherRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:simple_ros.UnregisterPublisherRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string topic_name = 1;
+  if (!this->_internal_topic_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_topic_name().data(), static_cast<int>(this->_internal_topic_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "simple_ros.UnregisterPublisherRequest.topic_name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_topic_name(), target);
+  }
+
+  // string msg_type = 2;
+  if (!this->_internal_msg_type().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_msg_type().data(), static_cast<int>(this->_internal_msg_type().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "simple_ros.UnregisterPublisherRequest.msg_type");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_msg_type(), target);
+  }
+
+  // .simple_ros.NodeInfo node_info = 3;
+  if (this->_internal_has_node_info()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(3, _Internal::node_info(this),
+        _Internal::node_info(this).GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:simple_ros.UnregisterPublisherRequest)
+  return target;
+}
+
+size_t UnregisterPublisherRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:simple_ros.UnregisterPublisherRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string topic_name = 1;
+  if (!this->_internal_topic_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_topic_name());
+  }
+
+  // string msg_type = 2;
+  if (!this->_internal_msg_type().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_msg_type());
+  }
+
+  // .simple_ros.NodeInfo node_info = 3;
+  if (this->_internal_has_node_info()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *node_info_);
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData UnregisterPublisherRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    UnregisterPublisherRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*UnregisterPublisherRequest::GetClassData() const { return &_class_data_; }
+
+void UnregisterPublisherRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<UnregisterPublisherRequest *>(to)->MergeFrom(
+      static_cast<const UnregisterPublisherRequest &>(from));
+}
+
+
+void UnregisterPublisherRequest::MergeFrom(const UnregisterPublisherRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:simple_ros.UnregisterPublisherRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_topic_name().empty()) {
+    _internal_set_topic_name(from._internal_topic_name());
+  }
+  if (!from._internal_msg_type().empty()) {
+    _internal_set_msg_type(from._internal_msg_type());
+  }
+  if (from._internal_has_node_info()) {
+    _internal_mutable_node_info()->::simple_ros::NodeInfo::MergeFrom(from._internal_node_info());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void UnregisterPublisherRequest::CopyFrom(const UnregisterPublisherRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:simple_ros.UnregisterPublisherRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool UnregisterPublisherRequest::IsInitialized() const {
+  return true;
+}
+
+void UnregisterPublisherRequest::InternalSwap(UnregisterPublisherRequest* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &topic_name_, lhs_arena,
+      &other->topic_name_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &msg_type_, lhs_arena,
+      &other->msg_type_, rhs_arena
+  );
+  swap(node_info_, other->node_info_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata UnregisterPublisherRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_ros_5frpc_2eproto_getter, &descriptor_table_ros_5frpc_2eproto_once,
+      file_level_metadata_ros_5frpc_2eproto[9]);
+}
+
+// ===================================================================
+
+class UnregisterPublisherResponse::_Internal {
+ public:
+};
+
+UnregisterPublisherResponse::UnregisterPublisherResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:simple_ros.UnregisterPublisherResponse)
+}
+UnregisterPublisherResponse::UnregisterPublisherResponse(const UnregisterPublisherResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  message_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    message_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_message().empty()) {
+    message_.Set(from._internal_message(), 
+      GetArenaForAllocation());
+  }
+  success_ = from.success_;
+  // @@protoc_insertion_point(copy_constructor:simple_ros.UnregisterPublisherResponse)
+}
+
+inline void UnregisterPublisherResponse::SharedCtor() {
+message_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  message_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+success_ = false;
+}
+
+UnregisterPublisherResponse::~UnregisterPublisherResponse() {
+  // @@protoc_insertion_point(destructor:simple_ros.UnregisterPublisherResponse)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void UnregisterPublisherResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  message_.Destroy();
+}
+
+void UnregisterPublisherResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void UnregisterPublisherResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:simple_ros.UnregisterPublisherResponse)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  message_.ClearToEmpty();
+  success_ = false;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* UnregisterPublisherResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // bool success = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          success_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string message = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_message();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "simple_ros.UnregisterPublisherResponse.message"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* UnregisterPublisherResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:simple_ros.UnregisterPublisherResponse)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bool success = 1;
+  if (this->_internal_success() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(1, this->_internal_success(), target);
+  }
+
+  // string message = 2;
+  if (!this->_internal_message().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_message().data(), static_cast<int>(this->_internal_message().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "simple_ros.UnregisterPublisherResponse.message");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_message(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:simple_ros.UnregisterPublisherResponse)
+  return target;
+}
+
+size_t UnregisterPublisherResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:simple_ros.UnregisterPublisherResponse)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string message = 2;
+  if (!this->_internal_message().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_message());
+  }
+
+  // bool success = 1;
+  if (this->_internal_success() != 0) {
+    total_size += 1 + 1;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData UnregisterPublisherResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    UnregisterPublisherResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*UnregisterPublisherResponse::GetClassData() const { return &_class_data_; }
+
+void UnregisterPublisherResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<UnregisterPublisherResponse *>(to)->MergeFrom(
+      static_cast<const UnregisterPublisherResponse &>(from));
+}
+
+
+void UnregisterPublisherResponse::MergeFrom(const UnregisterPublisherResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:simple_ros.UnregisterPublisherResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_message().empty()) {
+    _internal_set_message(from._internal_message());
+  }
+  if (from._internal_success() != 0) {
+    _internal_set_success(from._internal_success());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void UnregisterPublisherResponse::CopyFrom(const UnregisterPublisherResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:simple_ros.UnregisterPublisherResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool UnregisterPublisherResponse::IsInitialized() const {
+  return true;
+}
+
+void UnregisterPublisherResponse::InternalSwap(UnregisterPublisherResponse* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &message_, lhs_arena,
+      &other->message_, rhs_arena
+  );
+  swap(success_, other->success_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata UnregisterPublisherResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_ros_5frpc_2eproto_getter, &descriptor_table_ros_5frpc_2eproto_once,
+      file_level_metadata_ros_5frpc_2eproto[10]);
+}
+
+// ===================================================================
+
+class GetNodesRequest::_Internal {
+ public:
+};
+
+GetNodesRequest::GetNodesRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:simple_ros.GetNodesRequest)
+}
+GetNodesRequest::GetNodesRequest(const GetNodesRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  filter_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    filter_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_filter().empty()) {
+    filter_.Set(from._internal_filter(), 
+      GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:simple_ros.GetNodesRequest)
+}
+
+inline void GetNodesRequest::SharedCtor() {
+filter_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  filter_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+GetNodesRequest::~GetNodesRequest() {
+  // @@protoc_insertion_point(destructor:simple_ros.GetNodesRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void GetNodesRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  filter_.Destroy();
+}
+
+void GetNodesRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void GetNodesRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:simple_ros.GetNodesRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  filter_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetNodesRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string filter = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_filter();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "simple_ros.GetNodesRequest.filter"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* GetNodesRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:simple_ros.GetNodesRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string filter = 1;
+  if (!this->_internal_filter().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_filter().data(), static_cast<int>(this->_internal_filter().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "simple_ros.GetNodesRequest.filter");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_filter(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:simple_ros.GetNodesRequest)
+  return target;
+}
+
+size_t GetNodesRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:simple_ros.GetNodesRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string filter = 1;
+  if (!this->_internal_filter().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_filter());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetNodesRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    GetNodesRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetNodesRequest::GetClassData() const { return &_class_data_; }
+
+void GetNodesRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<GetNodesRequest *>(to)->MergeFrom(
+      static_cast<const GetNodesRequest &>(from));
+}
+
+
+void GetNodesRequest::MergeFrom(const GetNodesRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:simple_ros.GetNodesRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_filter().empty()) {
+    _internal_set_filter(from._internal_filter());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetNodesRequest::CopyFrom(const GetNodesRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:simple_ros.GetNodesRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetNodesRequest::IsInitialized() const {
+  return true;
+}
+
+void GetNodesRequest::InternalSwap(GetNodesRequest* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &filter_, lhs_arena,
+      &other->filter_, rhs_arena
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetNodesRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_ros_5frpc_2eproto_getter, &descriptor_table_ros_5frpc_2eproto_once,
+      file_level_metadata_ros_5frpc_2eproto[11]);
+}
+
+// ===================================================================
+
+class GetNodesResponse::_Internal {
+ public:
+};
+
+GetNodesResponse::GetNodesResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  nodes_(arena) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:simple_ros.GetNodesResponse)
+}
+GetNodesResponse::GetNodesResponse(const GetNodesResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      nodes_(from.nodes_) {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  message_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    message_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_message().empty()) {
+    message_.Set(from._internal_message(), 
+      GetArenaForAllocation());
+  }
+  success_ = from.success_;
+  // @@protoc_insertion_point(copy_constructor:simple_ros.GetNodesResponse)
+}
+
+inline void GetNodesResponse::SharedCtor() {
+message_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  message_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+success_ = false;
+}
+
+GetNodesResponse::~GetNodesResponse() {
+  // @@protoc_insertion_point(destructor:simple_ros.GetNodesResponse)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void GetNodesResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  message_.Destroy();
+}
+
+void GetNodesResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void GetNodesResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:simple_ros.GetNodesResponse)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  nodes_.Clear();
+  message_.ClearToEmpty();
+  success_ = false;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetNodesResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // bool success = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          success_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string message = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_message();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "simple_ros.GetNodesResponse.message"));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .simple_ros.NodeInfo nodes = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_nodes(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* GetNodesResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:simple_ros.GetNodesResponse)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bool success = 1;
+  if (this->_internal_success() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(1, this->_internal_success(), target);
+  }
+
+  // string message = 2;
+  if (!this->_internal_message().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_message().data(), static_cast<int>(this->_internal_message().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "simple_ros.GetNodesResponse.message");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_message(), target);
+  }
+
+  // repeated .simple_ros.NodeInfo nodes = 3;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_nodes_size()); i < n; i++) {
+    const auto& repfield = this->_internal_nodes(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(3, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:simple_ros.GetNodesResponse)
+  return target;
+}
+
+size_t GetNodesResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:simple_ros.GetNodesResponse)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .simple_ros.NodeInfo nodes = 3;
+  total_size += 1UL * this->_internal_nodes_size();
+  for (const auto& msg : this->nodes_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // string message = 2;
+  if (!this->_internal_message().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_message());
+  }
+
+  // bool success = 1;
+  if (this->_internal_success() != 0) {
+    total_size += 1 + 1;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetNodesResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    GetNodesResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetNodesResponse::GetClassData() const { return &_class_data_; }
+
+void GetNodesResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<GetNodesResponse *>(to)->MergeFrom(
+      static_cast<const GetNodesResponse &>(from));
+}
+
+
+void GetNodesResponse::MergeFrom(const GetNodesResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:simple_ros.GetNodesResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  nodes_.MergeFrom(from.nodes_);
+  if (!from._internal_message().empty()) {
+    _internal_set_message(from._internal_message());
+  }
+  if (from._internal_success() != 0) {
+    _internal_set_success(from._internal_success());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetNodesResponse::CopyFrom(const GetNodesResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:simple_ros.GetNodesResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetNodesResponse::IsInitialized() const {
+  return true;
+}
+
+void GetNodesResponse::InternalSwap(GetNodesResponse* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  nodes_.InternalSwap(&other->nodes_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &message_, lhs_arena,
+      &other->message_, rhs_arena
+  );
+  swap(success_, other->success_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetNodesResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_ros_5frpc_2eproto_getter, &descriptor_table_ros_5frpc_2eproto_once,
+      file_level_metadata_ros_5frpc_2eproto[12]);
+}
+
+// ===================================================================
+
+class GetNodeInfoRequest::_Internal {
+ public:
+};
+
+GetNodeInfoRequest::GetNodeInfoRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:simple_ros.GetNodeInfoRequest)
+}
+GetNodeInfoRequest::GetNodeInfoRequest(const GetNodeInfoRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  node_name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    node_name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_node_name().empty()) {
+    node_name_.Set(from._internal_node_name(), 
+      GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:simple_ros.GetNodeInfoRequest)
+}
+
+inline void GetNodeInfoRequest::SharedCtor() {
+node_name_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  node_name_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+GetNodeInfoRequest::~GetNodeInfoRequest() {
+  // @@protoc_insertion_point(destructor:simple_ros.GetNodeInfoRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void GetNodeInfoRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  node_name_.Destroy();
+}
+
+void GetNodeInfoRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void GetNodeInfoRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:simple_ros.GetNodeInfoRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  node_name_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetNodeInfoRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string node_name = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_node_name();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "simple_ros.GetNodeInfoRequest.node_name"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* GetNodeInfoRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:simple_ros.GetNodeInfoRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string node_name = 1;
+  if (!this->_internal_node_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_node_name().data(), static_cast<int>(this->_internal_node_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "simple_ros.GetNodeInfoRequest.node_name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_node_name(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:simple_ros.GetNodeInfoRequest)
+  return target;
+}
+
+size_t GetNodeInfoRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:simple_ros.GetNodeInfoRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string node_name = 1;
+  if (!this->_internal_node_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_node_name());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetNodeInfoRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    GetNodeInfoRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetNodeInfoRequest::GetClassData() const { return &_class_data_; }
+
+void GetNodeInfoRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<GetNodeInfoRequest *>(to)->MergeFrom(
+      static_cast<const GetNodeInfoRequest &>(from));
+}
+
+
+void GetNodeInfoRequest::MergeFrom(const GetNodeInfoRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:simple_ros.GetNodeInfoRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_node_name().empty()) {
+    _internal_set_node_name(from._internal_node_name());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetNodeInfoRequest::CopyFrom(const GetNodeInfoRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:simple_ros.GetNodeInfoRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetNodeInfoRequest::IsInitialized() const {
+  return true;
+}
+
+void GetNodeInfoRequest::InternalSwap(GetNodeInfoRequest* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &node_name_, lhs_arena,
+      &other->node_name_, rhs_arena
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetNodeInfoRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_ros_5frpc_2eproto_getter, &descriptor_table_ros_5frpc_2eproto_once,
+      file_level_metadata_ros_5frpc_2eproto[13]);
+}
+
+// ===================================================================
+
+class GetNodeInfoResponse::_Internal {
+ public:
+  static const ::simple_ros::NodeInfo& node_info(const GetNodeInfoResponse* msg);
+};
+
+const ::simple_ros::NodeInfo&
+GetNodeInfoResponse::_Internal::node_info(const GetNodeInfoResponse* msg) {
+  return *msg->node_info_;
+}
+GetNodeInfoResponse::GetNodeInfoResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  publishes_(arena),
+  subscribes_(arena) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:simple_ros.GetNodeInfoResponse)
+}
+GetNodeInfoResponse::GetNodeInfoResponse(const GetNodeInfoResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      publishes_(from.publishes_),
+      subscribes_(from.subscribes_) {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  message_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    message_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_message().empty()) {
+    message_.Set(from._internal_message(), 
+      GetArenaForAllocation());
+  }
+  if (from._internal_has_node_info()) {
+    node_info_ = new ::simple_ros::NodeInfo(*from.node_info_);
+  } else {
+    node_info_ = nullptr;
+  }
+  success_ = from.success_;
+  // @@protoc_insertion_point(copy_constructor:simple_ros.GetNodeInfoResponse)
+}
+
+inline void GetNodeInfoResponse::SharedCtor() {
+message_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  message_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&node_info_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&success_) -
+    reinterpret_cast<char*>(&node_info_)) + sizeof(success_));
+}
+
+GetNodeInfoResponse::~GetNodeInfoResponse() {
+  // @@protoc_insertion_point(destructor:simple_ros.GetNodeInfoResponse)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void GetNodeInfoResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  message_.Destroy();
+  if (this != internal_default_instance()) delete node_info_;
+}
+
+void GetNodeInfoResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void GetNodeInfoResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:simple_ros.GetNodeInfoResponse)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  publishes_.Clear();
+  subscribes_.Clear();
+  message_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && node_info_ != nullptr) {
+    delete node_info_;
+  }
+  node_info_ = nullptr;
+  success_ = false;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetNodeInfoResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // bool success = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          success_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string message = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_message();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "simple_ros.GetNodeInfoResponse.message"));
+        } else
+          goto handle_unusual;
+        continue;
+      // .simple_ros.NodeInfo node_info = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_node_info(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .simple_ros.TopicInfo publishes = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_publishes(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<34>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .simple_ros.TopicInfo subscribes = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_subscribes(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<42>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* GetNodeInfoResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:simple_ros.GetNodeInfoResponse)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bool success = 1;
+  if (this->_internal_success() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(1, this->_internal_success(), target);
+  }
+
+  // string message = 2;
+  if (!this->_internal_message().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_message().data(), static_cast<int>(this->_internal_message().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "simple_ros.GetNodeInfoResponse.message");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_message(), target);
+  }
+
+  // .simple_ros.NodeInfo node_info = 3;
+  if (this->_internal_has_node_info()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(3, _Internal::node_info(this),
+        _Internal::node_info(this).GetCachedSize(), target, stream);
+  }
+
+  // repeated .simple_ros.TopicInfo publishes = 4;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_publishes_size()); i < n; i++) {
+    const auto& repfield = this->_internal_publishes(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(4, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  // repeated .simple_ros.TopicInfo subscribes = 5;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_subscribes_size()); i < n; i++) {
+    const auto& repfield = this->_internal_subscribes(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(5, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:simple_ros.GetNodeInfoResponse)
+  return target;
+}
+
+size_t GetNodeInfoResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:simple_ros.GetNodeInfoResponse)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .simple_ros.TopicInfo publishes = 4;
+  total_size += 1UL * this->_internal_publishes_size();
+  for (const auto& msg : this->publishes_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .simple_ros.TopicInfo subscribes = 5;
+  total_size += 1UL * this->_internal_subscribes_size();
+  for (const auto& msg : this->subscribes_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // string message = 2;
+  if (!this->_internal_message().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_message());
+  }
+
+  // .simple_ros.NodeInfo node_info = 3;
+  if (this->_internal_has_node_info()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *node_info_);
+  }
+
+  // bool success = 1;
+  if (this->_internal_success() != 0) {
+    total_size += 1 + 1;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetNodeInfoResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    GetNodeInfoResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetNodeInfoResponse::GetClassData() const { return &_class_data_; }
+
+void GetNodeInfoResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<GetNodeInfoResponse *>(to)->MergeFrom(
+      static_cast<const GetNodeInfoResponse &>(from));
+}
+
+
+void GetNodeInfoResponse::MergeFrom(const GetNodeInfoResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:simple_ros.GetNodeInfoResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  publishes_.MergeFrom(from.publishes_);
+  subscribes_.MergeFrom(from.subscribes_);
+  if (!from._internal_message().empty()) {
+    _internal_set_message(from._internal_message());
+  }
+  if (from._internal_has_node_info()) {
+    _internal_mutable_node_info()->::simple_ros::NodeInfo::MergeFrom(from._internal_node_info());
+  }
+  if (from._internal_success() != 0) {
+    _internal_set_success(from._internal_success());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetNodeInfoResponse::CopyFrom(const GetNodeInfoResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:simple_ros.GetNodeInfoResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetNodeInfoResponse::IsInitialized() const {
+  return true;
+}
+
+void GetNodeInfoResponse::InternalSwap(GetNodeInfoResponse* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  publishes_.InternalSwap(&other->publishes_);
+  subscribes_.InternalSwap(&other->subscribes_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &message_, lhs_arena,
+      &other->message_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(GetNodeInfoResponse, success_)
+      + sizeof(GetNodeInfoResponse::success_)
+      - PROTOBUF_FIELD_OFFSET(GetNodeInfoResponse, node_info_)>(
+          reinterpret_cast<char*>(&node_info_),
+          reinterpret_cast<char*>(&other->node_info_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetNodeInfoResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_ros_5frpc_2eproto_getter, &descriptor_table_ros_5frpc_2eproto_once,
+      file_level_metadata_ros_5frpc_2eproto[14]);
+}
+
+// ===================================================================
+
+class GetTopicsRequest::_Internal {
+ public:
+};
+
+GetTopicsRequest::GetTopicsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:simple_ros.GetTopicsRequest)
+}
+GetTopicsRequest::GetTopicsRequest(const GetTopicsRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  filter_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    filter_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_filter().empty()) {
+    filter_.Set(from._internal_filter(), 
+      GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:simple_ros.GetTopicsRequest)
+}
+
+inline void GetTopicsRequest::SharedCtor() {
+filter_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  filter_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+GetTopicsRequest::~GetTopicsRequest() {
+  // @@protoc_insertion_point(destructor:simple_ros.GetTopicsRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void GetTopicsRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  filter_.Destroy();
+}
+
+void GetTopicsRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void GetTopicsRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:simple_ros.GetTopicsRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  filter_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetTopicsRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string filter = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_filter();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "simple_ros.GetTopicsRequest.filter"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* GetTopicsRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:simple_ros.GetTopicsRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string filter = 1;
+  if (!this->_internal_filter().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_filter().data(), static_cast<int>(this->_internal_filter().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "simple_ros.GetTopicsRequest.filter");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_filter(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:simple_ros.GetTopicsRequest)
+  return target;
+}
+
+size_t GetTopicsRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:simple_ros.GetTopicsRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string filter = 1;
+  if (!this->_internal_filter().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_filter());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetTopicsRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    GetTopicsRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetTopicsRequest::GetClassData() const { return &_class_data_; }
+
+void GetTopicsRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<GetTopicsRequest *>(to)->MergeFrom(
+      static_cast<const GetTopicsRequest &>(from));
+}
+
+
+void GetTopicsRequest::MergeFrom(const GetTopicsRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:simple_ros.GetTopicsRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_filter().empty()) {
+    _internal_set_filter(from._internal_filter());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetTopicsRequest::CopyFrom(const GetTopicsRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:simple_ros.GetTopicsRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetTopicsRequest::IsInitialized() const {
+  return true;
+}
+
+void GetTopicsRequest::InternalSwap(GetTopicsRequest* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &filter_, lhs_arena,
+      &other->filter_, rhs_arena
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetTopicsRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_ros_5frpc_2eproto_getter, &descriptor_table_ros_5frpc_2eproto_once,
+      file_level_metadata_ros_5frpc_2eproto[15]);
+}
+
+// ===================================================================
+
+class GetTopicsResponse::_Internal {
+ public:
+};
+
+GetTopicsResponse::GetTopicsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  topics_(arena) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:simple_ros.GetTopicsResponse)
+}
+GetTopicsResponse::GetTopicsResponse(const GetTopicsResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      topics_(from.topics_) {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  message_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    message_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_message().empty()) {
+    message_.Set(from._internal_message(), 
+      GetArenaForAllocation());
+  }
+  success_ = from.success_;
+  // @@protoc_insertion_point(copy_constructor:simple_ros.GetTopicsResponse)
+}
+
+inline void GetTopicsResponse::SharedCtor() {
+message_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  message_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+success_ = false;
+}
+
+GetTopicsResponse::~GetTopicsResponse() {
+  // @@protoc_insertion_point(destructor:simple_ros.GetTopicsResponse)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void GetTopicsResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  message_.Destroy();
+}
+
+void GetTopicsResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void GetTopicsResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:simple_ros.GetTopicsResponse)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  topics_.Clear();
+  message_.ClearToEmpty();
+  success_ = false;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetTopicsResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // bool success = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          success_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string message = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_message();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "simple_ros.GetTopicsResponse.message"));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .simple_ros.TopicInfo topics = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_topics(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* GetTopicsResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:simple_ros.GetTopicsResponse)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bool success = 1;
+  if (this->_internal_success() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(1, this->_internal_success(), target);
+  }
+
+  // string message = 2;
+  if (!this->_internal_message().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_message().data(), static_cast<int>(this->_internal_message().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "simple_ros.GetTopicsResponse.message");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_message(), target);
+  }
+
+  // repeated .simple_ros.TopicInfo topics = 3;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_topics_size()); i < n; i++) {
+    const auto& repfield = this->_internal_topics(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(3, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:simple_ros.GetTopicsResponse)
+  return target;
+}
+
+size_t GetTopicsResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:simple_ros.GetTopicsResponse)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .simple_ros.TopicInfo topics = 3;
+  total_size += 1UL * this->_internal_topics_size();
+  for (const auto& msg : this->topics_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // string message = 2;
+  if (!this->_internal_message().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_message());
+  }
+
+  // bool success = 1;
+  if (this->_internal_success() != 0) {
+    total_size += 1 + 1;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetTopicsResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    GetTopicsResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetTopicsResponse::GetClassData() const { return &_class_data_; }
+
+void GetTopicsResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<GetTopicsResponse *>(to)->MergeFrom(
+      static_cast<const GetTopicsResponse &>(from));
+}
+
+
+void GetTopicsResponse::MergeFrom(const GetTopicsResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:simple_ros.GetTopicsResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  topics_.MergeFrom(from.topics_);
+  if (!from._internal_message().empty()) {
+    _internal_set_message(from._internal_message());
+  }
+  if (from._internal_success() != 0) {
+    _internal_set_success(from._internal_success());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetTopicsResponse::CopyFrom(const GetTopicsResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:simple_ros.GetTopicsResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetTopicsResponse::IsInitialized() const {
+  return true;
+}
+
+void GetTopicsResponse::InternalSwap(GetTopicsResponse* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  topics_.InternalSwap(&other->topics_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &message_, lhs_arena,
+      &other->message_, rhs_arena
+  );
+  swap(success_, other->success_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetTopicsResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_ros_5frpc_2eproto_getter, &descriptor_table_ros_5frpc_2eproto_once,
+      file_level_metadata_ros_5frpc_2eproto[16]);
+}
+
+// ===================================================================
+
+class GetTopicInfoRequest::_Internal {
+ public:
+};
+
+GetTopicInfoRequest::GetTopicInfoRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:simple_ros.GetTopicInfoRequest)
+}
+GetTopicInfoRequest::GetTopicInfoRequest(const GetTopicInfoRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  topic_name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    topic_name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_topic_name().empty()) {
+    topic_name_.Set(from._internal_topic_name(), 
+      GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:simple_ros.GetTopicInfoRequest)
+}
+
+inline void GetTopicInfoRequest::SharedCtor() {
+topic_name_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  topic_name_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+GetTopicInfoRequest::~GetTopicInfoRequest() {
+  // @@protoc_insertion_point(destructor:simple_ros.GetTopicInfoRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void GetTopicInfoRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  topic_name_.Destroy();
+}
+
+void GetTopicInfoRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void GetTopicInfoRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:simple_ros.GetTopicInfoRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  topic_name_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetTopicInfoRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string topic_name = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_topic_name();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "simple_ros.GetTopicInfoRequest.topic_name"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* GetTopicInfoRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:simple_ros.GetTopicInfoRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string topic_name = 1;
+  if (!this->_internal_topic_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_topic_name().data(), static_cast<int>(this->_internal_topic_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "simple_ros.GetTopicInfoRequest.topic_name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_topic_name(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:simple_ros.GetTopicInfoRequest)
+  return target;
+}
+
+size_t GetTopicInfoRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:simple_ros.GetTopicInfoRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string topic_name = 1;
+  if (!this->_internal_topic_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_topic_name());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetTopicInfoRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    GetTopicInfoRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetTopicInfoRequest::GetClassData() const { return &_class_data_; }
+
+void GetTopicInfoRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<GetTopicInfoRequest *>(to)->MergeFrom(
+      static_cast<const GetTopicInfoRequest &>(from));
+}
+
+
+void GetTopicInfoRequest::MergeFrom(const GetTopicInfoRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:simple_ros.GetTopicInfoRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_topic_name().empty()) {
+    _internal_set_topic_name(from._internal_topic_name());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetTopicInfoRequest::CopyFrom(const GetTopicInfoRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:simple_ros.GetTopicInfoRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetTopicInfoRequest::IsInitialized() const {
+  return true;
+}
+
+void GetTopicInfoRequest::InternalSwap(GetTopicInfoRequest* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &topic_name_, lhs_arena,
+      &other->topic_name_, rhs_arena
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetTopicInfoRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_ros_5frpc_2eproto_getter, &descriptor_table_ros_5frpc_2eproto_once,
+      file_level_metadata_ros_5frpc_2eproto[17]);
+}
+
+// ===================================================================
+
+class GetTopicInfoResponse::_Internal {
+ public:
+};
+
+GetTopicInfoResponse::GetTopicInfoResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  publishers_(arena),
+  subscribers_(arena) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:simple_ros.GetTopicInfoResponse)
+}
+GetTopicInfoResponse::GetTopicInfoResponse(const GetTopicInfoResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      publishers_(from.publishers_),
+      subscribers_(from.subscribers_) {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  message_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    message_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_message().empty()) {
+    message_.Set(from._internal_message(), 
+      GetArenaForAllocation());
+  }
+  topic_name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    topic_name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_topic_name().empty()) {
+    topic_name_.Set(from._internal_topic_name(), 
+      GetArenaForAllocation());
+  }
+  msg_type_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    msg_type_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_msg_type().empty()) {
+    msg_type_.Set(from._internal_msg_type(), 
+      GetArenaForAllocation());
+  }
+  success_ = from.success_;
+  // @@protoc_insertion_point(copy_constructor:simple_ros.GetTopicInfoResponse)
+}
+
+inline void GetTopicInfoResponse::SharedCtor() {
+message_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  message_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+topic_name_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  topic_name_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+msg_type_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  msg_type_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+success_ = false;
+}
+
+GetTopicInfoResponse::~GetTopicInfoResponse() {
+  // @@protoc_insertion_point(destructor:simple_ros.GetTopicInfoResponse)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void GetTopicInfoResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  message_.Destroy();
+  topic_name_.Destroy();
+  msg_type_.Destroy();
+}
+
+void GetTopicInfoResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void GetTopicInfoResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:simple_ros.GetTopicInfoResponse)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  publishers_.Clear();
+  subscribers_.Clear();
+  message_.ClearToEmpty();
+  topic_name_.ClearToEmpty();
+  msg_type_.ClearToEmpty();
+  success_ = false;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetTopicInfoResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // bool success = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          success_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string message = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_message();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "simple_ros.GetTopicInfoResponse.message"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string topic_name = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          auto str = _internal_mutable_topic_name();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "simple_ros.GetTopicInfoResponse.topic_name"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string msg_type = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+          auto str = _internal_mutable_msg_type();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "simple_ros.GetTopicInfoResponse.msg_type"));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .simple_ros.NodeInfo publishers = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_publishers(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<42>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .simple_ros.NodeInfo subscribers = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_subscribers(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<50>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* GetTopicInfoResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:simple_ros.GetTopicInfoResponse)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bool success = 1;
+  if (this->_internal_success() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(1, this->_internal_success(), target);
+  }
+
+  // string message = 2;
+  if (!this->_internal_message().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_message().data(), static_cast<int>(this->_internal_message().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "simple_ros.GetTopicInfoResponse.message");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_message(), target);
+  }
+
+  // string topic_name = 3;
+  if (!this->_internal_topic_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_topic_name().data(), static_cast<int>(this->_internal_topic_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "simple_ros.GetTopicInfoResponse.topic_name");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_topic_name(), target);
+  }
+
+  // string msg_type = 4;
+  if (!this->_internal_msg_type().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_msg_type().data(), static_cast<int>(this->_internal_msg_type().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "simple_ros.GetTopicInfoResponse.msg_type");
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_msg_type(), target);
+  }
+
+  // repeated .simple_ros.NodeInfo publishers = 5;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_publishers_size()); i < n; i++) {
+    const auto& repfield = this->_internal_publishers(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(5, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  // repeated .simple_ros.NodeInfo subscribers = 6;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_subscribers_size()); i < n; i++) {
+    const auto& repfield = this->_internal_subscribers(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(6, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:simple_ros.GetTopicInfoResponse)
+  return target;
+}
+
+size_t GetTopicInfoResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:simple_ros.GetTopicInfoResponse)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .simple_ros.NodeInfo publishers = 5;
+  total_size += 1UL * this->_internal_publishers_size();
+  for (const auto& msg : this->publishers_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .simple_ros.NodeInfo subscribers = 6;
+  total_size += 1UL * this->_internal_subscribers_size();
+  for (const auto& msg : this->subscribers_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // string message = 2;
+  if (!this->_internal_message().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_message());
+  }
+
+  // string topic_name = 3;
+  if (!this->_internal_topic_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_topic_name());
+  }
+
+  // string msg_type = 4;
+  if (!this->_internal_msg_type().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_msg_type());
+  }
+
+  // bool success = 1;
+  if (this->_internal_success() != 0) {
+    total_size += 1 + 1;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetTopicInfoResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    GetTopicInfoResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetTopicInfoResponse::GetClassData() const { return &_class_data_; }
+
+void GetTopicInfoResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<GetTopicInfoResponse *>(to)->MergeFrom(
+      static_cast<const GetTopicInfoResponse &>(from));
+}
+
+
+void GetTopicInfoResponse::MergeFrom(const GetTopicInfoResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:simple_ros.GetTopicInfoResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  publishers_.MergeFrom(from.publishers_);
+  subscribers_.MergeFrom(from.subscribers_);
+  if (!from._internal_message().empty()) {
+    _internal_set_message(from._internal_message());
+  }
+  if (!from._internal_topic_name().empty()) {
+    _internal_set_topic_name(from._internal_topic_name());
+  }
+  if (!from._internal_msg_type().empty()) {
+    _internal_set_msg_type(from._internal_msg_type());
+  }
+  if (from._internal_success() != 0) {
+    _internal_set_success(from._internal_success());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetTopicInfoResponse::CopyFrom(const GetTopicInfoResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:simple_ros.GetTopicInfoResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetTopicInfoResponse::IsInitialized() const {
+  return true;
+}
+
+void GetTopicInfoResponse::InternalSwap(GetTopicInfoResponse* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  publishers_.InternalSwap(&other->publishers_);
+  subscribers_.InternalSwap(&other->subscribers_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &message_, lhs_arena,
+      &other->message_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &topic_name_, lhs_arena,
+      &other->topic_name_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &msg_type_, lhs_arena,
+      &other->msg_type_, rhs_arena
+  );
+  swap(success_, other->success_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetTopicInfoResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_ros_5frpc_2eproto_getter, &descriptor_table_ros_5frpc_2eproto_once,
+      file_level_metadata_ros_5frpc_2eproto[18]);
+}
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace simple_ros
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::simple_ros::NodeInfo*
 Arena::CreateMaybeMessage< ::simple_ros::NodeInfo >(Arena* arena) {
   return Arena::CreateMessageInternal< ::simple_ros::NodeInfo >(arena);
+}
+template<> PROTOBUF_NOINLINE ::simple_ros::TopicTargetsUpdate*
+Arena::CreateMaybeMessage< ::simple_ros::TopicTargetsUpdate >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::simple_ros::TopicTargetsUpdate >(arena);
+}
+template<> PROTOBUF_NOINLINE ::simple_ros::TopicInfo*
+Arena::CreateMaybeMessage< ::simple_ros::TopicInfo >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::simple_ros::TopicInfo >(arena);
+}
+template<> PROTOBUF_NOINLINE ::simple_ros::SubscribeRequest*
+Arena::CreateMaybeMessage< ::simple_ros::SubscribeRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::simple_ros::SubscribeRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::simple_ros::SubscribeResponse*
+Arena::CreateMaybeMessage< ::simple_ros::SubscribeResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::simple_ros::SubscribeResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::simple_ros::RegisterPublisherRequest*
+Arena::CreateMaybeMessage< ::simple_ros::RegisterPublisherRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::simple_ros::RegisterPublisherRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::simple_ros::RegisterPublisherResponse*
+Arena::CreateMaybeMessage< ::simple_ros::RegisterPublisherResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::simple_ros::RegisterPublisherResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::simple_ros::UnsubscribeRequest*
+Arena::CreateMaybeMessage< ::simple_ros::UnsubscribeRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::simple_ros::UnsubscribeRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::simple_ros::UnsubscribeResponse*
+Arena::CreateMaybeMessage< ::simple_ros::UnsubscribeResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::simple_ros::UnsubscribeResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::simple_ros::UnregisterPublisherRequest*
+Arena::CreateMaybeMessage< ::simple_ros::UnregisterPublisherRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::simple_ros::UnregisterPublisherRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::simple_ros::UnregisterPublisherResponse*
+Arena::CreateMaybeMessage< ::simple_ros::UnregisterPublisherResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::simple_ros::UnregisterPublisherResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::simple_ros::GetNodesRequest*
+Arena::CreateMaybeMessage< ::simple_ros::GetNodesRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::simple_ros::GetNodesRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::simple_ros::GetNodesResponse*
+Arena::CreateMaybeMessage< ::simple_ros::GetNodesResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::simple_ros::GetNodesResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::simple_ros::GetNodeInfoRequest*
+Arena::CreateMaybeMessage< ::simple_ros::GetNodeInfoRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::simple_ros::GetNodeInfoRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::simple_ros::GetNodeInfoResponse*
+Arena::CreateMaybeMessage< ::simple_ros::GetNodeInfoResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::simple_ros::GetNodeInfoResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::simple_ros::GetTopicsRequest*
+Arena::CreateMaybeMessage< ::simple_ros::GetTopicsRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::simple_ros::GetTopicsRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::simple_ros::GetTopicsResponse*
+Arena::CreateMaybeMessage< ::simple_ros::GetTopicsResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::simple_ros::GetTopicsResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::simple_ros::GetTopicInfoRequest*
+Arena::CreateMaybeMessage< ::simple_ros::GetTopicInfoRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::simple_ros::GetTopicInfoRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::simple_ros::GetTopicInfoResponse*
+Arena::CreateMaybeMessage< ::simple_ros::GetTopicInfoResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::simple_ros::GetTopicInfoResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 
