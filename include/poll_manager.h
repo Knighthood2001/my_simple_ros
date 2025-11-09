@@ -8,6 +8,9 @@
 #include <muduo/net/EventLoop.h>
 #include <muduo/net/InetAddress.h>
 #include <string>
+#include <functional>
+#include <muduo/net/Buffer.h>
+#include <muduo/base/Timestamp.h>
 /*
 | 成员                       | 作用                 |
 | ------------------------ | ------------------ |
@@ -20,10 +23,18 @@ class PollManager{
 public:
   PollManager(muduo::net::EventLoop* loop, const muduo::net::InetAddress& listenAddr);
   void start();
+  // 设置消息回调：参数 (connectionId, message)
+  void setMessageCallback(std::function<void(const std::string&, const std::string&)> cb);
 
 private:
   muduo::net::TcpServer server_;  //TCP服务器
+  // Muduo 要求的回调签名：onConnection 和 onMessage
   void onConnection(const muduo::net::TcpConnectionPtr& conn); // 处理连接事件
+  // 处理客户端发来的消息，从buf中读取数据并调用handleMessage进行处理
+  void onMessage(const muduo::net::TcpConnectionPtr& conn, muduo::net::Buffer* buf, muduo::Timestamp time);
+  // 存储用户提供的回调
+  // 回调函数，用于处理接收到的消息
+  std::function<void(const std::string&, const std::string&)> messageCallback_;
 
 
 };
