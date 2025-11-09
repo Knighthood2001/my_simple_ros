@@ -1,0 +1,9 @@
+syntax = "proto3";
+package simple_ros;
+
+// 定义节点信息消息
+message NodeInfo {
+  string ip = 1;          // 节点IP地址
+  int32 port = 2;         // 节点端口
+  string node_name = 3;   // 节点名称
+}
