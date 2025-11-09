@@ -3,6 +3,7 @@
 //
 #include "poll_manager.h"
 #include <muduo/base/Logging.h>
+#include "msg_factory.h"
 
 PollManager::PollManager(muduo::net::EventLoop* loop, const muduo::net::InetAddress& listenAddr)
     : server_(loop, listenAddr, "PollManager"){  //设置服务器名称 "PollManager"
@@ -44,4 +45,18 @@ std::unordered_set<NodeInfo, NodeInfoHash, NodeInfoEqual> PollManager::getTarget
     return {};
   }
   return it->second;
+}
+
+void PollManager::handleMessage(const std::string& topic,
+                                const std::string& msg_name,
+                                const std::string& data){
+  
+  // 2. 处理其他类型消息：通过消息工厂创建对应类型的消息对象并解析
+  // 调用 MsgFactory 单例的 createMessage 方法，根据 msg_name 创建对应的消息对象
+  auto msg = MsgFactory::instance().createMessage(msg_name);
+  // 若消息对象创建失败，或解析原始数据失败（Protobuf反序列化），则记录警告并返回
+  if (!msg || !msg->ParseFromString(data)){
+    LOG_WARN << "Failed to create/parse message: " << msg_name;
+    return;
+  }
 }

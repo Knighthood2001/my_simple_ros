@@ -52,6 +52,8 @@ private:
   void onConnection(const muduo::net::TcpConnectionPtr& conn); // 处理连接事件
   // 处理客户端发来的消息，从buf中读取数据并调用handleMessage进行处理
   void onMessage(const muduo::net::TcpConnectionPtr& conn, muduo::net::Buffer* buf, muduo::Timestamp time);
+  //解析消息内容，根据主题分发给目标节点
+  void handleMessage(const std::string& topic, const std::string& msg_name, const std::string& data);
   // 存储用户提供的回调
   // 回调函数，用于处理接收到的消息
   std::function<void(const std::string&, const std::string&)> messageCallback_;
