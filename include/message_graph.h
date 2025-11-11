@@ -51,7 +51,38 @@ namespace simple_ros{
     std::unordered_set<TopicKey, TopicKeyHash> publishes;
     std::unordered_set<TopicKey, TopicKeyHash> subscribes;
   };
+  /*
+  节点管理：
+    UpsertNode：新增或更新节点信息。
+    GetNodeByName：通过节点名称获取节点信息。
+  发布/订阅关系管理：
+    AddPublisher：添加发布者。
+    AddSubscriber：添加订阅者。
+    RemovePublisher：移除发布者。
+    RemoveSubscriber：移除订阅者。
+  查询功能：
+    GetSubscribersByTopic：获取某个话题的订阅者。
+    GetPublishersByTopic：获取某个话题的发布者。
+  导出功能：
+    ToReadableString：导出为可读字符串。
+    ToDOT：导出为 Graphviz 的 DOT 格式。
+    ToJSON：导出为 JSON 格式。
+  */
+  class MessageGraph {
+  public:
 
+  private:
+    //以 “节点名” 为键，存储所有节点的完整信息
+    std::unordered_map<std::string, NodeVertex> nodes_;
+    //以 “话题键（TopicKey）” 为键，分别存储该话题的所有发布者节点名、订阅者节点名。
+    //节点名集合用unordered_set存储，确保去重（同一节点不会重复添加到同一话题的发布者 / 订阅者中），且插入 / 删除 / 查找效率为 O (1)。
+    std::unordered_map<TopicKey, std::unordered_set<std::string>, TopicKeyHash> publishers_by_topic_;
+    std::unordered_map<TopicKey, std::unordered_set<std::string>, TopicKeyHash> subscribers_by_topic_;
+
+    //存储所有 “发布者 - 订阅者” 之间的边（Edge），代表节点间的消息流向关系。
+    std::unordered_set<Edge, EdgeHash> edges_;
+
+  };
 
 };
 
