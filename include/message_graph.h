@@ -70,7 +70,7 @@ namespace simple_ros{
   */
   class MessageGraph {
   public:
-
+    void UpsertNode(const NodeInfo &info);
   private:
     //以 “节点名” 为键，存储所有节点的完整信息
     std::unordered_map<std::string, NodeVertex> nodes_;
@@ -82,6 +82,10 @@ namespace simple_ros{
     //存储所有 “发布者 - 订阅者” 之间的边（Edge），代表节点间的消息流向关系。
     std::unordered_set<Edge, EdgeHash> edges_;
 
+    //新增发布者时，需要关联已存在的订阅者；
+    //新增订阅者时，需要关联已存在的发布者。
+    void ConnectPublisherToSubscribers(const std::string& pub_node, const TopicKey& k);
+    void ConnectPublishersToSubscriber(const std::string& sub_node, const TopicKey& k);
   };
 
 };
