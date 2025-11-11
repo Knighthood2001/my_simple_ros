@@ -44,5 +44,15 @@ namespace simple_ros{
       return (((h1^(h2<<1))^(h3<<1))^(h4<<1));
     }
   };
+  //每个节点可能同时是发布者和订阅者，因此需要存储它发布和订阅的话题。
+  struct NodeVertex{
+    NodeInfo info;//ip port node_name
+    //集合无序，不会重复，存放该节点发布/订阅的topic，msg
+    std::unordered_set<TopicKey, TopicKeyHash> publishes;
+    std::unordered_set<TopicKey, TopicKeyHash> subscribes;
+  };
+
+
 };
+
 #endif //MESSAGE_GRAPH_H
