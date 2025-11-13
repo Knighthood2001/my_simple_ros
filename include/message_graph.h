@@ -71,6 +71,11 @@ namespace simple_ros{
   class MessageGraph {
   public:
     void UpsertNode(const NodeInfo &info);
+
+    // 维护 topic/msg 到 发布者/订阅者 的索引，并即时建边
+    void AddPublisher(const NodeInfo &node, const TopicKey &k);
+    void AddSubscriber(const NodeInfo &node, const TopicKey &k);
+
   private:
     //以 “节点名” 为键，存储所有节点的完整信息
     std::unordered_map<std::string, NodeVertex> nodes_;

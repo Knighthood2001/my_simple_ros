@@ -27,6 +27,27 @@ namespace simple_ros {
     }
   }
 
+  void MessageGraph::AddPublisher(const NodeInfo& node, const TopicKey& k){
+    // node是ip port node_name,k是topic msg_type
+    UpsertNode(node);
+
+    nodes_[node.node_name()].publishes.insert(k);
+
+    publishers_by_topic_[k].insert(node.node_name());
+
+    ConnectPublisherToSubscribers(node.node_name(), k);
+
+  }
+
+  void MessageGraph::AddSubscriber(const NodeInfo& node, const TopicKey& k){
+    UpsertNode(node);
+    nodes_[node.node_name()].subscribes.insert(k);
+    subscribers_by_topic_[k].insert(node.node_name());
+    ConnectPublishersToSubscriber(node.node_name(), k);
+  }
+
+
+
 
 
 }
