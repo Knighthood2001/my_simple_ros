@@ -85,7 +85,7 @@ namespace simple_ros {
       }
     }
     RemoveEdgesBy(node.node_name(), k, true);
-
+    CleanupIsolatedNodeIfAny(node.node_name());
   }
   void MessageGraph::RemoveSubscriber(const NodeInfo &node, const TopicKey &k){
     auto itn = nodes_.find(node.node_name());
@@ -100,6 +100,24 @@ namespace simple_ros {
       }
     }
     RemoveEdgesBy(node.node_name(), k, false);
+    CleanupIsolatedNodeIfAny(node.node_name());
+  }
+  void MessageGraph::CleanupIsolatedNodeIfAny(const std::string &node_name){
+    //查找节点
+    auto it = nodes_.find(node_name);
+    if (it == nodes_.end()) return;
+
+    //检查发布和订阅关系,如果节点有任一关系（ has_pub 或 has_sub 为 true ），说明不是孤立节点，直接返回
+    bool has_pub = !(it->second.publishes.empty());
+    bool has_sub = !(it->second.subscribes.empty());
+    if (has_pub || has_sub) return;
+    
+    //检查边的连接.遍历所有边（ edges_ ），检查是否有边以该节点为起点（ src_node ）或终点（ dst_node ）。
+    //如果存在这样的边，说明节点仍与其他节点有连接，直接返回。
+    for (const auto& e : edges_){
+      if (e.src_node == node_name || e.dst_node == node_name) return;
+    }
+    nodes_.erase(it);
   }
 
 

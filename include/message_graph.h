@@ -97,6 +97,9 @@ namespace simple_ros{
 
     //从消息图中移除与特定节点和主题相关的边（连接关系）
     void RemoveEdgesBy(const std::string& node, const TopicKey& k, bool node_is_publisher);
+    
+    // 可选：清理完全没有发布/订阅与边的孤立节点（避免积累）
+    void CleanupIsolatedNodeIfAny(const std::string &node_name);
   };
 
 };
