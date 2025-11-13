@@ -75,6 +75,9 @@ namespace simple_ros{
     // 维护 topic/msg 到 发布者/订阅者 的索引，并即时建边
     void AddPublisher(const NodeInfo &node, const TopicKey &k);
     void AddSubscriber(const NodeInfo &node, const TopicKey &k);
+    // 删除发布/订阅关系，并相应删边；必要时清理孤立点
+    void RemovePublisher(const NodeInfo &node, const TopicKey &k);
+    void RemoveSubscriber(const NodeInfo &node, const TopicKey &k);
 
   private:
     //以 “节点名” 为键，存储所有节点的完整信息
@@ -91,6 +94,9 @@ namespace simple_ros{
     //新增订阅者时，需要关联已存在的发布者。
     void ConnectPublisherToSubscribers(const std::string& pub_node, const TopicKey& k);
     void ConnectPublishersToSubscriber(const std::string& sub_node, const TopicKey& k);
+
+    //从消息图中移除与特定节点和主题相关的边（连接关系）
+    void RemoveEdgesBy(const std::string& node, const TopicKey& k, bool node_is_publisher);
   };
 
 };

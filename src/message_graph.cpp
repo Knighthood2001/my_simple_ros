@@ -46,6 +46,59 @@ namespace simple_ros {
     ConnectPublishersToSubscriber(node.node_name(), k);
   }
 
+  void MessageGraph::RemoveEdgesBy(const std::string& node, const TopicKey& k, bool node_is_publisher){
+    // 由于 edges_ 是 unordered_set，只能线性扫描；但边规模通常 << 节点规模，且仅在注销/退订时发生。
+    std::vector<Edge> to_erase;  // src_node dst_node 以及TopicKey key
+    to_erase.reserve(16);// 预留16个
+    /*
+    对于每条边，检查：
+        边的主题和消息类型是否与参数匹配
+        根据 node_is_publisher 判断是移除该节点作为源（发布者）还是目标（订阅者）的边
+    */
+    for (const auto& e : edges_){  //std::unordered_set<Edge, EdgeHash> edges_;
+      if (e.key.topic == k.topic && e.key.msg_type == k.msg_type){
+        //节点取消发布某个主题时（node_is_publisher = true）
+        if (node_is_publisher && e.src_node == node){
+          to_erase.push_back(e);
+        }
+        //节点取消订阅某个主题时（node_is_publisher = false）
+        if(!node_is_publisher && e.dst_node == node){
+          to_erase.push_back(e);
+        }
+      }
+    }
+    for (auto& e : to_erase){
+      edges_.erase(e);
+    }
+  }
+  //从消息图中移除一个发布者（publisher）节点及其相关连接。
+  void MessageGraph::RemovePublisher(const NodeInfo& node, const TopicKey& k){
+    auto itn = nodes_.find(node.node_name());  //std::unordered_map<std::string, NodeVertex> nodes_
+    if (itn != nodes_.end()){
+      itn->second.publishes.erase(k);       // 从节点的发布列表中移除该主题
+    }
+    auto itp = publishers_by_topic_.find(k);//std::unordered_map<TopicKey, std::unordered_set<std::string>, TopicKeyHash> publishers_by_topic_;
+    if (itp != publishers_by_topic_.end()){
+      itp->second.erase(node.node_name());  // 从该主题的发布者列表中移除节点
+      if (itp->second.empty()){
+        publishers_by_topic_.erase(itp);    // 如果列表为空则移除整个主题条目
+      }
+    }
+
+  }
+  void MessageGraph::RemoveSubscriber(const NodeInfo &node, const TopicKey &k){
+    auto itn = nodes_.find(node.node_name());
+    if (itn != nodes_.end()){
+      itn->second.subscribes.erase(k);
+    }
+    auto its = subscribers_by_topic_.find(k);
+    if (its != subscribers_by_topic_.end()){
+      its->second.erase(node.node_name());
+      if (its->second.empty()){
+        subscribers_by_topic_.erase(its);
+      }
+    }
+  }
 
 
 
