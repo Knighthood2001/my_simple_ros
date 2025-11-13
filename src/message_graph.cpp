@@ -84,6 +84,7 @@ namespace simple_ros {
         publishers_by_topic_.erase(itp);    // 如果列表为空则移除整个主题条目
       }
     }
+    RemoveEdgesBy(node.node_name(), k, true);
 
   }
   void MessageGraph::RemoveSubscriber(const NodeInfo &node, const TopicKey &k){
@@ -98,6 +99,7 @@ namespace simple_ros {
         subscribers_by_topic_.erase(its);
       }
     }
+    RemoveEdgesBy(node.node_name(), k, false);
   }
 
 
