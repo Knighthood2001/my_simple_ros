@@ -71,6 +71,7 @@ namespace simple_ros{
   class MessageGraph {
   public:
     void UpsertNode(const NodeInfo &info);
+    bool GetNodeByName(const std::string& node_name, NodeInfo *node_info);
 
     // 维护 topic/msg 到 发布者/订阅者 的索引，并即时建边
     void AddPublisher(const NodeInfo &node, const TopicKey &k);
@@ -100,6 +101,8 @@ namespace simple_ros{
     
     // 可选：清理完全没有发布/订阅与边的孤立节点（避免积累）
     void CleanupIsolatedNodeIfAny(const std::string &node_name);
+
+
   };
 
 };

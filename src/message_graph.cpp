@@ -7,6 +7,14 @@ namespace simple_ros {
     auto& v = nodes_[info.node_name()];
     v.info = info;// 不用去管发布者和订阅者
   }
+  bool MessageGraph::GetNodeByName(const std::string& node_name, NodeInfo *node_info){
+    auto it = nodes_.find(node_name);
+    if (it == nodes_.end()){return false;}
+    // 通过解引用，我们才能将it->second.info的值赋值给node_info指针所指向的外部NodeInfo对象。
+    *node_info = it->second.info;  // NodeInfo info;//ip port node_name
+    return true;
+  }
+
   //根据话题（TopicKey）将相关的发布者和订阅者通过 “边” 关联起来
   void MessageGraph::ConnectPublisherToSubscribers(const std::string& pub_node, const TopicKey& k){
     // 步骤1：查找订阅了话题k的所有订阅者节点
