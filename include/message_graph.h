@@ -80,6 +80,22 @@ namespace simple_ros{
     void RemovePublisher(const NodeInfo &node, const TopicKey &k);
     void RemoveSubscriber(const NodeInfo &node, const TopicKey &k);
 
+    //导出
+    std::string ToReadableString() const;
+    std::string ToDOT() const;
+    std::string ToJSON() const;
+
+    std::vector<NodeInfo> GetAllNodes() const;
+    //是否存在node_name的Node
+    bool HasNode(const std::string& node_name) const;
+
+    // 获取节点发布/订阅的所有话题
+    std::vector<std::string> GetNodePublishTopics(const std::string& node_name) const;
+    std::vector<std::string> GetNodeSubscribeTopics(const std::string& node_name) const;
+    // 获取节点发布/订阅的所有话题（包含消息类型）
+    std::vector<TopicKey> GetNodePublishTopicKeys(const std::string &node_name) const;
+    std::vector<TopicKey> GetNodeSubscribeTopicKeys(const std::string &node_name) const;
+
   private:
     //以 “节点名” 为键，存储所有节点的完整信息
     std::unordered_map<std::string, NodeVertex> nodes_;

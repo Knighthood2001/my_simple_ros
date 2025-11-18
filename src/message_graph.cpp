@@ -1,7 +1,10 @@
 //
 // Created by wu on 25-11-11.
 //
+#include <sstream>
+
 #include "message_graph.h"
+
 namespace simple_ros {
   void MessageGraph::UpsertNode(const NodeInfo &info){
     auto& v = nodes_[info.node_name()];
@@ -128,7 +131,105 @@ namespace simple_ros {
     nodes_.erase(it);
   }
 
+  /*
+    ==== Message Graph ====
+    Nodes: 3, Edges: 2
 
+    [Nodes]
+    - sensor_camera (ip=192.168.1.10, port=8080)
+        publishes:
+          - image_raw : sensor_msgs/Image
+    - process_image (ip=192.168.1.11, port=8081)
+        publishes:
+          - image_processed : sensor_msgs/CompressedImage
+        subscribes:
+          - image_raw : sensor_msgs/Image
+    - display_screen (ip=192.168.1.12, port=8082)
+        subscribes:
+          - image_processed : sensor_msgs/CompressedImage
 
+    [Edges]
+    - sensor_camera -> process_image  [image_raw : sensor_msgs/Image]
+    - process_image -> display_screen  [image_processed : sensor_msgs/CompressedImage]
+  */
+  std::string MessageGraph::ToReadableString() const {
+    std::ostringstream oss;
+    oss << "==== Message Graph ====\n";
+    oss << "Nodes: " << nodes_.size() << ", Edges: " << edges_.size() << "\n\n";
+    oss << "[Nodes]\n";
+    for (const auto& [name, v] : nodes_) {
+        oss << " - " << name << " (ip=" << v.info.ip() << ", port=" << v.info.port() << ")\n";
+        if (!v.publishes.empty()) {
+            oss << "    publishes:\n";
+            for (const auto& k : v.publishes) oss << "      - " << k.topic << " : " << k.msg_type << "\n";
+        }
+        if (!v.subscribes.empty()) {
+            oss << "    subscribes:\n";
+            for (const auto& k : v.subscribes) oss << "      - " << k.topic << " : " << k.msg_type << "\n";
+        }
+    }
+    oss << "\n[Edges]\n";
+    for (const auto& e : edges_) {
+        oss << " - " << e.src_node << " -> " << e.dst_node
+            << "  [" << e.key.topic << " : " << e.key.msg_type << "]\n";
+    }
+    return oss.str();
+  }
+  
+  std::vector<NodeInfo> MessageGraph::GetAllNodes() const {
+    std::vector<NodeInfo> result;
+    for (const auto& [name, v] : nodes_) {
+      result.push_back(v.info);
+    }
+    return result;
+  }
+  bool MessageGraph::HasNode(const std::string& node_name) const {
+    auto it = nodes_.find(node_name);
+    if (it == nodes_.end()) return false;
+    return true;
+  }
+
+  std::vector<std::string> MessageGraph::GetNodePublishTopics(const std::string& node_name) const {
+    std::vector<std::string> result;
+    auto it = nodes_.find(node_name);
+    if (it != nodes_.end()){
+      for (const auto& topic_key : it->second.publishes) {
+        result.push_back(topic_key.topic);
+      }
+    }
+    return result;
+  }
+  
+  std::vector<std::string> MessageGraph::GetNodeSubscribeTopics(const std::string& node_name) const {
+    std::vector<std::string> result;
+    auto it = nodes_.find(node_name);
+    if (it != nodes_.end()){
+      for (const auto& topic_key : it->second.subscribes) {
+        result.push_back(topic_key.topic);
+      }
+    }
+    return result;
+  }
+
+  std::vector<TopicKey> MessageGraph::GetNodePublishTopicKeys(const std::string &node_name) const{
+    std::vector<TopicKey> result;
+    auto it = nodes_.find(node_name);
+    if (it != nodes_.end()){
+      for (const auto& topic_key : it->second.publishes){
+        result.push_back(topic_key);
+      }
+    }
+    return result;
+  }
+  std::vector<TopicKey> MessageGraph::GetNodeSubscribeTopicKeys(const std::string &node_name) const {
+    std::vector<TopicKey> result;
+    auto it = nodes_.find(node_name);
+    if (it != nodes_.end()){
+      for (const auto& topic_key : it->second.subscribes){
+        result.push_back(topic_key);
+      }
+    }
+    return result;
+  }
 
 }
