@@ -26,8 +26,14 @@ public:
   Timer(muduo::net::EventLoop* loop, double period, const TimerCallback& callback);
   ~Timer();
 
-  void start();
-  void stop();
+  //禁止拷贝和移动
+  Timer(const Timer&) = delete;
+  Timer& operator=(const Timer&) = delete;
+  Timer(Timer&&) = delete;
+  Timer& operator=(Timer&&) = delete;
+
+  void start(); //启动定时器
+  void stop();  //停止定时器
 
   void setOneShot(bool oneshot); // 设置是否为单次计时器
 
@@ -55,9 +61,7 @@ private:
   double remainingTime_;
   TimerEvent lastEvent_;           // 上一次事件信息
   
-  /**
-    * @brief 内部回调函数，会调用用户提供的回调函数
-  */
+  //内部回调函数，会调用用户提供的回调函数
   void internalCallback();
 };
 
