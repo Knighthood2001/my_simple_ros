@@ -24,7 +24,16 @@ class RosRpcClient{
                     const std::string& msg_type,
                     const NodeInfo& node_info,
                     UnsubscribeResponse* response);
+    // 调用RegisterPublisher RPC
+    bool RegisterPublisher(const std::string& topic_name,
+                           const std::string& msg_type,
+                           const NodeInfo& node_info,
+                           RegisterPublisherResponse* response);
 
+    bool UnregisterPublisher(const std::string& topic_name,
+                             const std::string& msg_type,
+                             const NodeInfo& node_info,
+                             UnregisterPublisherResponse* response);
   private:
     //RosRpcService::Stub 是 gRPC 自动生成的客户端存根类，用于调用服务端定义的 RPC 方法。
     std::unique_ptr<RosRpcService::Stub> stub_;  // 使用 std::unique_ptr 管理 Stub

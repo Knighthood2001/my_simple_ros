@@ -47,4 +47,40 @@ bool RosRpcClient::Unsubscribe(const std::string& topic_name,
   return true;
 }
 
+bool RosRpcClient::RegisterPublisher(const std::string& topic_name,
+                                    const std::string& msg_type,
+                                    const NodeInfo& node_info,
+                                    RegisterPublisherResponse* response) {
+    RegisterPublisherRequest request;
+    request.set_topic_name(topic_name);
+    request.set_msg_type(msg_type);
+    *request.mutable_node_info() = node_info;
+                                        
+    grpc::ClientContext context;
+    grpc::Status status = stub_->RegisterPublisher(&context, request, response);
+
+    if (!status.ok()) {
+        std::cerr << "RegisterPublisher RPC failed: " << status.error_message() << std::endl;
+        return false;
+    }
+    return true;
+}
+
+bool RosRpcClient::UnregisterPublisher(const std::string& topic_name,
+                                       const std::string& msg_type,
+                                       const NodeInfo& node_info,
+                                       UnregisterPublisherResponse* response) {
+    UnregisterPublisherRequest request;
+    request.set_topic_name(topic_name);
+    request.set_msg_type(msg_type);
+    *request.mutable_node_info() = node_info;
+
+    grpc::ClientContext context;
+    grpc::Status status = stub_->UnregisterPublisher(&context, request, response);
+    if (!status.ok()) {
+        std::cerr << "UnregisterPublisher RPC failed: " << status.error_message() << std::endl;
+        return false;
+    }
+    return true;
+}
 }
