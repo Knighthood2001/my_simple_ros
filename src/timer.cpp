@@ -42,6 +42,7 @@ void Timer::pause(){
   isPaused_ = true;
 
 }
+
 //恢复一个被暂停的计时器
 void Timer::resume(){
   if (!isRunning_ || isPaused_) return;
@@ -84,5 +85,21 @@ void Timer::internalCallback(){
     isRunning_ = false;
   }
 }
+
+void Timer::setPeriod(double period){
+  bool wasRunning  = isRunning_;
+  if(wasRunning){
+    stop();
+  }
+  period_ = period;
+  if(wasRunning){
+    start();
+  }
+}
+
+double Timer::getPeriod() const {
+   return period_;
+}
+
 }
 

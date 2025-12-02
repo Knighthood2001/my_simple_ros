@@ -29,12 +29,14 @@ public:
   void start();
   void stop();
 
-  void setOneShot(bool oneshot); // 设置单次计时器
+  void setOneShot(bool oneshot); // 设置是否为单次计时器
 
-  void pause();
-  void resume();
+  void pause();   // 暂停定时器
+  void resume();  // 恢复定时器
   
-  
+  void setPeriod(double period); //设置定时器周期
+  double getPeriod() const;      //获取定时器周期
+
 private:
 /*
 具体流程:
