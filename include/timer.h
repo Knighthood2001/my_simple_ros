@@ -11,7 +11,7 @@
 
 namespace simple_ros {
 
-struct TimeEvent{
+struct TimerEvent{
   double current_real;
   double last_real;
   double expected_real;
@@ -19,7 +19,7 @@ struct TimeEvent{
 };
 
 // 将std::function<void()>这个类型，起一个新的别名TimerCallback。
-typedef std::function<void()> TimerCallback;
+typedef std::function<void(const TimerEvent&)> TimerCallback;
 
 class Timer {
 public:
@@ -33,7 +33,8 @@ public:
 
   void pause();
   void resume();
-
+  
+  
 private:
 /*
 具体流程:

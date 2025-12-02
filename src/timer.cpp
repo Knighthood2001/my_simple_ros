@@ -18,10 +18,10 @@ void Timer::start(){
   isRunning_ = true;
 
   if (isOneShot_) {
-    timerId_ = loop_->runAfter(period_, callback_); //单次定时器
+    timerId_ = loop_->runAfter(period_, std::bind(&Timer::internalCallback, this)); //单次定时器
   }
   else{
-    timerId_ = loop_->runEvery(period_, callback_); //重复定时器
+    timerId_ = loop_->runEvery(period_, std::bind(&Timer::internalCallback, this)); //重复定时器
   }
 }
 
@@ -58,6 +58,30 @@ void Timer::resume(){
     timerId_ = loop_->runAfter(remaining, std::bind(&Timer::internalCallback, this));
   }else{
     timerId_ = loop_->runEvery(remaining, std::bind(&Timer::internalCallback, this));
+  }
+}
+
+void Timer::internalCallback(){
+  double startTime = muduo::Timestamp::now().secondsSinceEpoch();
+
+  //更新事件信息
+  TimerEvent event;
+  event.current_real = startTime;
+  event.last_real = lastEvent_.current_real;
+  event.expected_real = lastEvent_.expected_real + period_;
+  event.last_duration = lastEvent_.last_duration;
+
+  if (callback_){
+    callback_(event);
+  }
+  double endTime = muduo::Timestamp::now().secondsSinceEpoch();
+  lastEvent_.last_duration = static_cast<int32_t>((endTime-startTime)*1000);
+  lastEvent_.current_real = startTime;
+  lastEvent_.expected_real = event.expected_real;
+
+  // 对于一次性定时器，执行后停止
+  if(isOneShot_){
+    isRunning_ = false;
   }
 }
 }
