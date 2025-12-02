@@ -16,13 +16,23 @@ Timer::~Timer(){
 void Timer::start(){
   if (isRunning_) return;
   isRunning_ = true;
-  timerId_ = loop_->runEvery(period_, callback_);
+
+  if (isOneShot_) {
+    timerId_ = loop_->runAfter(period_, callback_); //单次定时器
+  }
+  else{
+    timerId_ = loop_->runEvery(period_, callback_); //重复定时器
+  }
 }
 
 void Timer::stop(){
   if (!isRunning_) return;
   loop_->cancel(timerId_);
   isRunning_ = false;
+}
+
+void Timer::setOneShot(bool oneshot){
+  isOneShot_= oneshot;
 }
 }
 

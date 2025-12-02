@@ -20,6 +20,8 @@ public:
   void start();
   void stop();
 
+  void setOneShot(bool oneshot);
+
 private:
 /*
 具体流程:
@@ -33,6 +35,7 @@ private:
   TimerCallback callback_;
   muduo::net::TimerId timerId_;
   bool isRunning_;
+  bool isOneShot_; //提供一个标志位 isOneShot_，用于区分周期性定时器和一次性定时器。
 };
 
 }
