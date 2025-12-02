@@ -15,6 +15,15 @@ class RosRpcClient{
     //显式构造函数
     explicit RosRpcClient(const std::string& server_address);
     ~RosRpcClient();
+    bool Subscribe(const std::string& topic_name,
+                  const std::string& msg_type,
+                  const NodeInfo& node_info,
+                  SubscribeResponse* response);
+
+    bool Unsubscribe(const std::string& topic_name,
+                    const std::string& msg_type,
+                    const NodeInfo& node_info,
+                    UnsubscribeResponse* response);
 
   private:
     //RosRpcService::Stub 是 gRPC 自动生成的客户端存根类，用于调用服务端定义的 RPC 方法。
