@@ -12,10 +12,10 @@
 namespace simple_ros {
 
 struct TimerEvent{
-  double current_real;
-  double last_real;
-  double expected_real;
-  int32_t last_duration;
+  double current_real;   // 当前时间
+  double last_real;      // 上一次触发时间
+  double expected_real;  // 期望触发时间
+  int32_t last_duration; // 上一次回调执行时间（毫秒）
 };
 
 // 将std::function<void()>这个类型，起一个新的别名TimerCallback。
@@ -58,7 +58,6 @@ private:
   bool isRunning_;
   bool isOneShot_; //提供一个标志位 isOneShot_，用于区分周期性定时器和一次性定时器。
   bool isPaused_;
-  double remainingTime_;
   TimerEvent lastEvent_;           // 上一次事件信息
   
   //内部回调函数，会调用用户提供的回调函数

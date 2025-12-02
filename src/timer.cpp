@@ -9,15 +9,24 @@
 namespace simple_ros {
 
 Timer::Timer(muduo::net::EventLoop* loop, double period, const TimerCallback& callback)
-  : loop_(loop), period_(period), callback_(callback) {}
+  : loop_(loop), period_(period), callback_(callback), isRunning_(false), isPaused_(false), isOneShot_(false) {
+  lastEvent_.current_real = 0.0;
+  lastEvent_.last_real = 0.0;
+  lastEvent_.expected_real = 0.0;
+  lastEvent_.last_duration = 0;
+}
 
 Timer::~Timer(){
   stop();
 }
 
 void Timer::start(){
-  if (isRunning_) return;
+  if (isRunning_ || isPaused_) return;
   isRunning_ = true;
+  isPaused_ = false;
+
+  // 获取当前时间作为期望触发时间的基准
+  lastEvent_.expected_real = muduo::Timestamp::now().secondsSinceEpoch();
 
   if (isOneShot_) {
     timerId_ = loop_->runAfter(period_, std::bind(&Timer::internalCallback, this)); //单次定时器
@@ -28,13 +37,24 @@ void Timer::start(){
 }
 
 void Timer::stop(){
-  if (!isRunning_) return;
-  loop_->cancel(timerId_);
+  if (!isRunning_ && !isPaused_) return;
+  if (isRunning_) {
+    loop_->cancel(timerId_);
+  }
+
   isRunning_ = false;
+  isPaused_ = false;
 }
 
 void Timer::setOneShot(bool oneshot){
+  bool wasRunning = isRunning_;
+  if (wasRunning) {
+    stop();
+  }
   isOneShot_= oneshot;
+  if (wasRunning) {
+    start();
+  }
 }
 
 void Timer::pause(){
@@ -74,8 +94,12 @@ void Timer::internalCallback(){
   event.expected_real = lastEvent_.expected_real + period_;
   event.last_duration = lastEvent_.last_duration;
 
+  try{
   if (callback_){
     callback_(event);
+  }
+  } catch (const std::exception& e){
+    fprintf(stderr, "Timer callback exception: %s\n", e.what());
   }
   double endTime = muduo::Timestamp::now().secondsSinceEpoch();
   lastEvent_.last_duration = static_cast<int32_t>((endTime-startTime)*1000);
