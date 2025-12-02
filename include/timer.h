@@ -7,8 +7,17 @@
 #include <functional>
 #include "muduo/net/EventLoop.h"
 #include "muduo/net/TimerId.h"
+#include <cmath>
 
 namespace simple_ros {
+
+struct TimeEvent{
+  double current_real;
+  double last_real;
+  double expected_real;
+  int32_t last_duration;
+};
+
 // 将std::function<void()>这个类型，起一个新的别名TimerCallback。
 typedef std::function<void()> TimerCallback;
 
@@ -20,7 +29,10 @@ public:
   void start();
   void stop();
 
-  void setOneShot(bool oneshot);
+  void setOneShot(bool oneshot); // 设置单次计时器
+
+  void pause();
+  void resume();
 
 private:
 /*
@@ -36,6 +48,14 @@ private:
   muduo::net::TimerId timerId_;
   bool isRunning_;
   bool isOneShot_; //提供一个标志位 isOneShot_，用于区分周期性定时器和一次性定时器。
+  bool isPaused_;
+  double remainingTime_;
+  TimerEvent lastEvent_;           // 上一次事件信息
+  
+  /**
+    * @brief 内部回调函数，会调用用户提供的回调函数
+  */
+  void internalCallback();
 };
 
 }
