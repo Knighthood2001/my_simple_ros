@@ -21,5 +21,18 @@ void MasterTcpServer::Stop(){
   server_.stop();
   LOG_INFO << "MasterTcpServer stopped";
 }
-
+void MasterTcpServer::OnConnection(const muduo::net::TcpConnectionPtr& conn){
+  LOG_INFO << "Connection to " << conn->peerAddress().toIpPort() << "is" << (conn->connected() ? "UP" : "DOWN");
+  std::lock_guard<std::mutex> lock(clients_mutex_);
+  if (conn->connected()){
+    active_clients_[conn->peerAddress().toIpPort()] = conn;
+  }else{
+    active_clients_.erase(conn->peerAddress().toIpPort());
+  }
+}
+void MasterTcpServer::OnWriteComplete(const muduo::net::TcpConnectionPtr& conn){
+  LOG_INFO << "Write complete to " << conn->peerAddress().toIpPort();
+  // 发送完成后主动断开连接
+  conn->shutdown();
+}
 }
