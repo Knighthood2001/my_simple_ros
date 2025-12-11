@@ -83,4 +83,61 @@ bool RosRpcClient::UnregisterPublisher(const std::string& topic_name,
     }
     return true;
 }
+bool RosRpcClient::GetNodes(const std::string& filter, GetNodesResponse* response){
+  GetNodesRequest request;
+  request.set_filter(filter);
+
+  grpc::ClientContext context;
+  grpc::Status status = stub_->GetNodes(&context, request, response);
+
+  if(!status.ok()){
+    std::cerr << "GetNodes RPC failed:" << status.error_message() << std::endl;
+    return false;
+  }
+  return true;
+}
+bool RosRpcClient::GetNodeInfo(const std::string& node_name, GetNodeInfoResponse* response){
+  GetNodeInfoRequest request;
+  request.set_node_name(node_name);
+
+  grpc::ClientContext context;
+  grpc::Status status = stub_->GetNodeInfo(&context, request, response);
+
+  if(!status.ok()){
+    std::cerr << "GetNodeInfo RPC failed:" << status.error_message() << std::endl;
+    return false;
+  }
+  return true;
+}
+
+bool RosRpcClient::GetTopics(const std::string& filter, GetTopicsResponse* response){
+  GetTopicsRequest request;
+  request.set_filter(filter);
+
+  grpc::ClientContext context;
+  grpc::Status status = stub_->GetTopics(&context, request, response);
+
+  if(!status.ok()){
+    std::cerr << "GetTopics RPC failed:" << status.error_message() << std::endl;
+    return false;
+  }
+  return true;
+}
+
+bool RosRpcClient::GetTopicInfo(const std::string& topic_name, GetTopicInfoResponse* response){
+  GetTopicInfoRequest request;
+  request.set_topic_name(topic_name);
+
+  grpc::ClientContext context;
+  grpc::Status status = stub_->GetTopicInfo(&context, request, response);
+
+  if(!status.ok()){
+    std::cerr << "GetTopicInfo RPC failed:" << status.error_message() << std::endl;
+    return false;
+  }
+  return true;
+}
+
+
+
 }
