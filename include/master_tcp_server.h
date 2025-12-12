@@ -25,7 +25,7 @@ struct PendingUpdate{
 };
 class MasterTcpServer {
   public:
-    MasterTcpServer(muduo::net::EventLoop* loop);
+    MasterTcpServer(muduo::net::EventLoop* loop, std::shared_ptr<MessageGraph> graph);
     ~MasterTcpServer();
 
     void Start();

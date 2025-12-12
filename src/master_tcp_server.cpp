@@ -14,7 +14,7 @@
 #include <muduo/base/Logging.h>
 #include <memory>
 namespace simple_ros{
-MasterTcpServer::MasterTcpServer(muduo::net::EventLoop* loop): loop_(loop), server_(loop, muduo::net::InetAddress(50052), "MasterTcpServer"){
+MasterTcpServer::MasterTcpServer(muduo::net::EventLoop* loop, std::shared_ptr<MessageGraph> graph): loop_(loop), graph_(graph), server_(loop, muduo::net::InetAddress(50052), "MasterTcpServer"){
   LOG_INFO << "MasterTcpServer initialized";
 }
 MasterTcpServer::~MasterTcpServer(){
@@ -27,7 +27,9 @@ void MasterTcpServer::Start(){
 }
 
 void MasterTcpServer::Stop(){
-  server_.stop();
+  std::lock_guard<std::mutex> lock(clients_mutex_);//clients_mutex_ 是保护客户端相关数据的互斥锁，std::lock_guard 是 RAII 风格的锁管理类（构造时加锁，析构时自动解锁）；
+  active_clients_.clear(); // 清理 “活跃客户端”
+  pending_updates_.clear();// 清理 “待处理更新” 容器
   LOG_INFO << "MasterTcpServer stopped";
 }
 void MasterTcpServer::OnConnection(const muduo::net::TcpConnectionPtr& conn){
