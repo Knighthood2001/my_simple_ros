@@ -4,9 +4,11 @@
 #include "master_tcp_server.h"
 #include <iostream>
 #include <arpa/inet.h> // htons htonl
-#include <muduo/base/Logging.h>
+#include <muduo/net/TcpClient.h>
+#include <muduo/net/EventLoop.h>
 #include <muduo/net/InetAddress.h>
 #include <muduo/net/TcpConnection.h>
+#include <muduo/base/Logging.h>
 #include <boost/bind/bind.hpp>
 #include <sstream>
 #include "ros_rpc.pb.h"

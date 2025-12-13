@@ -11,7 +11,9 @@
 #include <muduo/net/TcpConnection.h>
 #include <memory>
 #include <string>
+#include <muduo/net/TcpClient.h>
 #include <grpcpp/grpcpp.h>
+#include <muduo/base/Logging.h>
 #include "ros_rpc.pb.h"
 #include "message_graph.h"
 
@@ -45,7 +47,7 @@ class MasterTcpServer {
     muduo::net::EventLoop* loop_;
     muduo::net::TcpServer server_;
     
-    std::unordered_map<std::string, muduo::net::TcpConnectionPtr> active_clients_;
+    std::unordered_map<std::string, std::shared_ptr<muduo::net::TcpClient>> active_clients_;
     std::unordered_map<std::string, PendingUpdate> pending_updates_;
     std::mutex clients_mutex_;
     std::shared_ptr<MessageGraph> graph_;  // 使用shared_ptr

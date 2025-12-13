@@ -18,7 +18,7 @@ void PollManager::start(){
 }
 
 void PollManager::onConnection(const muduo::net::TcpConnectionPtr& conn){
-  if (conn->isConnected()) { // 判断连接状态：是否是新建立的连接
+  if (conn->connected()) { // 判断连接状态：是否是新建立的连接
     LOG_INFO << "new connection: " << conn->peerAddress().toIpPort();
   } else {
     LOG_INFO << "connection closed: " << conn->name();
@@ -33,8 +33,8 @@ void PollManager::onMessage(const muduo::net::TcpConnectionPtr& conn, muduo::net
   //后续进行优化
   while (buf->readableBytes() > 0){
     std::string msg(buf->retrieveAllAsString());
-    if (messgaeCallback_) {
-      messageCallBack_(conn->name(), msg);
+    if (messageCallback_) {
+      messageCallback_(conn->name(), msg);
     }
   }
 }
