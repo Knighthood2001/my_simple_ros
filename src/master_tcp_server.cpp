@@ -9,9 +9,7 @@
 #include <muduo/net/TcpConnection.h>
 #include <boost/bind/bind.hpp>
 #include <sstream>
-#include "master_tcp_server.h"
 #include "ros_rpc.pb.h"
-#include <muduo/base/Logging.h>
 #include <memory>
 namespace simple_ros{
 MasterTcpServer::MasterTcpServer(muduo::net::EventLoop* loop, std::shared_ptr<MessageGraph> graph): loop_(loop), graph_(graph), server_(loop, muduo::net::InetAddress(50052), "MasterTcpServer"){
@@ -31,20 +29,6 @@ void MasterTcpServer::Stop(){
   active_clients_.clear(); // 清理 “活跃客户端”
   pending_updates_.clear();// 清理 “待处理更新” 容器
   LOG_INFO << "MasterTcpServer stopped";
-}
-void MasterTcpServer::OnConnection(const muduo::net::TcpConnectionPtr& conn){
-  LOG_INFO << "Connection to " << conn->peerAddress().toIpPort() << "is" << (conn->connected() ? "UP" : "DOWN");
-  std::lock_guard<std::mutex> lock(clients_mutex_);
-  if (conn->connected()){
-    active_clients_[conn->peerAddress().toIpPort()] = conn;
-  }else{
-    active_clients_.erase(conn->peerAddress().toIpPort());
-  }
-}
-void MasterTcpServer::OnWriteComplete(const muduo::net::TcpConnectionPtr& conn){
-  LOG_INFO << "Write complete to " << conn->peerAddress().toIpPort();
-  // 发送完成后主动断开连接
-  conn->shutdown();
 }
 
 bool MasterTcpServer::SendUpdate(const std::string& node_name, const TopicTargetsUpdate& update){
@@ -101,5 +85,72 @@ void MasterTcpServer::SendUpdateToNode(const NodeInfo& node_info, const TopicTar
   }
   // 告诉 muduo 的 IO 线程 “发起对 peer_addr 的 TCP 连接”，调用后立刻返回（异步），不会阻塞当前线程。
   client->connect();
+}
+
+void MasterTcpServer::OnConnection(const muduo::net::TcpConnectionPtr& conn){
+  LOG_INFO << "Connection to " << conn->peerAddress().toIpPort() << "is" << (conn->connected() ? "UP" : "DOWN");
+//  std::lock_guard<std::mutex> lock(clients_mutex_);
+//  if (conn->connected()){
+//    active_clients_[conn->peerAddress().toIpPort()] = conn;
+//  }else{
+//    active_clients_.erase(conn->peerAddress().toIpPort());
+//  }
+  //连接成功则按自定义协议发送更新数据
+  if (conn->connected()) {
+    std::string peer_key = conn->peerAddress().toIpPort(); //获取对等方（目标节点）的网络地址，toIpPort() 转换为 ip:port 字符串。
+    PendingUpdate pending_update;
+    // 步骤1：从缓存中取出待发送的更新数据（线程安全）
+    {
+      std::lock_guard<std::mutex> lock(clients_mutex_);
+      auto it = pending_updates_.find(peer_key);
+      if (it == pending_updates_.end()){
+        LOG_WARN << "NO pending update found for" << peer_key;
+        return;
+      }else{
+        pending_update = it->second;  // 拷贝待发送数据
+        pending_updates_.erase(it);   // 移除缓存（避免重复发送）
+      }
+    }
+    // 步骤2：Protobuf 序列化更新数据（转成字节串）
+    std::string message;
+    if (!pending_update.update.SerializeToString(&message)){ //TopicTargetsUpdate 是 Protobuf 定义的结构体，SerializeToString 把结构化数据转成二进制字节串（网络传输的基础格式）
+      LOG_WARN << "Failed to serialize message";
+      return;
+    }
+    // 步骤3：按自定义协议构建完整消息（解决TCP粘包/拆包问题）
+    //// 按照协议格式构建完整消息：topic_name_len(2B) + topic_name + msg_name_len(2B) + msg_name + msg_data_len(4B) + msg_data
+    std::string buffer;
+    // 3.1 写入 topic 名称长度（2字节大端） + topic 名称
+    std::string topic = pending_update.update.topic();
+    if (topic.empty()){
+      topic = "__master_topic_update";  // 空topic兜底
+    }
+    uint16_t topic_len = htons(static_cast<uint16_t>(topic.size()));
+    buffer.append(reinterpret_cast<const char*>(&topic_len), sizeof(topic_len));
+    buffer.append(topic);
+    // 3.2 写入消息名称长度（2字节大端） + 消息名称
+    std::string msg_name = "TopicTargetsUpdate";
+    uint16_t msg_name_len = htons(static_cast<uint16_t>(msg_name.size()));
+    buffer.append(reinterpret_cast<const char*>(&msg_name_len), sizeof(msg_name_len));
+    buffer.append(msg_name);
+    // 3.3 写入消息数据长度（4字节大端） + 消息数据
+    uint32_t msg_data_len = htonl(static_cast<uint32_t>(message.size()));
+    buffer.append(reinterpret_cast<const char*>(&msg_data_len), sizeof(msg_data_len));
+    buffer.append(message);
+    // 步骤4：发送完整格式化消息
+    conn->send(buffer);
+
+
+  }else{
+    // 连接断开，清理客户端
+    std::lock_guard<std::mutex> lock(clients_mutex_);
+    active_clients_.erase(conn->peerAddress().toIpPort());
+  }
+}
+
+void MasterTcpServer::OnWriteComplete(const muduo::net::TcpConnectionPtr& conn){
+  LOG_INFO << "Write complete to " << conn->peerAddress().toIpPort();
+  // 发送完成后主动断开连接
+  conn->shutdown();
 }
 }

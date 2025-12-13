@@ -29,6 +29,10 @@ add_library(ros_rpc_core
         src/poll_manager.cpp
         src/generated/example.pb.cc
         src/generated/ros_rpc.pb.cc
+        src/message_graph.cpp
+        src/timer.cpp
+        src/master_tcp_server.cpp
+        src/ros_rpc_client.cpp
 )
 
 target_include_directories(ros_rpc_core PUBLIC
