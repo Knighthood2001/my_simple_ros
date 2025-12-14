@@ -21,7 +21,18 @@ class RosRpcServiceImpl final :public RosRpcService::Service{
     // 接口签名：gRPC 标准 → Status返回值 + 上下文 + 请求指针 + 响应指针
     // 订阅话题服务
     grpc::Status Subscribe(grpc::ServerContext* context, const SubscribeRequest* request, SubscribeResponse* response) override;
-    
+    grpc::Status RegisterPublisher(grpc::ServerContext* context, const RegisterPublisherRequest* request, RegisterPublisherResponse* response) override;
+    grpc::Status Unsubscribe(grpc::ServerContext* context, const UnsubscribeRequest* request, UnsubscribeResponse* response) override;
+    grpc::Status UnregisterPublisher(grpc::ServerContext* context, const UnregisterPublisherRequest* request, UnregisterPublisherResponse* response) override;
+    // 新增：获取节点列表
+    grpc::Status GetNodes(grpc::ServerContext* context, const GetNodesRequest* request, GetNodesResponse* response) override;
+    // 新增：获取节点详细信息
+    grpc::Status GetNodeInfo(grpc::ServerContext* context, const GetNodeInfoRequest* request, GetNodeInfoResponse* response) override;
+    // 新增：获取话题列表
+    grpc::Status GetTopics(grpc::ServerContext* context, const GetTopicsRequest* request, GetTopicsResponse* response) override;
+    // 新增：获取话题详细信息
+    grpc::Status GetTopicInfo(grpc::ServerContext* context, const GetTopicInfoRequest* request, GetTopicInfoResponse* response) override;
+      
   private:
 
 };
