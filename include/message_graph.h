@@ -89,6 +89,8 @@ namespace simple_ros{
     //是否存在node_name的Node
     bool HasNode(const std::string& node_name) const;
 
+    std::vector<NodeInfo> GetSubscribersByTopic(const std::string &topic) const;
+    std::vector<NodeInfo> GetPublishersByTopic(const std::string &topic) const;
     // 获取节点发布/订阅的所有话题
     std::vector<std::string> GetNodePublishTopics(const std::string& node_name) const;
     std::vector<std::string> GetNodeSubscribeTopics(const std::string& node_name) const;

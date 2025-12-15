@@ -231,5 +231,35 @@ namespace simple_ros {
     }
     return result;
   }
+  std::vector<NodeInfo> MessageGraph::GetSubscribersByTopic(const std::string& topic) const {
+    std::vector<NodeInfo> result;
 
+    // 找到对应 topic 的订阅者集合
+    auto it = std::find_if(subscribers_by_topic_.begin(), subscribers_by_topic_.end(),
+                           [&](const auto& pair){ return pair.first.topic == topic; });
+    if (it == subscribers_by_topic_.end()) return result;
+
+    // 一次循环获取 NodeInfo
+    result.reserve(it->second.size());
+    for (const auto& node_name : it->second) {
+        if (auto nit = nodes_.find(node_name); nit != nodes_.end())
+            result.push_back(nit->second.info);
+    }
+    return result;
+  }
+
+  std::vector<NodeInfo> MessageGraph::GetPublishersByTopic(const std::string& topic) const {
+    std::vector<NodeInfo> result;
+
+    auto it = std::find_if(publishers_by_topic_.begin(), publishers_by_topic_.end(),
+                           [&](const auto& pair){ return pair.first.topic == topic; });
+    if (it == publishers_by_topic_.end()) return result;
+
+    result.reserve(it->second.size());
+    for (const auto& node_name : it->second) {
+        if (auto nit = nodes_.find(node_name); nit != nodes_.end())
+            result.push_back(nit->second.info);
+    }
+    return result;
+  }
 }
