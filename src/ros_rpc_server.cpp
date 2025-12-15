@@ -4,19 +4,62 @@
 #include "ros_rpc_server.h"
 #include <grpcpp/server_builder.h>
 #include <iostream>
+#include "message_graph.h"
 
 namespace simple_ros{
 grpc::Status RosRpcServiceImpl::Subscribe(grpc::ServerContext* context, const SubscribeRequest* request, SubscribeResponse* response){
-  std::cout << "Received Subscribe request fo topic: "<< request->topic_name() << std::endl;
+  //用「话题名 + 消息类型」拼接成唯一键
+  const std::string topic_key = request->topic_name() + "/" + request->msg_type();
+  const NodeInfo& node = request->node_info();//node：引用请求中的 NodeInfo（订阅节点的元信息，包含节点名、IP、端口等），避免拷贝，提升效率。
+
+  LOG_INFO << "Received Subscribe request: topic: "<< request->topic_name() << ", msg_type=" << request->msg_type() << ", node_name=" << node.node_name();
+  {
+    // 步骤1：更新节点拓扑图，添加订阅者关系
+    graph_->AddSubscriber(node, {request->topic_name(), request->msg_type()});//把「节点」和「话题 + 消息类型」的订阅关系写入拓扑图；
+    LOG_DEBUG << "Addd subscriber "<< node.node_name() << "to topic " << request->topic_name();
+    // 通知节点 “话题的目标列表变化”
+    simple_ros::TopicTargetsUpdate update;
+    update.set_topic(request->topic_name());  // 指定通知对应的话题名；
+    auto* add_node = update.add_add_targets();  // 添加 “需要新增的目标节点”（即新订阅者）—— 发布者收到这个通知后，会把该节点加入 “数据发送列表”；
+    *add_node = node;  //把新订阅节点的 NodeInfo（IP、端口、节点名）写入通知。
+
+    // 遍历发布者并发送通知
+    int count = 0;
+    for(auto& pub : graph_->GetPublishersByTopic(request->topic_name())) {// 从拓扑图中获取该话题的所有发布者节点（NodeInfo 列表）
+      tcp_server_->SendUpdate(pub.node_name(), update);  //给每个发布者发 “新增订阅者” 的 TCP 通知；
+      count++;
+    }
+    LOG_INFO << "Notified " << count << " publishers about new subscriber " << node.node_name();
+  }
   response->set_success(true);
   response->set_message("Subscribe success");
+  LOG_INFO << "Subscribe request processed successfully for node " << node.node_name();
   return grpc::Status::OK;
 }
 grpc::Status RegisterPublisher(grpc::ServerContext* context, const RegisterPublisherRequest* request, RegisterPublisherResponse* response){
 
 }
 grpc::Status Unsubscribe(grpc::ServerContext* context, const UnsubscribeRequest* request, UnsubscribeResponse* response){
+  const TopicKey k{request->topic_name(),request->msg_type()};
+  const NodeInfo& node = request->node_info();
+  {
+    // 步骤1：从拓扑图中移除该节点的订阅关系
+    graph_->RemoveSubscriber(node ,k);
 
+    // 步骤2：构建“移除订阅者”的更新通知（发给发布者）
+    simple_ros::TopicTargetsUpdate update;
+    update.set_topic(request->topic_name());  // 指定通知对应的话题名
+    auto* remove_node = update.add_remove_targets();  // 添加“要移除的目标节点”字段
+    *remove_node = node;  // 把取消订阅的节点信息写入通知
+
+    // 步骤3：遍历该话题的所有发布者，逐个发送“移除订阅者”通知
+    for (auto& pub : graph_->GetPublishersByTopic(request->topic_name())) {
+      tcp_server_->SendUpdate(pub.node_name(), update);
+    }
+  }
+  response->set_success(true);
+  response->set_message("Unsubscribe success");
+  return grpc::Status::OK;
 }
 grpc::Status UnregisterPublisher(grpc::ServerContext* context, const UnregisterPublisherRequest* request, UnregisterPublisherResponse* response){
 

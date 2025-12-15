@@ -9,6 +9,9 @@
 #include "ros_rpc.pb.h"
 #include <memory>
 #include <string>
+#include "message_graph.h"
+#include <mutex>
+#include "master_tcp_server.h"
 
 namespace simple_ros{
 //业务逻辑实现（RosRpcServiceImpl）+ 服务生命周期管理（RosRpcServer）
@@ -34,7 +37,10 @@ class RosRpcServiceImpl final :public RosRpcService::Service{
     grpc::Status GetTopicInfo(grpc::ServerContext* context, const GetTopicInfoRequest* request, GetTopicInfoResponse* response) override;
       
   private:
-
+        // 使用外部传入的图结构智能指针
+    std::shared_ptr<MessageGraph> graph_;
+    mutable std::mutex mtx_;
+    std::shared_ptr<MasterTcpServer> tcp_server_;
 };
 // ========== 核心2：gRPC 服务端生命周期管理类 ==========
 class RosRpcServer{
