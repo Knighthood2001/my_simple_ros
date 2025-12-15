@@ -20,6 +20,8 @@ namespace simple_ros{
 // RosRpcService::Service 是 proto 文件生成的服务基类，所有 RPC 接口都是纯虚函数
 class RosRpcServiceImpl final :public RosRpcService::Service{
   public:
+    RosRpcServiceImpl(std::shared_ptr<MasterTcpServer> tcp_server, std::shared_ptr<MessageGraph> graph) :tcp_server_(tcp_server), graph_(graph){};
+    ~RosRpcServiceImpl() override = default;
     // 重写“订阅话题”的 RPC 接口（必须加 override，保证签名匹配）
     // 接口签名：gRPC 标准 → Status返回值 + 上下文 + 请求指针 + 响应指针
     // 订阅话题服务
@@ -46,7 +48,7 @@ class RosRpcServiceImpl final :public RosRpcService::Service{
 class RosRpcServer{
   public:
   // 构造函数：接收监听地址、TCP服务、节点图（传给内部的service_）
-  explicit RosRpcServer(const std::string& server_address);
+  RosRpcServer(const std::string& server_address, std::shared_ptr<MasterTcpServer> tcp_server, std::shared_ptr<MessageGraph> graph);
   ~RosRpcServer();
   
   void Run();
