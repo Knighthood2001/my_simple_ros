@@ -36,10 +36,28 @@ grpc::Status RosRpcServiceImpl::Subscribe(grpc::ServerContext* context, const Su
   LOG_INFO << "Subscribe request processed successfully for node " << node.node_name();
   return grpc::Status::OK;
 }
-grpc::Status RegisterPublisher(grpc::ServerContext* context, const RegisterPublisherRequest* request, RegisterPublisherResponse* response){
-
+grpc::Status RosRpcServiceImpl::RegisterPublisher(grpc::ServerContext* context, const RegisterPublisherRequest* request, RegisterPublisherResponse* response){
+  const TopicKey k{request->topic_name(), request->msg_type()};
+  const NodeInfo& node = request->node_info();
+  
+  {
+    graph_->AddPublisher(node, k);
+    LOG_INFO << "RegisterPublisher request: topic=" << request->topic_name() 
+            << ", msg_type=" << request->msg_type() 
+            << ", node_name=" << node.node_name();
+    simple_ros::TopicTargetsUpdate update;
+    update.set_topic(request->topic_name());
+    for (auto& pub : graph_->GetSubscribersByTopic(request->topic_name())) {
+      auto* add_node = update.add_add_targets();
+      *add_node = node;
+    }
+    tcp_server_->SendUpdate(node.node_name(), update);
+  }
+  response->set_success(true);
+  response->set_message("Register publisher success");
+  return grpc::Status::OK;
 }
-grpc::Status Unsubscribe(grpc::ServerContext* context, const UnsubscribeRequest* request, UnsubscribeResponse* response){
+grpc::Status RosRpcServiceImpl::Unsubscribe(grpc::ServerContext* context, const UnsubscribeRequest* request, UnsubscribeResponse* response){
   const TopicKey k{request->topic_name(),request->msg_type()};
   const NodeInfo& node = request->node_info();
   {
@@ -61,23 +79,35 @@ grpc::Status Unsubscribe(grpc::ServerContext* context, const UnsubscribeRequest*
   response->set_message("Unsubscribe success");
   return grpc::Status::OK;
 }
-grpc::Status UnregisterPublisher(grpc::ServerContext* context, const UnregisterPublisherRequest* request, UnregisterPublisherResponse* response){
+grpc::Status RosRpcServiceImpl::UnregisterPublisher(grpc::ServerContext* context, const UnregisterPublisherRequest* request, UnregisterPublisherResponse* response){
+  const TopicKey k{request->topic_name(),request->msg_type()};
+  const NodeInfo& node = request->node_info();
+  
+  {
+    graph_->RemovePublisher(node ,k);
+    LOG_INFO << "UnregisterPublisher request: topic=" << request->topic_name() 
+            << ", msg_type=" << request->msg_type() 
+            << ", node_name=" << node.node_name();
 
+  }
+  response->set_success(true);
+  response->set_message("Unregister publisher success");
+  return grpc::Status::OK;
 }
 // 新增：获取节点列表
-grpc::Status GetNodes(grpc::ServerContext* context, const GetNodesRequest* request, GetNodesResponse* response){
+grpc::Status RosRpcServiceImpl::GetNodes(grpc::ServerContext* context, const GetNodesRequest* request, GetNodesResponse* response){
 
 }
 // 新增：获取节点详细信息
-grpc::Status GetNodeInfo(grpc::ServerContext* context, const GetNodeInfoRequest* request, GetNodeInfoResponse* response){
+grpc::Status RosRpcServiceImpl::GetNodeInfo(grpc::ServerContext* context, const GetNodeInfoRequest* request, GetNodeInfoResponse* response){
 
 }
 // 新增：获取话题列表
-grpc::Status GetTopics(grpc::ServerContext* context, const GetTopicsRequest* request, GetTopicsResponse* response){
+grpc::Status RosRpcServiceImpl::GetTopics(grpc::ServerContext* context, const GetTopicsRequest* request, GetTopicsResponse* response){
   
 }
 // 新增：获取话题详细信息
-grpc::Status GetTopicInfo(grpc::ServerContext* context, const GetTopicInfoRequest* request, GetTopicInfoResponse* response){
+grpc::Status RosRpcServiceImpl::GetTopicInfo(grpc::ServerContext* context, const GetTopicInfoRequest* request, GetTopicInfoResponse* response){
 
 }
   
