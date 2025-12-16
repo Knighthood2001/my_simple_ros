@@ -2,6 +2,7 @@
 // Created by wu on 25-12-16.
 //
 #include <muduo/base/Logging.h>
+#include <chrono>
 #include "global_init.h"
 
 SystemManager& SystemManager::instance(){
@@ -15,6 +16,10 @@ void SystemManager::init(){
 
 //启动一个后台线程，在该线程中初始化网络事件循环（EventLoop）和网络连接管理器（PollManager），并运行事件循环以处理网络 IO 事件，从而避免阻塞主线程。
 void SystemManager::init(int port){
+  // 先初始化消息队列
+  if(!messageQueue_){
+    messageQueue_ = std::make_shared<MessageQueue>();
+  }
   //启动后台线程运行事件循环
   eventThread_ = std::thread([this, port](){
     eventLoop_ = std::make_shared<muduo::net::EventLoop>(); // 创建事件循环实例
@@ -37,4 +42,21 @@ void SystemManager::init(int port){
     pollManager_.reset();
     eventLoop_.reset();
   });
+}
+
+void SystemManager::spin(){
+  while(running_){
+    if(messageQueue_){
+      // 队列中存储的是 “待执行的回调函数”，processCallbacks() 的作用是遍历消息队列，
+      // 逐个执行这些回调函数—— 而这些回调函数的逻辑，正是 “处理对应的消息”（比如解析网络数据、响应 ROS 话题、执行异步任务）。
+      messageQueue_->processCallbacks();
+    }
+    std::this_thread::sleep_for(std::chrono::milliseconds(1));   //// 避免占用过高CPU
+  }
+}
+void SystemManager::spinOnce(){
+  if(messageQueue_){
+    messageQueue_->processCallbacks();// 单次处理
+  }
+  std::this_thread::sleep_for(std::chrono::milliseconds(1));
 }
