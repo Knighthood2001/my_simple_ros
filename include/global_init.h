@@ -11,6 +11,10 @@ class SystemManager{
     static SystemManager& instance();
     SystemManager(const SystemManager&) = delete;
     SystemManager& operator=(const SystemManager&) = delete;
+
+    void init();
+    void init(int port);
+
   private:
     // 私有构造/析构，确保只能通过 instance() 获取实例
 
