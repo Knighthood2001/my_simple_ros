@@ -82,3 +82,20 @@ void SystemManager::spinOnce(){
   }
   std::this_thread::sleep_for(std::chrono::milliseconds(1));
 }
+
+int SystemManager::findAvailablePort(int start_port, int end_port){
+  for (int port = start_port; port <= end_port; ++port){
+    int sock = socket(AF_INET, SOCK_STREAM, 0);
+    if (sock < 0) continue;
+    sockaddr_in addr{};
+    addr.sin_family = AF_INET;
+    addr.sin_addr.s_addr = INADDR_ANY;
+    addr.sin_port = htons(port);
+
+    // 绑定成功说明端口可用
+    int bind_result = bind(sock, (struct sockaddr*)&addr, sizeof(addr));
+    close(sock);
+    if (bind_result == 0) return port;
+  }
+  return -1;
+}

@@ -44,6 +44,7 @@ class SystemManager{
     SystemManager() = default;
     ~SystemManager() = default;
 
+    int findAvailablePort(int start_port = 60000, int end_port = 61000);
     
 };
 #endif //GLOBAL_INIT_H
