@@ -24,12 +24,19 @@ class SystemManager{
 
     void spin();
     void spinOnce();
+
+    // 资源清理方法
+    void shutdown();
+
     // 获取消息队列指针（供外部添加消息）
     std::shared_ptr<MessageQueue> getMessageQueue() const {return messageQueue_;}
     std::shared_ptr<RosRpcClient> getRpcClient() const {return rpcClient_;}
     NodeInfo getNodeInfo() const {return nodeInfo_;}
 
   private:
+    // 私有构造/析构，确保只能通过 instance() 获取实例
+    SystemManager() = default;
+    ~SystemManager();
     std::shared_ptr<muduo::net::EventLoop> eventLoop_;  // 事件循环
     std::shared_ptr<PollManager> pollManager_;  // 网络连接管理器
     std::thread eventThread_;  // 运行事件循环的后台线程
@@ -39,10 +46,6 @@ class SystemManager{
 
     std::shared_ptr<RosRpcClient> rpcClient_;  // 全局RPC客户端
     NodeInfo nodeInfo_;  //// 节点信息（名称、IP、端口）
-
-    // 私有构造/析构，确保只能通过 instance() 获取实例
-    SystemManager() = default;
-    ~SystemManager() = default;
 
     int findAvailablePort(int start_port = 60000, int end_port = 61000);
     

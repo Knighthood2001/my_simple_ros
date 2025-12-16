@@ -99,3 +99,25 @@ int SystemManager::findAvailablePort(int start_port, int end_port){
   }
   return -1;
 }
+
+SystemManager::~SystemManager(){
+  shutdown();
+}
+
+void SystemManager::shutdown(){
+  // 先停业务 → 停事件循环 → 等线程退出 → 清理资源，确保
+    //自旋循环（spin()）正常退出；
+    //后台事件循环线程（eventThread_）安全停止，不触发崩溃；
+    //所有核心资源（消息队列、事件循环、网络管理器）正确释放。
+  running_ = false;  //这一步是 “停业务层”，先让主线程的自旋循环停止，避免关闭过程中还在处理新消息。
+  if (eventLoop_){
+    eventLoop_->runInLoop([this]{eventLoop_->quit();});
+  }
+  // 3. 等待后台事件线程完全退出
+  if (eventThread_.joinable()){//如果不判断直接 join()，可能触发崩溃（比如线程未启动 / 已 join 过）
+    eventThread_.join();
+  }
+  // 4. 显式清理消息队列资源
+  messageQueue_.reset();
+  LOG_INFO << "SystemManager shutdown";
+}
