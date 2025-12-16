@@ -4,6 +4,9 @@
 #include <muduo/base/Logging.h>
 #include <chrono>
 #include "global_init.h"
+#include "ros_rpc_client.h"
+
+using namespace simple_ros;
 
 SystemManager& SystemManager::instance(){
   static SystemManager instance_;

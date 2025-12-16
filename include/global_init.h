@@ -6,11 +6,14 @@
 #define GLOBAL_INIT_H
 #include <memory>
 #include <thread>
+#include <string>
 #include <muduo/net/EventLoop.h>
 #include "poll_manager.h"
 #include "message_queue.h"
 #include "ros_rpc_client.h"
 #include "ros_rpc.pb.h"
+
+using namespace simple_ros;
 class SystemManager{
   public:
     static SystemManager& instance();
@@ -30,8 +33,13 @@ class SystemManager{
 
     // 获取消息队列指针（供外部添加消息）
     std::shared_ptr<MessageQueue> getMessageQueue() const {return messageQueue_;}
+    // 获取全局RPC客户端
     std::shared_ptr<RosRpcClient> getRpcClient() const {return rpcClient_;}
     NodeInfo getNodeInfo() const {return nodeInfo_;}
+    // 获取 PollManager 指针
+    std::shared_ptr<PollManager> getPollManager() const { return pollManager_; }
+    // 获取 EventLoop 指针
+    std::shared_ptr<muduo::net::EventLoop> getEventLoop() const { return eventLoop_; }
 
   private:
     // 私有构造/析构，确保只能通过 instance() 获取实例
