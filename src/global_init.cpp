@@ -20,6 +20,11 @@ void SystemManager::init(int port){
   if(!messageQueue_){
     messageQueue_ = std::make_shared<MessageQueue>();
   }
+
+  // 初始化全局RPC客户端，连接主服务器
+  rpcClient_ = std::make_shared<RosRpcClient>("localhost:50051");
+  LOG_INFO << "global RosRpcClient initialized";
+
   //启动后台线程运行事件循环
   eventThread_ = std::thread([this, port](){
     eventLoop_ = std::make_shared<muduo::net::EventLoop>(); // 创建事件循环实例
@@ -44,6 +49,23 @@ void SystemManager::init(int port){
   });
 }
 
+void SystemManager::init(int port, std::string node_name){
+  nodeInfo_.set_node_name(node_name);
+  nodeInfo_.set_ip("127.0.0.1");
+  nodeInfo_.set_port(port);
+  LOG_INFO<< "NodeInfo initialized: name: " << node_name << " port: " << port;
+
+  init(port);
+}
+
+void SystemManager::init(const std::string& node_name){
+  int port = findAvailablePort();  // 自动找端口
+  if (port<0){
+    LOG_WARN<< "no available port found";
+    throw std::runtime_error("No available port found");
+  }
+  init(port, node_name);
+}
 void SystemManager::spin(){
   while(running_){
     if(messageQueue_){
