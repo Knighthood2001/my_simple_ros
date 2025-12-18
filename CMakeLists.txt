@@ -33,6 +33,7 @@ add_library(ros_rpc_core
         src/timer.cpp
         src/master_tcp_server.cpp
         src/ros_rpc_client.cpp
+        src/global_init.cpp
 )
 
 target_include_directories(ros_rpc_core PUBLIC
