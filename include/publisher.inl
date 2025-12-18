@@ -7,7 +7,13 @@ template <typename T>
 Publisher<T>::Publisher(const std::string& topic): topic_(topic){
   msgType_ = T::descriptor()->full_name();
   LOG_INFO<<"Publisher init: topic=" << topic << "type=" << msgType_;
+  // 从系统管理器获取节点信息
+  nodeInfo_ = SystemManager::instance().getNodeInfo();
   updateTargets();
+}
+template <typename T>
+Publisher<T>::~Publisher(){
+  unregister();
 }
 
 template <typename T>
@@ -41,6 +47,25 @@ void Publisher<T>::publish(const T& msg){
   }
 }
 
+template <typename T>
+void Publisher<T>::unregister(){
+  LOG_INFO<<"unregistering publisher: "<< topic_;
+  
+  std::shared_ptr<RosRpcClient> rpc_client = SystemManager::instance().getRpcClient();
+  if (rpc_client){
+    simple_ros::UnregisterPublisherResponse response;
+    bool success = rpc_client->UnregisterPublisher(topic_, msgType_, nodeInfo_, &response);
+    if (success){
+      LOG_INFO << "Unregister RPC success: " << topic_;
+    }else{
+      LOG_INFO << "Unregister RPC failed: " << topic_;
+    }
+  }else{
+    LOG_ERROR << "RPC client not init";
+  }
+  clients_.clear();
+  connections_.clear();
+}
 template <typename T>
 void Publisher<T>::updateTargets(){
   std::shared_ptr<PollManager> poll_manager = SystemManager::instance().getPollManager();
