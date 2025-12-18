@@ -21,9 +21,9 @@ class Publisher {
   public:
     Publisher(const std::string& topic);
     void publish(const T& msg);
-    void updateTargets();
-    void createClient(const NodeInfo& nodeInfo);
-    std::string getConnectionId(const NodeInfo& nodeInfo);
+    void updateTargets();  // 更新订阅节点
+    void createClient(const NodeInfo& nodeInfo);  // 创建TCP客户端
+    std::string getConnectionId(const NodeInfo& nodeInfo);  // 生成连接ID,比如127.0.0.1:8000
   private:
     std::string topic_; //话题名
     std::string msgType_;  // 消息类型全名
