@@ -11,6 +11,7 @@ Publisher<T>::Publisher(const std::string& topic): topic_(topic){
   nodeInfo_ = SystemManager::instance().getNodeInfo();
   updateTargets();
 }
+
 template <typename T>
 Publisher<T>::~Publisher(){
   unregister();
@@ -18,6 +19,7 @@ Publisher<T>::~Publisher(){
 
 template <typename T>
 void Publisher<T>::publish(const T& msg){
+  updateTargets();
   std::string msg_data;
   if(!msg.SerializeToString(&msg_data)){
     LOG_ERROR<<"Failed to serialize message";
