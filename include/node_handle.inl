@@ -52,3 +52,34 @@ std::shared_ptr<Publisher<MsgType>> NodeHandle::advertise(const std::string& top
 
   return publisher;
 }
+template<typename MsgType, typename Class>
+std::shared_ptr<Subscriber> Subscriber::subscribe(const std::string& topic,
+                                      uint32_t queue_size,
+                                      void(Class::*callback)(const std::shared_ptr<MsgType>&),
+                                      Class* instance){
+  // 创建一个包装类成员函数的lambda表达式
+  auto wrapped_callback = [callback, instance](const std::shared_ptr<MsgType>& msg) {
+      (instance->*callback)(msg);
+  };
+  std::string msg_type_name = MsgType::descriptor()->full_name();
+  LOG_INFO << "Subscribe to topic=" << topic << ", type=" << msg_type_name;
+
+  // 创建订阅者实例
+  auto subscriber = std::make_shared<Subscriber>(topic, queue_size, wrapped_callback);
+
+  // 调用RPC订阅
+  auto rpc_client = SystemManager::instance().getRpcClient();
+  if (rpc_client) {
+      SubscribeResponse response;
+      bool success = rpc_client->Subscribe(topic, msg_type_name, nodeInfo_, &response);
+      if (success) {
+          LOG_INFO << "Subscribe RPC successful for topic: " << topic;
+      } else {
+          LOG_ERROR << "Subscribe RPC failed for topic: " << topic;
+      }
+  } else {
+      LOG_ERROR << "Global RPC client not initialized";
+  }
+
+  return subscriber;
+}
