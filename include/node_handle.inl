@@ -53,7 +53,7 @@ std::shared_ptr<Publisher<MsgType>> NodeHandle::advertise(const std::string& top
   return publisher;
 }
 template<typename MsgType, typename Class>
-std::shared_ptr<Subscriber> Subscriber::subscribe(const std::string& topic,
+std::shared_ptr<Subscriber> NodeHandle::subscribe(const std::string& topic,
                                       uint32_t queue_size,
                                       void(Class::*callback)(const std::shared_ptr<MsgType>&),
                                       Class* instance){

@@ -29,11 +29,15 @@ add_library(ros_rpc_core
         src/poll_manager.cpp
         src/generated/example.pb.cc
         src/generated/ros_rpc.pb.cc
+        src/generated/ros_rpc.grpc.pb.cc
         src/message_graph.cpp
         src/timer.cpp
         src/master_tcp_server.cpp
         src/ros_rpc_client.cpp
         src/global_init.cpp
+        src/node_handle.cpp
+        src/publisher.cpp
+        src/subscriber.cpp
 )
 
 target_include_directories(ros_rpc_core PUBLIC
@@ -69,3 +73,21 @@ target_link_libraries(mytest_msg_factory
         PRIVATE
         ros_rpc_core
 )
+
+add_executable(mytest_SystemManager
+        test/mytest_SystemManager.cpp
+        src/poll_manager.cpp
+        src/ros_rpc_client.cpp
+        src/generated/ros_rpc.pb.cc
+        src/generated/ros_rpc.grpc.pb.cc
+)
+target_include_directories(mytest_SystemManager PUBLIC
+        ${CMAKE_CURRENT_SOURCE_DIR}/include
+        ${GENERATED_DIR}
+)
+
+target_link_libraries(mytest_SystemManager
+        PRIVATE
+        ros_rpc_core
+)
+

@@ -14,7 +14,7 @@ class RosRpcClient{
   public:
     //显式构造函数
     explicit RosRpcClient(const std::string& server_address);
-    ~RosRpcClient();
+    ~RosRpcClient() = default;
     bool Subscribe(const std::string& topic_name,
                   const std::string& msg_type,
                   const NodeInfo& node_info,
