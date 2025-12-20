@@ -76,10 +76,6 @@ target_link_libraries(mytest_msg_factory
 
 add_executable(mytest_SystemManager
         test/mytest_SystemManager.cpp
-        src/poll_manager.cpp
-        src/ros_rpc_client.cpp
-        src/generated/ros_rpc.pb.cc
-        src/generated/ros_rpc.grpc.pb.cc
 )
 target_include_directories(mytest_SystemManager PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/include
