@@ -81,8 +81,18 @@ target_include_directories(mytest_SystemManager PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/include
         ${GENERATED_DIR}
 )
-
 target_link_libraries(mytest_SystemManager
+        PRIVATE
+        ros_rpc_core
+)
+add_executable(mytest_Timer
+        test/mytest_Timer.cpp
+)
+target_include_directories(mytest_Timer PUBLIC
+        ${CMAKE_CURRENT_SOURCE_DIR}/include
+        ${GENERATED_DIR}
+)
+target_link_libraries(mytest_Timer
         PRIVATE
         ros_rpc_core
 )
