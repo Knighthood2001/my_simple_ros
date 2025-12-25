@@ -3,7 +3,7 @@
 using namespace simple_ros;
 
 template <typename MsgType>
-std::shared_ptr<Subscriber> NodeHandle::subscriber(const std::string& topic,
+std::shared_ptr<Subscriber> NodeHandle::subscribe(const std::string& topic,
                                       uint32_t queue_size,
                                       std::function<void(const std::shared_ptr<MsgType>&)> callback){
   std::string msg_type_name = MsgType::descriptor()->full_name();
