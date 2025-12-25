@@ -25,18 +25,20 @@ class NodeHandle{
     NodeHandle& operator=(NodeHandle&&) noexcept;
 
     template <typename MsgType>
-    std::shared_ptr<Subscriber> subscriber(const std::string& topic,
+    std::shared_ptr<Subscriber> subscribe(const std::string& topic,
                                           uint32_t queue_size,
                                           std::function<void(const std::shared_ptr<MsgType>&)> callback);
-    std::shared_ptr<Subscriber> subscribe(const std::string& topic,
-                                         uint32_t queue_size, 
-                                         const std::string& msg_type_name, 
-                                         MessageQueue::Callback callback);
+
     template<typename MsgType, typename Class>
     std::shared_ptr<Subscriber> subscribe(const std::string& topic,
                                           uint32_t queue_size,
                                           void(Class::*callback)(const std::shared_ptr<MsgType>&),
                                           Class* instance);
+
+    std::shared_ptr<Subscriber> subscribe(const std::string& topic,
+                                         uint32_t queue_size,
+                                         const std::string& msg_type_name,
+                                         MessageQueue::Callback callback);
     template <typename MsgType>
     std::shared_ptr<Publisher<MsgType>> advertise(const std::string& topic);
 
