@@ -27,5 +27,23 @@ std::shared_ptr<Subscriber> NodeHandle::subscribe(const std::string& topic,
 }
 template <typename MsgType>
 std::shared_ptr<Publisher<MsgType>> NodeHandle::advertise(const std::string& topic){
-  
+  std::string msg_type_name = MsgType::descriptor()->full_name();
+  LOG_INFO << "Advertise topic=" << topic << ", type= " << msg_type_name;
+
+  auto publisher = std::make_shared<Publisher<MsgType>>(topic);
+  LOG_INFO << "node_name: "<< nodeInfo_.node_name() << ", ip" << nodeInfo_.ip() << ", port: " << nodeInfo_.port();
+
+  auto rpc_client = SystemManager::instance().getRpcClient();
+  if (rpc_client) {
+    RegisterPublisherResponse response;
+    bool success = rpc_client->RegisterPublisher(topic, msg_type_name, nodeInfo_, &response);
+    if (success) {
+      LOG_INFO << "Registered publisher successful, topic=" << topic << ", type=" << msg_type_name;
+    } else {
+      LOG_ERROR << "Registering publisher failed, topic=" << topic << ", type=" << msg_type_name;
+    }
+  }else {
+    LOG_ERROR << "Global Rpc client not initialized";
+  }
+  return publisher;
 }
