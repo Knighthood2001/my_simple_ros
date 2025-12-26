@@ -67,6 +67,7 @@ set(MYTEST
         test/mytest_SystemManager.cpp
         test/mytest_Timer.cpp
         test/mytest_init.cpp
+        test/mytest_advertise.cpp
         # 后续新增测试文件，直接在这里加一行即可
 )
 
