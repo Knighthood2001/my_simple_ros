@@ -96,4 +96,28 @@ target_link_libraries(mytest_Timer
         PRIVATE
         ros_rpc_core
 )
+# ===== 测试 =====
+find_package(GTest REQUIRED)
+enable_testing()
+
+# 测试列表
+set(TESTS
+        test/gtest_init.cpp
+)
+
+# 编译测试文件 -> 放到 bin/tests
+foreach(test_src IN LISTS TESTS)
+    get_filename_component(test_name ${test_src} NAME_WE)
+    add_executable(${test_name} ${test_src})
+    target_link_libraries(${test_name}
+            PRIVATE
+            ros_rpc_core
+            GTest::GTest
+            GTest::Main
+            pthread)
+    set_target_properties(${test_name} PROPERTIES
+            RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/tests
+    )
+    add_test(NAME ${test_name} COMMAND ${CMAKE_BINARY_DIR}/bin/tests/${test_name})
+endforeach()
 
