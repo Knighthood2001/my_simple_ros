@@ -63,12 +63,10 @@ target_link_libraries(ros_rpc_core
 add_executable(mytest_msg_factory
         test/mytest_msg_factory.cpp
 )
-
 target_include_directories(mytest_msg_factory PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/include
         ${GENERATED_DIR}
 )
-
 target_link_libraries(mytest_msg_factory
         PRIVATE
         ros_rpc_core
@@ -85,6 +83,7 @@ target_link_libraries(mytest_SystemManager
         PRIVATE
         ros_rpc_core
 )
+
 add_executable(mytest_Timer
         test/mytest_Timer.cpp
 )
@@ -93,6 +92,18 @@ target_include_directories(mytest_Timer PUBLIC
         ${GENERATED_DIR}
 )
 target_link_libraries(mytest_Timer
+        PRIVATE
+        ros_rpc_core
+)
+
+add_executable(mytest_init
+        test/mytest_init.cpp
+)
+target_include_directories(mytest_init PUBLIC
+        ${CMAKE_CURRENT_SOURCE_DIR}/include
+        ${GENERATED_DIR}
+)
+target_link_libraries(mytest_init
         PRIVATE
         ros_rpc_core
 )
