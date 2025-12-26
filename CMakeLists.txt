@@ -61,53 +61,42 @@ target_link_libraries(ros_rpc_core
 )
 
 # ===== 测试程序 =====
-add_executable(mytest_msg_factory
+# 1. 列出所有测试源文件（替换你原来逐个写的4个测试程序）
+set(MYTEST
         test/mytest_msg_factory.cpp
-)
-target_include_directories(mytest_msg_factory PUBLIC
-        ${CMAKE_CURRENT_SOURCE_DIR}/include
-        ${GENERATED_DIR}
-)
-target_link_libraries(mytest_msg_factory
-        PRIVATE
-        ros_rpc_core
-)
-
-add_executable(mytest_SystemManager
         test/mytest_SystemManager.cpp
-)
-target_include_directories(mytest_SystemManager PUBLIC
-        ${CMAKE_CURRENT_SOURCE_DIR}/include
-        ${GENERATED_DIR}
-)
-target_link_libraries(mytest_SystemManager
-        PRIVATE
-        ros_rpc_core
-)
-
-add_executable(mytest_Timer
         test/mytest_Timer.cpp
-)
-target_include_directories(mytest_Timer PUBLIC
-        ${CMAKE_CURRENT_SOURCE_DIR}/include
-        ${GENERATED_DIR}
-)
-target_link_libraries(mytest_Timer
-        PRIVATE
-        ros_rpc_core
+        test/mytest_init.cpp
+        # 后续新增测试文件，直接在这里加一行即可
 )
 
-add_executable(mytest_init
-        test/mytest_init.cpp
-)
-target_include_directories(mytest_init PUBLIC
-        ${CMAKE_CURRENT_SOURCE_DIR}/include
-        ${GENERATED_DIR}
-)
-target_link_libraries(mytest_init
-        PRIVATE
-        ros_rpc_core
-)
+# 2. 批量编译所有测试程序
+foreach(test_src IN LISTS MYTEST)
+    # 提取文件名（不含后缀）作为可执行程序名（比如 mytest_msg_factory.cpp → mytest_msg_factory）
+    get_filename_component(test_name ${test_src} NAME_WE)
+
+    # 创建可执行程序（替代原来逐个add_executable）
+    add_executable(${test_name} ${test_src})
+
+    # 设置头文件包含目录（和你原有配置完全一致）
+    target_include_directories(${test_name} PUBLIC
+            ${CMAKE_CURRENT_SOURCE_DIR}/include
+            ${GENERATED_DIR}
+    )
+
+    # 链接依赖库（保留你原有ros_rpc_core，若有GTest/线程库可按需加）
+    target_link_libraries(${test_name}
+            PRIVATE
+            ros_rpc_core
+    )
+
+    # 设置输出目录（可选，和你示例里一致，放到bin/tests下）
+    set_target_properties(${test_name} PROPERTIES
+            RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/mytests
+    )
+endforeach()
+
+
 # ===== 测试 =====
 find_package(GTest REQUIRED)
 enable_testing()
