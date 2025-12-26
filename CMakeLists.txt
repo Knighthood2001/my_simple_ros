@@ -34,6 +34,7 @@ add_library(ros_rpc_core
         src/timer.cpp
         src/master_tcp_server.cpp
         src/ros_rpc_client.cpp
+        src/ros_rpc_server.cpp
         src/global_init.cpp
         src/node_handle.cpp
         src/publisher.cpp
@@ -130,5 +131,21 @@ foreach(test_src IN LISTS TESTS)
             RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/tests
     )
     add_test(NAME ${test_name} COMMAND ${CMAKE_BINARY_DIR}/bin/tests/${test_name})
+endforeach()
+
+# ====工具=====
+set(TOOLS
+        tools/master.cpp
+)
+# 编译测试文件 -> 放到 bin/tests
+foreach(tool_src IN LISTS TOOLS)
+    get_filename_component(tool_name ${tool_src} NAME_WE)
+    add_executable(${tool_name} ${tool_src})
+    target_link_libraries(${tool_name}
+            PRIVATE
+            ros_rpc_core)
+    set_target_properties(${tool_name} PROPERTIES
+            RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/tools
+    )
 endforeach()
 

@@ -95,8 +95,4 @@ int main(){
   LOG_INFO << "Test completed";
 
   sys.shutdown();
-
-
-
-
 }
