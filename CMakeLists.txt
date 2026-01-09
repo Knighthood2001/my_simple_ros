@@ -69,6 +69,7 @@ set(MYTEST
         test/mytest_init.cpp
         test/mytest_advertise.cpp
         test/mytest_sub.cpp
+        test/test_pub.cpp
         # 后续新增测试文件，直接在这里加一行即可
 )
 
